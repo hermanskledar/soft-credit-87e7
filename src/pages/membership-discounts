@@ -1,4 +1,4 @@
----
+ ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -133,6 +133,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <!-- Footer -->
 <Footer />
 
-    <script src="script.js"></script>
+<script is:inline src="/script.js"></script>
 </body>
 </html>

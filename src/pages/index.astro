@@ -5,46 +5,189 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.S.K.V. Spartacus - Student Strength Sports Association</title>
+    <meta name="description" content="The largest student strength sports association in the Benelux, promoting powerlifting, bodybuilding, and fitness among students at Tilburg University.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">T.S.K.V. <span>Spartacus</span></a>
+            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="powerlifting.html">Powerlifting</a></li>
+                    <li><a href="become-a-member.html">Membership</a></li>
+                    <li><a href="membership-discounts.html">Discounts</a></li>
+                    <li><a href="webshop.html">Webshop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- Hero Section with Background Video -->
+<section class="hero">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <h1>T.S.K.V. Spartacus</h1>
+            <h2>The Largest Student Strength Sports Association in the Benelux</h2>
+            <p> Since 2012, we've united students of all fitness levels and goals. JOIN US FOR: Expert-led seminars, Practical training clinics, Bodybuilding, Competitive powerlifting, Vibrant social events. International students welcome—all activities in English. </p>
+            <div class="hero-buttons">
+                <a href="become-a-member.html" class="btn">Become a Member</a>
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-video">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/-B_i2C1bJuE?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=-B_i2C1bJuE&mute=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="background-overlay"></div>
+</section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Features -->
+            <section class="section">
+                <h2 class="section-title centered-title">Why Join Spartacus?</h2>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Powerlifting</h3>
+                        <p>Train with experienced lifters and compete in official KNKF competitions. Perfect your technique and reach new personal records.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>Join a diverse, international community of students who share your passion for strength and fitness.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h3>Exclusive Discounts</h3>
+                        <p>Enjoy special deals on supplements, nutrition, and physiotherapy services as a Spartacus member.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Preview -->
+            <section class="section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About Spartacus</h2>
+                        <p>Founded in 2012, T.S.K.V. Spartacus has grown to become the largest student strength sports association in the Benelux. We are dedicated to promoting strength sports among students at Tilburg University.</p>
+                        <p>Our association is entirely student-led, creating a vibrant community where both beginners and experienced athletes can thrive. All our activities are conducted in English, making us accessible to international students.</p>
+                        <a href="about.html" class="btn">Learn Our Story</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="placeholder-about.jpg" alt="Students training at Spartacus">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Preview -->
+            <section class="section text-center">
+                <h2 class="section-title centered-title">Become a Member Today</h2>
+                <p class="mb-40">Join Spartacus for just €25 per year and gain access to all our clinics, events, and exclusive member benefits.</p>
+                <div class="pricing">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <h3>Student Membership</h3>
+                            <div class="price-amount">€25<span>/year</span></div>
+                        </div>
+                        <ul class="price-features">
+                            <li>Guidance from experienced lifters</li>
+                            <li>Participation in competitions</li>
+                            <li>Access to our monthly clinics</li>
+                            <li>Exclusive discounts for meat</li>
+                            <li>Regular social events and workshops</li>
+                        </ul>
+                        <div class="price-action">
+                            <a href="become-a-member.html" class="btn">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="section text-center">
+                <h2 class="section-title centered-title">Ready to Join the Strength Revolution?</h2>
+                <p class="mb-40">Whether you're a beginner or an experienced lifter, Spartacus offers the perfect environment to reach your fitness goals.</p>
+                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="webshop.html" class="btn btn-secondary">Visit Our Webshop</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>T.S.K.V. Spartacus</h3>
+                    <p>The largest student strength sports association in the Benelux, promoting powerlifting, bodybuilding, and fitness at Tilburg University.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="powerlifting.html">Powerlifting</a></li>
+                        <li><a href="become-a-member.html">Membership</a></li>
+                        <li><a href="history.html">Our History</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Member Benefits</h3>
+                    <ul class="footer-links">
+                        <li><a href="membership-discounts.html">Membership Discounts</a></li>
+                        <li><a href="membership-discounts/bossers-vlees.html">Bossers Vlees</a></li>
+                        <li><a href="membership-discounts/fysiofitaal.html">Fysio Fitaal</a></li>
+                        <li><a href="webshop.html">Webshop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="membership-discounts.html">Membership Discounts</a></li>
+                        <li><a href="membership-discounts/bossers-vlees.html" target="_blank">KNKF registration</a></li>
+                        <li><a href="webshop.html">Webshop</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 T.S.K.V. Spartacus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

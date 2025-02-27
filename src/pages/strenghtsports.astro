@@ -1,0 +1,186 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <BaseHead />
+</head>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Introduction -->
+            <section class="section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">STRENGTH SPORTS AT SPARTACUS</h2>
+                        <p>At T.S.K.V. Spartacus, we're passionate about all forms of strength sports. Whether you're interested in powerlifting, bodybuilding, or Olympic weightlifting, our association provides the training, facilities, and community you need to excel.</p>
+                        <br>
+                        <p>Our primary focus is powerlifting, but we support members interested in various strength disciplines. Our diverse community welcomes athletes of all levels, from beginners to experienced competitors.</p>
+                        <br>
+                        <p>With expert coaching, quality equipment, and a supportive environment, Spartacus is the perfect place to pursue your strength goals.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="placeholder-strength-sports.jpg" alt="Strength sports at Spartacus">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Powerlifting -->
+            <section class="section">
+                <h2 class="section-title">POWERLIFTING</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Powerlifting is a strength sport focusing on three lifts: squat, bench press, and deadlift. Athletes get three attempts at each lift, with their best successful attempts combined for a total score.</p>
+                        <br>
+                        <p>As our primary focus, T.S.K.V. Spartacus offers comprehensive powerlifting training including:</p>
+                        <br>
+                        <ul>
+                            <li>Technique workshops for the three main lifts</li>
+                            <li>Structured training programs for all experience levels</li>
+                            <li>Professional coaching opportunities</li>
+                            <li>Access to competitive opportunities through our KNKF membership</li>
+                        </ul>
+                        <br>
+                        <p>Whether you're looking to compete or simply get stronger, our powerlifting program provides the perfect foundation.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="placeholder-powerlifting.jpg" alt="Powerlifting at Spartacus">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bodybuilding -->
+            <section class="section">
+                <h2 class="section-title">BODYBUILDING</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="placeholder-bodybuilding.jpg" alt="Bodybuilding at Spartacus">
+                    </div>
+                    <div class="about-text">
+                        <p>Bodybuilding focuses on developing muscle size, definition, and overall aesthetic physique through resistance training and nutrition.</p>
+                        <br>
+                        <p>At Spartacus, we support bodybuilding enthusiasts with:</p>
+                        <ul>
+                            <li>Nutritional advice for muscle building and body composition goals</li>
+                            <li>Community support from fellow bodybuilding enthusiasts</li>
+                            <li>Bulking and cutting competitions</li>
+                        </ul>
+                        <br>
+                        <p>While we don't specifically prepare members for bodybuilding competitions, our environment and resources provide everything needed for successful physique development.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weightlifting -->
+            <section class="section">
+                <h2 class="section-title">OLYMPIC WEIGHTLIFTING</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Olympic weightlifting is a dynamic strength sport featuring two competition lifts: the snatch and the clean & jerk. It emphasizes explosive power, technique, and mobility.</p>
+                        <br>
+                        <p>For members interested in weightlifting, Spartacus offers:</p>
+                        <ul>
+                            <li>Clinics from experts for the Olympic lifts</li>
+                            <li>Community knowledge-sharing from experienced lifters</li>
+                        </ul>
+                        <br>
+                        <p>While our primary focus remains on powerlifting, we welcome and support members interested in developing their Olympic lifting skills.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="placeholder-weightlifting.jpg" alt="Olympic weightlifting">
+                    </div>
+                </div>
+            </section>
+
+            <!-- KNKF Affiliation -->
+            <section class="section">
+                <h2 class="section-title">KNKF MEMBERSHIP</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="placeholder-knkf.jpg" alt="KNKF logo">
+                    </div>
+                    <div class="about-text">
+                        <p>T.S.K.V. Spartacus is an official member of the KNKF (Royal Dutch Powerlifting Federation), the governing body for powerlifting in the Netherlands.</p>
+                        <br>
+                        <p>This affiliation allows our members to participate in sanctioned powerlifting competitions throughout the Netherlands and internationally. It also ensures that our training practices and competition standards align with national and international guidelines.</p>
+                        <br>
+                        <p>As part of our commitment to clean sport, we support and adhere to the KNKF's anti-doping policies, promoting fair competition and athlete health.</p>
+                        <a href="https://knkf-sectiepowerliften.nl/" target = "_blank" class="btn">KNKF Website</a>
+                        <a href="https://knkf-sectiepowerliften.nl/leden/anti-doping/" target="_blank" class="btn btn-secondary">Anti-Doping E-Learning</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competitions -->
+            <section class="section">
+                <h2 class="section-title centered-title">COMPETITIONS</h2>
+                <p class="text-center mb-40">T.S.K.V. Spartacus regularly participates in powerlifting competitions and also organizes internal meets for members to gain experience.</p>
+                
+                <ul class="competition-list">
+                    <li class="competition-item">
+                        <h3>INTERNAL COMPETITIONS</h3>
+                        <p>Throughout the academic year, we organize several internal competitions exclusively for Spartacus members. These events are perfect for first-time competitors to experience a competition environment in a supportive setting.</p>
+                        <p>Our internal competitions follow official powerlifting rules but in a less pressured atmosphere, allowing lifters to focus on technique and personal improvement.</p>
+                    </li>
+                    <li class="competition-item">
+                        <h3>KNKF REGIONAL AND NATIONAL COMPETITIONS</h3>
+                        <p>For members looking to compete at a higher level, we facilitate participation in KNKF regional and national competitions. These events require registration through the federation and adherence to their weight classes and regulations.</p>
+                        <p>Our coaches provide guidance on meet preparation, weight management, attempt selection, and competition strategy to ensure you're ready for the platform.</p>
+                    </li>
+                    <li class="competition-item">
+                        <h3>UNIVERSITY COMPETITIONS</h3>
+                        <p>Spartacus also participates in competitions between university strength sports clubs, fostering friendly rivalry and community among student lifters across the Netherlands.</p>
+                        <p>These events are an excellent opportunity to represent Tilburg University and connect with other student strength athletes.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Volunteering -->
+            <section class="section">
+                <h2 class="section-title">VOLUNTEER OPPORTUNITIES</h2>
+                <p>Powerlifting competitions rely heavily on volunteers to run smoothly. At T.S.K.V. Spartacus, we encourage members to get involved in various roles:</p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-spoon"></i>
+                        </div>
+                        <h3>Powerlifting Committee</h3>
+                        <p>Help with organising big powerlifting competitions</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-fist"></i>
+                        </div>
+                        <h3>Catering</h3>
+                        <p>Help both volunteers and visitors be well fed</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>SPOTTERS & LOADERS</h3>
+                        <p>Ensure athlete safety and smooth transitions between lifters by serving on the spotter and loader team.</p>
+                    </div>
+                </div>
+                <p class="text-center mb-40">Volunteering is an excellent way to learn more about strength sports and contribute to our community. No experience is necessary—we provide training for all roles.</p>
+                <div class="text-center">
+                    <a href="contact.html" class="btn">Volunteer Sign-Up</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+<Footer />
+
+<script is:inline src="/script.js"></script>
+</body>
+</html>

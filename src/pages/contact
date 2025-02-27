@@ -1,0 +1,126 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <BaseHead />
+</head>
+
+<body>
+    <!-- Header -->
+    <Header />
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Contact Options -->
+            <section class="section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">GET IN TOUCH</h2>
+                        <p>Have questions about joining T.S.K.V. Spartacus? Interested in our competitions? Or just want to learn more about our association? We're here to help!</p>
+                        <p>There are several ways to contact us:</p>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">EMAIL</h3>
+                            <p><i class="fas fa-envelope spartacus-red"></i> <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a></p>
+                        </div>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">LOCATION</h3>
+                            <p><i class="fas fa-map-marker-alt spartacus-red"></i> Tilburg University Sports Center<br>
+                            Tilburg University Campus<br>
+                            Tilburg, Netherlands</p>
+                        </div>
+                        
+                        <div style="margin-top: 25px;">
+                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">SOCIAL MEDIA</h3>
+                            <div class="social-links" style="margin-top: 10px;">
+                                <a href="https://www.facebook.com/T.S.K.V.Spartacus/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/tskvspartacus/"target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/t.s.k.v.-spartacus/posts/?feedView=all"target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="placeholder-contact.jpg" alt="Spartacus team">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section class="section">
+                <h2 class="section-title">SEND US A MESSAGE</h2>
+                <p class="mb-40">Fill out the form below and we'll get back to you as soon as possible.</p>
+                
+                <form id="contactForm" class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" class="form-control" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="membership">Membership Information</option>
+                            <option value="powerlifting">Powerlifting Questions</option>
+                            <option value="competitions">Competition Information</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">SEND MESSAGE</button>
+                </form>
+            </section>
+            
+            <!-- FAQ -->
+            <section class="section">
+                <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+                
+                <div style="margin-top: 25px;">
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">WHEN ARE YOUR TRAINING HOURS?</h3>
+                    <p>Our members train during the regular opening hours of the Tilburg University Sports Center. However, we organize specific training sessions and workshops that are announced to our members via WhatsApp and email.</p>
+                </div>
+                
+                <div style="margin-top: 25px;">
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">HOW DO I SIGN UP FOR COMPETITIONS?</h3>
+                    <p>For internal competitions, registration forms are shared with members. For official KNKF competitions, our competition coordinator provides guidance on registration procedures.</p>
+                </div>
+                
+                <div style="margin-top: 25px;">
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">DO YOU PROVIDE COACHING?</h3>
+                    <p>Yes, experienced members regularly organize technique workshops and provide guidance during training sessions. For more specific coaching, reach out to us directly.</p>
+                </div>
+                
+                <div style="margin-top: 25px;">
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">CAN I TRY BEFORE BECOMING A MEMBER?</h3>
+                    <p>Absolutely! Contact us to arrange a trial session at the sports center. You'll need a day pass for the sports center to participate.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+<Footer />
+
+<script is:inline src="/script.js"></script>
+</body>
+</html>

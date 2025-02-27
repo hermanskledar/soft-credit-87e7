@@ -1,4 +1,7 @@
 ---
+// Import your CSS file
+import '../styles/global.css';
+
 // Define props the component will accept
 interface Props {
   title?: string;
@@ -16,9 +19,6 @@ const {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
-
-<!-- Stylesheets -->
-<link rel="stylesheet" href="/styles/global.css">
 
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

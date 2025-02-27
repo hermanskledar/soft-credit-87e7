@@ -1,0 +1,110 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <BaseHead />
+</head>
+
+<body>
+    <!-- Header -->
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our History</h1>
+            <h2>From Passion to the Largest Strength Sports Association</h2>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section class="section">
+                <h2 class="section-title centered-title">The Spartacus Journey</h2>
+                <p class="text-center mb-40">Since our founding in 2012, T.S.K.V. Spartacus has grown from a small group of passionate lifters to the largest student strength sports association in the Benelux.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2012: The Beginning</h3>
+                            <p>T.S.K.V. Spartacus was founded by a small group of passionate students who saw the need for a dedicated strength sports association at Tilburg University. Starting with just 15 members, the association began offering basic training sessions at the university sports center.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2014: First Competition</h3>
+                            <p>Spartacus organized its first powerlifting competition, which attracted participants from multiple universities across the Netherlands. This event marked our commitment to competitive lifting and helped establish our reputation in the student sports community.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2016: International Expansion</h3>
+                            <p>Recognizing the growing international student body at Tilburg University, all Spartacus activities became English-speaking, opening the door to a more diverse membership. This change led to a significant increase in international members.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2018: KNKF Affiliation</h3>
+                            <p>Spartacus became an official member of the KNKF (Royal Dutch Powerlifting Federation), allowing our members to participate in sanctioned competitions and providing access to official coaching resources.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2020: Adapting to Challenges</h3>
+                            <p>During the global pandemic, Spartacus quickly adapted by creating online training programs, virtual competitions, and community support networks to keep members engaged and active despite physical restrictions.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>2022: 10-Year Anniversary</h3>
+                            <p>Spartacus celebrated its 10th anniversary with over 300 active members, making it the largest student strength sports association in the Benelux. A special competition and gala were organized to commemorate this milestone.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Today: Looking Forward</h3>
+                            <p>Today, T.S.K.V. Spartacus continues to grow and evolve, offering more programs, partnerships, and opportunities for students interested in strength sports. We remain committed to our founding mission of promoting strength sports among students while fostering a supportive community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Testimonials -->
+            <section class="section">
+                <h2 class="section-title centered-title">Words from Our Founders</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="placeholder-founder.jpg" alt="Spartacus Founder">
+                    </div>
+                    <div class="about-text">
+                        <blockquote>
+                            "When we started Spartacus in 2012, we never imagined it would grow to become what it is today. We simply wanted to create a space where students passionate about strength training could come together, learn from each other, and push their limits. Seeing how the association has evolved and the impact it has had on so many students' lives is truly rewarding."
+                        </blockquote>
+                        <p class="text-right">- Founding Member of T.S.K.V. Spartacus</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Call to Action -->
+            <section class="section text-center">
+                <h2 class="section-title centered-title">Be Part of Our Future</h2>
+                <p class="mb-40">Join T.S.K.V. Spartacus today and become part of our continuing history. Your journey with us starts now!</p>
+                <a href="become-a-member.html" class="btn">Become a Member</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

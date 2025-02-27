@@ -4,151 +4,692 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-:root {
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
-  --black: 15, 18, 25;
-  --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
-  font-family: "Atkinson";
-  src: url("/fonts/atkinson-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Atkinson";
-  src: url("/fonts/atkinson-bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-body {
-  font-family: "Atkinson", sans-serif;
+/* Reset and base styles */
+* {
   margin: 0;
   padding: 0;
-  text-align: left;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
-  background-size: 100% 600px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
-  font-size: 20px;
-  line-height: 1.7;
+  box-sizing: border-box;
 }
-main {
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f8f8;
+  font-size: 13px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
-  line-height: 1.2;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  color: #37001b; /* Spartacus burgundy */
 }
+
 h1 {
-  font-size: 3.052em;
+  font-size: 26px;
 }
+
 h2 {
-  font-size: 2.441em;
+  font-size: 26px;
 }
+
 h3 {
-  font-size: 1.953em;
+  font-size: 18px;
 }
-h4 {
-  font-size: 1.563em;
-}
-h5 {
-  font-size: 1.25em;
-}
-strong,
-b {
-  font-weight: 700;
-}
-a {
-  color: var(--accent);
-}
-a:hover {
-  color: var(--accent);
-}
-p {
-  margin-bottom: 1em;
-}
-.prose p {
-  margin-bottom: 2em;
-}
-textarea {
+
+/* Container */
+.container {
   width: 100%;
-  font-size: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-input {
-  font-size: 16px;
+
+/* Header */
+header {
+  background-color: #ba131a; /* Spartacus red */
+  color: #fff;
+  padding: 15px 0;
+  position: relative;
 }
-table {
-  width: 100%;
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  text-decoration: none;
+  color: #fff;
 }
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+
+.logo span {
+  color: #e7c55e; /* Spartacus yellow */
 }
-code {
-  padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
-  border-radius: 2px;
-}
-pre {
-  padding: 1.5em;
-  border-radius: 8px;
-}
-pre > code {
-  all: unset;
-}
-blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
-  margin: 0px;
-  font-size: 1.333em;
-}
-hr {
+
+/* Navigation */
+.nav-toggle {
+  display: none;
+  background: none;
   border: none;
-  border-top: 1px solid rgb(var(--gray-light));
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin-top: 15px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 5px 0;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li a:hover {
+  color: #e7c55e; /* Spartacus yellow */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #e7c55e; /* Spartacus yellow */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Updated Hero section with side-by-side layout */
+.hero {
+    position: relative;
+    color: white;
+    padding: 80px 0;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #37001b; /* Spartacus burgundy as base color */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(55, 0, 27, 0.95) 0%, rgba(186, 19, 26, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(55, 0, 27, 0.7);
+    padding: 40px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(231, 197, 94, 0.3); /* Spartacus yellow border */
+}
+
+.hero-video {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(231, 197, 94, 0.3); /* Spartacus yellow border */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #e7c55e; /* Spartacus yellow */
+    letter-spacing: 1px;
+}
+
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px; /* Following the guidelines */
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero .btn {
+    padding: 12px 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ba131a; /* Spartacus red */
+    color: white;
+    margin-top: 12px;
+    padding: 12px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #d01520;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #e7c55e; /* Spartacus yellow */
+    color: #e7c55e;
+}
+
+.btn-secondary:hover {
+    background-color: #e7c55e;
+    color: #37001b; /* Spartacus burgundy */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-content, 
+    .hero-video {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+    
+    .hero-video {
+        display: none; /* Hide video on mobile as requested */
+    }
+    
+    .hero h1 {
+        font-size: 26px; /* Following the guidelines */
+    }
+    
+    .hero h2 {
+        font-size: 16px; /* Following the guidelines */
+    }
+    
+    .hero-content {
+        padding: 30px 20px;
+    }
+}
+/* Main content */
+main {
+  padding: 60px 0;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #37001b; /* Spartacus burgundy */
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #ba131a; /* Spartacus red */
+  bottom: 0;
+  left: 0;
+}
+
+.centered-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Features section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.feature {
+  flex-basis: calc(33.333% - 20px);
+  margin-bottom: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #ba131a; /* Spartacus red */
+}
+
+.feature h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #37001b; /* Spartacus burgundy */
+  letter-spacing: 1px;
+}
+
+/* About page */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+}
+
+/* Team section */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member {
+  flex-basis: calc(25% - 30px);
+  min-width: 220px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #37001b; /* Spartacus burgundy */
+}
+
+.team-member p {
+  color: #777;
+  font-size: 11px;
+}
+
+/* Membership section */
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.price-box {
+  flex-basis: 300px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.price-box:hover {
+  transform: translateY(-10px);
+}
+
+.price-header {
+  background: #ba131a; /* Spartacus red */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.price-header h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.price-amount {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.price-features {
+  padding: 30px;
+  list-style: none;
+}
+
+.price-features li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 11px;
+}
+
+.price-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ba131a; /* Spartacus red */
+  font-weight: bold;
+}
+
+.price-action {
+  text-align: center;
+  padding: 0 30px 30px;
+}
+
+/* Footer */
+footer {
+  background-color: #37001b; /* Spartacus burgundy */
+  color: #fff;
+  padding: 60px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-column {
+  flex-basis: 23%;
+  min-width: 250px;
+  margin-bottom: 30px;
+}
+
+.footer-column h3 {
+  color: #e7c55e; /* Spartacus yellow */
+  margin-bottom: 20px;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: #ba131a; /* Spartacus red */
+  bottom: 0;
+  left: 0;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #e7c55e; /* Spartacus yellow */
+}
+
+.social-links {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ba131a; /* Spartacus red */
+  color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background-color: #e7c55e; /* Spartacus yellow */
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid #4b0026;
+  padding-top: 20px;
+  color: #fff;
+  font-size: 11px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .feature {
+    flex-basis: calc(50% - 20px);
   }
-  main {
-    padding: 1em;
+  
+  .team-member {
+    flex-basis: calc(33.333% - 30px);
   }
 }
 
-.sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
-  clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
-  clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-  white-space: nowrap;
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ba131a; /* Spartacus red */
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  nav ul.active {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  .hero h2 {
+    font-size: 16px;
+  }
+  
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .feature {
+    flex-basis: 100%;
+  }
+  
+  .team-member {
+    flex-basis: calc(50% - 30px);
+  }
+  
+  .footer-column {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  .team-member {
+    flex-basis: 100%;
+  }
+  
+  .footer-column {
+    flex-basis: 100%;
+  }
+}
+
+/* Additional utilities */
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.centered-title {
+  text-align: center;
+}
+
+.centered-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Powerlifting specific */
+.competition-list {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.competition-item {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.competition-item h3 {
+  margin-bottom: 10px;
+  color: #e10600;
+  letter-spacing: 1px;
 }

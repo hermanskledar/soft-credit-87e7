@@ -12,14 +12,5 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
-  }),
-  vite: {
-    css: {
-      preprocessorOptions: {
-        css: {
-          additionalData: `@import "./src/styles/global.css";`
-        }
-      }
-    }
-  }
+  })
 });

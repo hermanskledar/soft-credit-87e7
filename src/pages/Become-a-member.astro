@@ -1,0 +1,124 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <BaseHead />
+</head>
+
+<body>
+    <!-- Header -->
+    <Header />
+
+ <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>BECOME A MEMBER</h1>
+            <h2>JOIN THE LARGEST STUDENT STRENGTH SPORTS ASSOCIATION</h2>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Membership Info -->
+            <section class="section">
+                <h2 class="section-title">MEMBERSHIP DETAILS</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Joining T.S.K.V. Spartacus gives you access to high-quality training facilities, expert guidance, and a supportive community of strength sports enthusiasts.</p>
+                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 25px;">ANNUAL FEE</h3>
+                        <p>Membership costs <strong>€25 per year</strong> - an investment in your strength journey that provides exceptional value.</p>
+                        
+                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 25px;">MEMBERSHIP BENEFITS</h3>
+                        <ul>
+                            <li>Guidance from experienced lifters and coaches</li>
+                            <li>Participation in internal competitions and events</li>
+                            <li>Eligibility for KNKF competitions</li>
+                            <li>Exclusive member discounts at partner businesses</li>
+                            <li>Regular social events, workshops, and seminars</li>
+                            <li>International community of like-minded students</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="placeholder-membership.jpg" alt="Spartacus members training">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registration Process -->
+            <section class="section">
+                <h2 class="section-title">HOW TO JOIN</h2>
+                <ol style="margin-left: 20px; margin-bottom: 30px;">
+                    <li><strong>Complete the Spartacus registration form</strong> - Fill out our form to provide your contact details and training preferences.</li>
+                    <li><strong>Pay the annual membership fee</strong> - The €25 fee will be automatically subtracted by incasso</li>
+                    <li><strong>Join our community</strong> - Get added to our WhatsApp groups and newsletter to stay updated on all activities.</li>
+                </ol>
+                <p><strong>Note:</strong> To join Spartacus, you must also have a valid Tilburg University Sports Center membership or day pass.</p>
+                <div class="text-center mb-40">
+                <br>
+                    <a href="#" class="btn">BECOME A MEMBER!</a>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="section">
+                <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+                <div class="mb-40">
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 20px;">DO I NEED PREVIOUS EXPERIENCE?</h3>
+                    <p>No, we welcome members of all experience levels. Our community includes beginners, intermediate lifters, and advanced athletes.</p>
+                    
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 20px;">IS SPARTACUS ONLY FOR POWERLIFTERS?</h3>
+                    <p>While we have a strong focus on powerlifting, we support all strength sports including bodybuilding and Olympic weightlifting.</p>
+                    
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 20px;">ARE INTERNATIONAL STUDENTS WELCOME?</h3>
+                    <p>Absolutely! All our activities are conducted in English, and we have a diverse international membership.</p>
+                    
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 20px;">WHEN CAN I JOIN?</h3>
+                    <p>You can join T.S.K.V. Spartacus at any time during the academic year.</p>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="section">
+                <h2 class="section-title centered-title">MEMBER TESTIMONIALS</h2>
+                <div class="features">
+                    <div class="feature">
+                        <p>"Joining Spartacus was the best decision I made at university. I've improved my strength significantly and made great friends in the process."</p>
+                        <p style="text-align: right; font-style: italic;">— First-year student</p>
+                    </div>
+                    <div class="feature">
+                        <p>"As an international student, Spartacus helped me find a community. The coaches are knowledgeable and everyone is supportive."</p>
+                        <p style="text-align: right; font-style: italic;">— Exchange student</p>
+                    </div>
+                    <div class="feature">
+                        <p>"I never thought I'd compete in powerlifting until I joined Spartacus. They guided me through my first competition and I'm hooked!"</p>
+                        <p style="text-align: right; font-style: italic;">— Third-year member</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="section text-center">
+                <h2 class="section-title centered-title">READY TO JOIN?</h2>
+                <p class="mb-40">Visit the Tilburg University Sports Center today to register with T.S.K.V. Spartacus.</p>
+                <div>
+                    <a href="contact.html" class="btn">CONTACT US WITH QUESTIONS</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+<Footer />
+
+<script is:inline src="/script.js"></script>
+</body>
+</html>

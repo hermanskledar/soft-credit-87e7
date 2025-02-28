@@ -1055,7 +1055,7 @@ footer {
             position: relative;
         }
         .testimonial::before {
-            content: """;
+            content: "some text";
             position: absolute;
             top: 10px;
             left: 10px;

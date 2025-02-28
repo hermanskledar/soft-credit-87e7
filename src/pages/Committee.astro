@@ -1,0 +1,345 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <BaseHead />
+</head>
+
+<body>
+    <!-- Header -->
+    <Header />
+
+
+   <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>OUR COMMITTEES</h1>
+            <h2>THE DRIVING FORCE BEHIND SPARTACUS</h2>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Board Section -->
+            <section class="section board-section">
+                <h2 class="section-title">BOARD OF DIRECTORS</h2>
+                <p>The Board of Directors oversees all aspects of T.S.K.V. Spartacus, ensuring that the association stays true to its mission of promoting strength sports among students. The board members are elected annually and volunteer their time to serve the association.</p>
+                
+                <div class="board-members">
+                    <div class="board-member">
+                        <img src="placeholder-board1.jpg" alt="Board President">
+                        <h3 class="board-member-name">LISA VERHOEVEN</h3>
+                        <p class="board-member-role">President</p>
+                        <p class="board-member-email">president@tskvspartacus.nl</p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="placeholder-board2.jpg" alt="Board Secretary">
+                        <h3 class="board-member-name">MARK DE JONG</h3>
+                        <p class="board-member-role">Secretary</p>
+                        <p class="board-member-email">secretary@tskvspartacus.nl</p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="placeholder-board3.jpg" alt="Board Treasurer">
+                        <h3 class="board-member-name">SOPHIE BAKKER</h3>
+                        <p class="board-member-role">Treasurer</p>
+                        <p class="board-member-email">treasurer@tskvspartacus.nl</p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="placeholder-board4.jpg" alt="Internal Affairs">
+                        <h3 class="board-member-name">THOMAS CHEN</h3>
+                        <p class="board-member-role">Internal Affairs</p>
+                        <p class="board-member-email">internal@tskvspartacus.nl</p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="placeholder-board5.jpg" alt="External Affairs">
+                        <h3 class="board-member-name">EMMA WILLIAMS</h3>
+                        <p class="board-member-role">External Affairs</p>
+                        <p class="board-member-email">external@tskvspartacus.nl</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Committees Section -->
+            <section class="section">
+                <h2 class="section-title">OUR COMMITTEES</h2>
+                <p>T.S.K.V. Spartacus operates through several specialized committees that focus on different aspects of our association. These committees are made up of dedicated volunteers who contribute their time and talents to enhance the Spartacus experience for all members.</p>
+                
+                <div class="committee-grid">
+                    <!-- Competition Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">COMPETITION COMMITTEE</h3>
+                            <p class="committee-description">The Competition Committee is responsible for organizing and executing all internal competitions and coordinating participation in external events. They handle everything from registration and equipment setup to judging and result recording.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: David Smit</p>
+                                <ul class="committee-list">
+                                    <li>5-7 active members</li>
+                                    <li>Meets monthly, more frequently before competitions</li>
+                                    <li>Technical knowledge of powerlifting preferred</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Events Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">EVENTS COMMITTEE</h3>
+                            <p class="committee-description">The Events Committee plans and coordinates social gatherings, workshops, seminars, and other non-competition events. They focus on creating opportunities for members to connect, learn, and have fun outside of regular training.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Julia van der Meer</p>
+                                <ul class="committee-list">
+                                    <li>4-6 active members</li>
+                                    <li>Meets biweekly</li>
+                                    <li>Creativity and organizational skills valued</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Media Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">MEDIA COMMITTEE</h3>
+                            <p class="committee-description">The Media Committee handles all aspects of the association's visual presence, including photography, videography, social media content creation, and website maintenance. They document events and create engaging content to showcase Spartacus activities.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Noah Rodriguez</p>
+                                <ul class="committee-list">
+                                    <li>3-5 active members</li>
+                                    <li>Meets monthly, plus event coverage</li>
+                                    <li>Photography, videography, or social media experience helpful</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Training Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">TRAINING COMMITTEE</h3>
+                            <p class="committee-description">The Training Committee develops educational resources, organizes technique workshops, and provides guidance to members. They create training programs, coordinate coaching sessions, and help ensure safe and effective training practices.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Sander de Vries</p>
+                                <ul class="committee-list">
+                                    <li>4-6 active members</li>
+                                    <li>Meets biweekly</li>
+                                    <li>Technical knowledge and coaching experience preferred</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recruitment Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">RECRUITMENT COMMITTEE</h3>
+                            <p class="committee-description">The Recruitment Committee focuses on attracting new members to the association. They organize information sessions, represent Spartacus at university events, manage open houses, and create promotional materials targeted at prospective members.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Kim van Dijk</p>
+                                <ul class="committee-list">
+                                    <li>3-5 active members</li>
+                                    <li>Meets monthly, more active during academic year start</li>
+                                    <li>Outgoing personality and marketing skills valuable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sponsorship Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">SPONSORSHIP COMMITTEE</h3>
+                            <p class="committee-description">The Sponsorship Committee builds and maintains relationships with external partners and sponsors. They seek out new partnerships, negotiate agreements, and ensure that existing partnerships are mutually beneficial for all parties involved.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Lucas Peeters</p>
+                                <ul class="committee-list">
+                                    <li>2-4 active members</li>
+                                    <li>Meets monthly</li>
+                                    <li>Communication skills and business acumen valuable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- International Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">INTERNATIONAL COMMITTEE</h3>
+                            <p class="committee-description">The International Committee ensures that T.S.K.V. Spartacus is accessible and welcoming to international students. They organize specific events for international members, provide translation assistance, and help bridge cultural differences within the association.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Elena Rossi</p>
+                                <ul class="committee-list">
+                                    <li>3-5 active members</li>
+                                    <li>Meets monthly</li>
+                                    <li>International background or multilingual skills helpful</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Merchandise Committee -->
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                        </div>
+                        <div class="committee-content">
+                            <h3 class="committee-title">MERCHANDISE COMMITTEE</h3>
+                            <p class="committee-description">The Merchandise Committee handles all aspects of Spartacus branded products. They design new merchandise, manage inventory, process orders, and coordinate with suppliers to ensure high-quality products that represent the Spartacus brand.</p>
+                            
+                            <div class="committee-members">
+                                <p class="committee-head">Committee Head: Anna Jansen</p>
+                                <ul class="committee-list">
+                                    <li>2-4 active members</li>
+                                    <li>Meets monthly</li>
+                                    <li>Design skills and organizational abilities valuable</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">JOIN THIS COMMITTEE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteer Section -->
+            <section id="volunteer-section" class="volunteer-section">
+                <h2 class="section-title">GET INVOLVED</h2>
+                <p>Volunteering with T.S.K.V. Spartacus is a rewarding way to contribute to our community, develop new skills, and make lasting connections. We welcome members of all experience levels to join our committees and help shape the future of our association.</p>
+                
+                <div class="join-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>EXPLORE</h3>
+                        <p>Review the different committees and their responsibilities to find the best fit for your interests and skills.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>CONTACT</h3>
+                        <p>Email the committee head or the Board secretary expressing your interest in joining a specific committee.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>ATTEND</h3>
+                        <p>Sit in on a committee meeting to get a feel for the work and meet current members.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>CONTRIBUTE</h3>
+                        <p>Start contributing to projects and initiatives based on your availability and strengths.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="contact.html" class="btn">EXPRESS INTEREST</a>
+                </div>
+            </section>
+
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>Joining the Competition Committee was one of the best decisions I made at university. Not only did I learn valuable skills in event management and leadership, but I also formed deep friendships with fellow committee members. Seeing an event we planned come to life and watching members achieve their goals is incredibly rewarding.</p>
+                    <p class="testimonial-author">— Jan Visser, Competition Committee Member (2023-2025)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- Footer -->
+<Footer />
+
+<script is:inline src="/script.js"></script>
+</body>
+</html>

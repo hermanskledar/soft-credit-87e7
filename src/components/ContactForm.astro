@@ -52,7 +52,8 @@
         const formObject = Object.fromEntries(formData.entries());
         
         try {
-            const response = await fetch('/api/contact', {
+            // Update this URL to your Cloudflare Worker URL
+            const response = await fetch('https://contact-form-handler.your-worker-subdomain.workers.dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -714,6 +714,8 @@ footer {
     text-align: left;
 }
 
+<!-- Add these styles to your CSS file -->
+<style>
     /* Calendar styling following Spartacus Guidelines */
     .calendar-wrapper {
         position: relative;
@@ -795,6 +797,34 @@ footer {
         color: #37001b; /* Spartacus burgundy */
     }
     
+    /* Mobile calendar styling */
+    .calendar-mobile {
+        display: none;
+    }
+    
+    .mobile-calendar-alternative {
+        display: none;
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .mobile-calendar-alternative p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+    
+    .mobile-calendar-btn {
+        margin-top: 10px;
+        display: inline-block;
+    }
+    
     /* Additional spacing utilities */
     .mt-20 {
         margin-top: 20px;
@@ -815,4 +845,43 @@ footer {
     
     .calendar-container button:hover {
         background-color: #37001b !important; /* Spartacus burgundy */
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .calendar-wrapper {
+            max-width: 100%;
+        }
+        
+        .calendar-legend {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-item {
+            margin: 0;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .calendar-desktop {
+            display: none;
+        }
+        
+        .calendar-mobile {
+            display: block;
+        }
+        
+        .mobile-calendar-alternative {
+            display: block;
+        }
+        
+        .calendar-wrapper {
+            border-width: 1px;
+        }
+        
+        .calendar-wrapper iframe {
+            height: 400px;
+        }
     }

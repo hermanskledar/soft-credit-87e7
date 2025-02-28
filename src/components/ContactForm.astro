@@ -8,29 +8,30 @@
     
     <form id="contactForm" class="contact-form" method="POST">
         <div class="form-group">
-            <label for="name">Name *</label>
+            <label for="name">NAME *</label>
             <input type="text" id="name" name="name" class="form-control" required>
         </div>
         
         <div class="form-group">
-            <label for="email">Email *</label>
+            <label for="email">EMAIL *</label>
             <input type="email" id="email" name="email" class="form-control" required>
         </div>
         
         <div class="form-group">
-            <label for="subject">Subject *</label>
+            <label for="subject">SUBJECT *</label>
             <select id="subject" name="subject" class="form-control" required>
                 <option value="">Select a subject</option>
                 <option value="general">General Inquiry</option>
                 <option value="membership">Membership Information</option>
-                <option value="powerlifting">Powerlifting Questions</option>
+                <option value="strength-sports">Strength Sports Questions</option>
                 <option value="competitions">Competition Information</option>
+                <option value="committee">Committee Involvement</option>
                 <option value="other">Other</option>
             </select>
         </div>
         
         <div class="form-group">
-            <label for="message">Message *</label>
+            <label for="message">MESSAGE *</label>
             <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
         </div>
         
@@ -46,14 +47,14 @@
         
         const formStatus = document.getElementById('formStatus');
         formStatus.textContent = 'Sending message...';
-        formStatus.style.color = '#ba131a'; // Using your Spartacus red
+        formStatus.style.color = '#ba131a'; // Spartacus red
         
         const formData = new FormData(e.target);
         const formObject = Object.fromEntries(formData.entries());
         
         try {
             // Update this URL to your Cloudflare Worker URL
-            const response = await fetch('https://contact-form-handler.your-worker-subdomain.workers.dev', {
+            const response = await fetch('https://contact-form-handler.tskvspartacus.workers.dev', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -84,7 +85,11 @@
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
-}
+        background-color: white;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
     .form-group {
         margin-bottom: 20px;
@@ -92,11 +97,17 @@
 
     .form-control {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
         border: 1px solid #ddd;
         border-radius: 4px;
         font-family: 'Montserrat', sans-serif;
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    .form-control:focus {
+        border-color: #ba131a;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(186, 19, 26, 0.2);
     }
 
     textarea.form-control {
@@ -105,18 +116,53 @@
 
     label {
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
         font-weight: bold;
-        font-size: 13px;
+        font-size: 14px;
+        font-family: 'Bebas Neue', sans-serif;
+        color: #37001b;
+    }
+
+    .btn {
+        background-color: #ba131a;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 4px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 16px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #37001b;
     }
 
     #formStatus {
         margin-top: 15px;
         text-align: center;
         font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
     }
 
-.section-title, .mb-40 {
-    text-align: left;
-}
+    .section-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 26px;
+        color: #37001b;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: #ba131a;
+        bottom: 0;
+        left: 0;
+    }
 </style>

@@ -1,0 +1,78 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead />
+</head>
+<body>
+    <Header />
+
+    <main class="container">
+        <section class="registration">
+            <h1>Become a Member</h1>
+            <p>Fill out the form below to join Spartacus.</p>
+
+            <form id="registrationForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <label for="membership">Membership Type</label>
+                <select id="membership" name="membership" required>
+                    <option value="student">Student (€25/year)</option>
+                    <option value="alumni">Alumni (€40/year)</option>
+                </select>
+
+                <label for="signature">Digital Signature (Type Your Name)</label>
+                <input type="text" id="signature" name="signature" required placeholder="Type your full name to sign" />
+
+                <div class="contract-agreement">
+                    <input type="checkbox" id="contract" name="contract" required />
+                    <label for="contract">I agree to the membership terms & conditions.</label>
+                </div>
+
+                <button type="submit" class="btn">Register Now</button>
+            </form>
+
+            <p id="responseMessage"></p>
+        </section>
+    </main>
+
+    <Footer />
+    
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch("/register.php", {  
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    window.location.href = "/confirmation";
+                } else {
+                    document.getElementById("responseMessage").innerText = result.message;
+                }
+            } catch (error) {
+                document.getElementById("responseMessage").innerText = "An error occurred. Please try again.";
+            }
+        });
+
+    </script>
+</body>
+</html>

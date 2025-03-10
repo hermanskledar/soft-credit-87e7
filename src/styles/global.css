@@ -22,6 +22,21 @@ nav ul li a:hover { color: #e7c55e; }
 nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; background: #e7c55e; bottom: 0; left: 0; transition: width 0.3s; }
 nav ul li a:hover::after { width: 100%; }
 
+/* Header */
+header {
+  background-color: #ba131a;
+  color: #fff;
+  padding: 15px 0;
+  position: relative;
+}
+
+.logo {
+    font-family: Bebas Neue, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    text-decoration: none;
+    color: #fff;
+
 /* CTA Button */
 .cta-button { background-color: #e7c55e; color: #37001b; font-family: 'Bebas Neue', sans-serif; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; transition: background-color 0.3s, transform 0.2s; margin-left: 20px; white-space: nowrap; }
 .cta-button:hover { background-color: #fff; color: #ba131a; transform: translateY(-2px); }

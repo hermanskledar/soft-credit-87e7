@@ -88,3 +88,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on mobile
+    if (window.innerWidth < 768) {
+        const slider = document.querySelector('.pricing-slider');
+        const indicators = document.querySelectorAll('.indicator');
+        const boxes = document.querySelectorAll('.price-box');
+        
+        // Update indicators based on scroll position
+        function updateIndicators() {
+            const index = Math.round(slider.scrollLeft / (slider.scrollWidth / boxes.length));
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+        }
+        
+        // Listen for scroll events on the slider
+        slider.addEventListener('scroll', updateIndicators);
+        
+        // Make indicators clickable
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                slider.scrollTo({
+                    left: (slider.scrollWidth / boxes.length) * i,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize with first indicator active
+        updateIndicators();
+    }
+});

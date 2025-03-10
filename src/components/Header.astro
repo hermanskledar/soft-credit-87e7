@@ -1,12 +1,10 @@
----
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
----
-
 <header>
-        <div class="container">
+    <div class="cta-container">
+        <div class="top-row">
             <a href="/index" class="logo">T.S.K.V. <span>Spartacus</span></a>
-            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+            <a href="/register" class="cta-button">Register!</a>
+        </div>
+        <div class="header-right">
             <nav>
                 <ul>
                     <li><a href="/index">Home</a></li>
@@ -15,9 +13,11 @@ import { SITE_TITLE } from '../consts';
                     <li><a href="/become-a-member">Membership</a></li>
                     <li><a href="/membership-discounts">Discounts</a></li>
                     <li><a href="/committee">Committee</a></li>
-                    <li><a href="/webshop">Webshop</a></li>
+                    <li><a href="https://merch.tskvspartacus.nl/" target="_blank">Webshop</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
+            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
         </div>
-    </header>
+    </div>
+</header>

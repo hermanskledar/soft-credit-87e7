@@ -266,3 +266,47 @@ footer { background-color: #37001b; color: #fff; padding: 60px 0 20px; }
   .calendar-wrapper { border-width: 1px; }
   .calendar-wrapper iframe { height: 400px; }
 }
+
+
+         .registration {
+           max-width: 600px;
+           margin: 40px auto;
+           padding: 20px;
+           background: white;
+           border-radius: 10px;
+           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+       }
+       
+       .registration form {
+           display: flex;
+           flex-direction: column;
+       }
+       
+       .registration label {
+           font-weight: bold;
+           margin-top: 10px;
+       }
+       
+       .registration input, .registration select {
+           padding: 10px;
+           margin-top: 5px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+           font-size: 16px;
+       }
+       
+       .registration button {
+           margin-top: 20px;
+           background: #ba131a;
+           color: white;
+           border: none;
+           padding: 12px;
+           font-size: 18px;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: 0.3s;
+       }
+       
+       .registration button:hover {
+           background: #970f15;
+       }

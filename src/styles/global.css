@@ -310,3 +310,150 @@ footer { background-color: #37001b; color: #fff; padding: 60px 0 20px; }
        .registration button:hover {
            background: #970f15;
        }
+
+
+.confirmation-section {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        
+        .confirmation-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #ba131a;
+        }
+        
+        .confirmation-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: #ba131a;
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .next-steps {
+            background-color: #f8f8f8;
+            padding: 25px;
+            border-radius: 6px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .next-steps-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            color: #37001b;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e7c55e;
+            padding-bottom: 10px;
+        }
+        
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .step-icon {
+            background-color: #ba131a;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            padding-top: 5px;
+        }
+        
+        .social-follow {
+            margin-top: 30px;
+        }
+        
+        .social-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            color: #37001b;
+            margin-bottom: 15px;
+        }
+        
+        .social-links-large {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #37001b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .social-btn i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .social-btn:hover {
+            background-color: #ba131a;
+            transform: translateY(-3px);
+        }
+        
+        .confirmation-actions {
+            margin-top: 30px;
+        }
+        
+        .spartacus-link {
+            color: #ba131a;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .spartacus-link:hover {
+            color: #37001b;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-card {
+                padding: 30px 20px;
+            }
+            
+            .confirmation-title {
+                font-size: 28px;
+            }
+            
+            .social-links-large {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }

@@ -85,30 +85,55 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                 </div>
             </section>
 
-            <!-- Membership Preview -->
-            <section class="section text-center">
-                <h2 class="section-title centered-title">Become a Member Today</h2>
-                <p class="mb-40">Join Spartacus for just €25 per year and gain access to all our clinics, events, and exclusive member benefits.</p>
-                <div class="pricing">
-                    <div class="price-box">
-                        <div class="price-header">
-                            <h3>Student Membership</h3>
-                            <div class="price-amount">€25<span>/year</span></div>
-                        </div>
-                        <ul class="price-features">
-                            <li>Guidance from experienced lifters</li>
-                            <li>Participation in competitions</li>
-                            <li>Ability to apply for free coaching</li>
-                            <li>Access to our monthly clinics</li>
-                            <li>Exclusive discounts</li>
-                            <li>Regular social events</li>
-                        </ul>
-                        <div class="price-action">
-                            <a href="/register" class="btn">Register Now</a>
-                        </div>
-                    </div>
+<!-- Membership Preview -->
+<section class="section text-center">
+    <h2 class="section-title centered-title">Become a Member Today</h2>
+    <p class="mb-40">Join Spartacus for just €25 per year and gain access to all our clinics, events, and exclusive member benefits. Or join us for a test training!</p>
+    
+    <!-- Swipeable container for mobile -->
+    <div class="pricing-slider-container">
+        <div class="pricing-slider">
+            <div class="price-box">
+                <div class="price-header">
+                    <h3>Student Membership</h3>
+                    <div class="price-amount">€25<span>/year</span></div>
                 </div>
-            </section>
+                <ul class="price-features">
+                    <li>Guidance from experienced lifters</li>
+                    <li>Participation in competitions</li>
+                    <li>Ability to apply for free coaching</li>
+                    <li>Access to our monthly clinics</li>
+                    <li>Exclusive discounts</li>
+                    <li>Regular social events</li>
+                </ul>
+                <div class="price-action">
+                    <a href="/register" class="btn">Register Now</a>
+                </div>
+            </div>
+            
+            <div class="price-box">
+                <div class="price-header">
+                    <h3>Try out Training</h3>
+                    <div class="price-amount">Free</div>
+                </div>
+                <ul class="price-features">
+                    <li>Guidance from experienced lifter</li>
+                    <li>Free of charge</li>
+                    <li>No strings attached</li>
+                </ul>
+                <div class="price-action">
+                    <a href="/contact" class="btn">Sign-up Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Indicators for mobile swipe -->
+        <div class="slider-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+        </div>
+    </div>
+</section>
 
 <!-- Calendar Section -->
 <section class="section">

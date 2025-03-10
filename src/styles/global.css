@@ -124,17 +124,59 @@ header {
 .team-member h3 { margin-bottom: 5px; font-size: 16px; color: #37001b; }
 .team-member p { color: #777; font-size: 11px; }
 
-/* Pricing */
-.pricing { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
-.price-box { flex-basis: 300px; background: white; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s; }
-.price-box:hover { transform: translateY(-10px); }
-.price-header { background: #ba131a; color: white; text-align: center; padding: 20px; }
-.price-header h3 { font-size: 16px; margin-bottom: 10px; color: #fff; }
-.price-amount { font-size: 36px; font-weight: bold; font-family: 'Montserrat', sans-serif; }
-.price-features { padding: 30px; list-style: none; }
-.price-features li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 11px; }
-.price-features li::before { content: '✓'; position: absolute; left: 0; color: #ba131a; font-weight: bold; }
-.price-action { text-align: center; padding: 0 30px 30px; }
+/* Mobile view - with slider */
+@media (max-width: 767px) {
+    .pricing-slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding: 0 0 40px;
+    }
+    
+    .pricing-slider {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+    
+    .pricing-slider::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .price-box {
+        flex: 0 0 85%;
+        margin: 0 auto;
+        scroll-snap-align: center;
+    }
+    
+    .slider-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ddd;
+        transition: background-color 0.3s;
+    }
+    
+    .indicator.active {
+        background-color: #333;
+    }
+}
+
+@media (min-width: 768px) {
+    .slider-indicators {
+        display: none;
+    }
+}
 
 /* Footer */
 footer { background-color: #37001b; color: #fff; padding: 60px 0 20px; }

@@ -90,12 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
+//Mobile slider homepage
+
 document.addEventListener('DOMContentLoaded', function() {
     // Only run on mobile
     if (window.innerWidth < 768) {
         const slider = document.querySelector('.pricing-slider');
         const indicators = document.querySelectorAll('.indicator');
-        const boxes = document.querySelectorAll('.price-box');
+        const boxes = document.querySelectorAll('.pricing-slider .price-box');
         
         // Update indicators based on scroll position
         function updateIndicators() {
@@ -111,10 +113,31 @@ document.addEventListener('DOMContentLoaded', function() {
         // Make indicators clickable
         indicators.forEach((indicator, i) => {
             indicator.addEventListener('click', () => {
+                const boxWidth = boxes[0].offsetWidth;
+                const scrollPosition = i * (boxWidth + 20); // 20px is the gap between cards
+                
                 slider.scrollTo({
-                    left: (slider.scrollWidth / boxes.length) * i,
+                    left: scrollPosition,
                     behavior: 'smooth'
                 });
+            });
+        });
+        
+        // Make price boxes clickable to navigate
+        boxes.forEach((box, i) => {
+            box.addEventListener('click', (event) => {
+                // Only trigger navigation if not clicking a button or link inside
+                if (!event.target.closest('a') && !event.target.closest('button')) {
+                    // Go to next card (or first card if at the end)
+                    const nextIndex = (i + 1) % boxes.length;
+                    const boxWidth = boxes[0].offsetWidth;
+                    const scrollPosition = nextIndex * (boxWidth + 20);
+                    
+                    slider.scrollTo({
+                        left: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
         
@@ -122,3 +145,4 @@ document.addEventListener('DOMContentLoaded', function() {
         updateIndicators();
     }
 });
+ 

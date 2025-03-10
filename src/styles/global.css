@@ -47,27 +47,13 @@ h3 {
   padding: 0 20px;
 }
 
-/* Header */
-header {
-  background-color: #ba131a; /* Spartacus red */
-  color: #fff;
-  padding: 15px 0;
-  position: relative;
-}
-
-.logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: bold;
-  font-size: 28px;
-  text-decoration: none;
-  color: #fff;
-}
-
-.logo span {
-  color: #e7c55e; /* Spartacus yellow */
-}
-
 /* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -117,6 +103,56 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   width: 100%;
+}
+
+.cta-button {
+  background-color: #e7c55e; /* Spartacus yellow */
+  color: #37001b; /* Spartacus burgundy */
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background-color: #fff;
+  color: #ba131a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cta-button {
+    display: none;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ba131a;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  nav ul.active {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 
 /* Updated Hero section with side-by-side layout */

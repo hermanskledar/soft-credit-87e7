@@ -708,12 +708,6 @@ footer {
     }
 }
 
-/* Add these to ensure left alignment for form headings */
-.section:has(.contact-form) .section-title,
-.section:has(.contact-form) .mb-40 {
-    text-align: left;
-}
-
 <!-- Add these styles to your CSS file -->
 <style>
     /* Calendar styling following Spartacus Guidelines */

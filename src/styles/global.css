@@ -32,12 +32,18 @@ header {
 
 .cta-container {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .logo {
@@ -46,7 +52,6 @@ header {
   font-size: 28px;
   text-decoration: none;
   color: #fff;
-  order: 2;
 }
 
 .logo span {
@@ -54,9 +59,9 @@ header {
 }
 
 .header-right {
-  order: 1;
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .cta-button {
@@ -70,7 +75,6 @@ header {
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: none;
-  margin-left: 20px;
   font-size: 14px;
 }
 

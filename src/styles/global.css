@@ -38,9 +38,25 @@ header {
     color: #fff;
 }
 
-/* CTA Button */
-.cta-button { background-color: #e7c55e; color: #37001b; font-family: 'Bebas Neue', sans-serif; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold; transition: background-color 0.3s, transform 0.2s; margin-left: 20px; white-space: nowrap; }
-.cta-button:hover { background-color: #fff; color: #ba131a; transform: translateY(-2px); }
+.cta-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
 
 /* Hero Section */
 .hero { position: relative; color: white; padding: 80px 0; overflow: hidden; min-height: 80vh; display: flex; align-items: center; background-color: #37001b; }

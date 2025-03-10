@@ -124,8 +124,35 @@ header {
 .team-member h3 { margin-bottom: 5px; font-size: 16px; color: #37001b; }
 .team-member p { color: #777; font-size: 11px; }
 
-/* Mobile view - with slider */
+/* Desktop/Mobile visibility */
+.desktop-only {
+    display: flex;
+}
+.mobile-only {
+    display: none;
+}
+
+/* Pricing - Keep the original styles */
+.pricing { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+.price-box { flex-basis: 300px; background: white; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s; }
+.price-box:hover { transform: translateY(-10px); }
+.price-header { background: #ba131a; color: white; text-align: center; padding: 20px; }
+.price-header h3 { font-size: 16px; margin-bottom: 10px; color: #fff; }
+.price-amount { font-size: 36px; font-weight: bold; font-family: 'Montserrat', sans-serif; }
+.price-features { padding: 30px; list-style: none; }
+.price-features li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 11px; }
+.price-features li::before { content: '✓'; position: absolute; left: 0; color: #ba131a; font-weight: bold; }
+.price-action { text-align: center; padding: 0 30px 30px; }
+
 @media (max-width: 767px) {
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+    
+    /* Mobile view - with slider */
     .pricing-slider-container {
         position: relative;
         overflow: hidden;

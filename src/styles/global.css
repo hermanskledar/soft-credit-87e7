@@ -31,11 +31,15 @@ header {
 }
 
 .logo {
-    font-family: Bebas Neue, sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    text-decoration: none;
-    color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo span {
+  color: #e7c55e; /* Spartacus yellow */
 }
 
 .cta-button {

@@ -132,8 +132,15 @@ header {
     display: none;
 }
 
+/* Pricing cards container (desktop) */
+.pricing-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
 /* Pricing - Keep the original styles */
-.pricing { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
 .price-box { flex-basis: 300px; background: white; border-radius: 5px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s; }
 .price-box:hover { transform: translateY(-10px); }
 .price-header { background: #ba131a; color: white; text-align: center; padding: 20px; }

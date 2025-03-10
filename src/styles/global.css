@@ -30,36 +30,53 @@ header {
   position: relative;
 }
 
+.cta-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .logo {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: bold;
   font-size: 28px;
   text-decoration: none;
   color: #fff;
+  order: 2;
 }
 
 .logo span {
   color: #e7c55e; /* Spartacus yellow */
 }
 
+.header-right {
+  order: 1;
+  display: flex;
+  align-items: center;
+}
+
 .cta-button {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    padding: 8px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-transform: none;
-    margin-left: 20px;
-    font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: none;
+  margin-left: 20px;
+  font-size: 14px;
 }
 
 .cta-button:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Hero Section */

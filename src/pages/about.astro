@@ -7,117 +7,116 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <BaseHead />
+    </head>
+    <body>
+        <!-- Header -->
+        <Header />
 
-<head>
-    <BaseHead />
-</head>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>About Spartacus</h1>
+                <h2>Our Mission, Vision & Team</h2>
+            </div>
+        </section>
 
-<body>
-    <!-- Header -->
-    <Header />
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>About Spartacus</h1>
-            <h2>Our Mission, Vision & Team</h2>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <!-- Mission -->
-            <section class="section">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">Our Mission</h2>
-                        <p>At T.S.K.V. Spartacus, our mission is clear: to promote strength sports among students at Tilburg University and create a supportive community for athletes of all levels.</p>
-                        <p>We believe that strength training is not only about physical improvement but also about developing discipline, confidence, and mental resilience. Our association offers a platform for students to explore various strength sports, connect with like-minded individuals, and achieve their fitness goals in a motivating environment.</p>
-                        <p>All our activities are conducted in English, making us fully accessible to the international student community at Tilburg University.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="placeholder-mission.jpg" alt="Spartacus members training together">
-                    </div>
-                </div>
-            </section>
-
-            <!-- Board Section -->
-            <section class="section board-section">
-                <h2 class="section-title">BOARD OF DIRECTORS</h2>
-                <p>T.S.K.V. Spartacus is entirely student-led, with a dedicated board and volunteers who work tirelessly to create the best experience for our members.</p>
-                
-                <div class="board-members">
-                    <div class="board-member">
-                        <img src="placeholder-board1.jpg" alt="Board Chair">
-                        <h3 class="board-member-name">Merel van Buren</h3>
-                        <p class="board-member-role">Chair</p>
-                        <p class="board-member-email"><a href="mailto:Voorzitter@tskvspartacus.nl">Voorzitter@tskvspartacus.nl</a></p>
-                    </div>
-                    
-                    <div class="board-member">
-                        <img src="placeholder-board2.jpg" alt="Board Secretary">
-                        <h3 class="board-member-name">Jelle Smitss</h3>
-                        <p class="board-member-role">Vice Chair</p>
-                        <p class="board-member-email"><a href="mailto:Vicevoorzitter@tskvspartacus.nl">Vicevoorzitter@tskvspartacus.nl</a></p>
-                    </div>
-                    
-                    <div class="board-member">
-                        <img src="placeholder-board3.jpg" alt="Board Treasurer">
-                        <h3 class="board-member-name">Herman Skledar</h3>
-                        <p class="board-member-role">Treasurer</p>
-                        <p class="board-member-email"><a href="mailto:Penningmeester@tskvspartacus.nl">Penningmeester@tskvspartacus.nl</a></p>
-                    </div>
-                    <div class="board-member">
-                        <img src="placeholder-board4.jpg" alt="Internal Affairs">
-                        <h3 class="board-member-name">Sam Aras</h3>
-                        <p class="board-member-role">Secretary</p>
-                        <p class="board-member-email"><a href="mailto:Secretaris@tskvspartacus.nl">Secretaris@tskvspartacus.nl</a></p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Affiliation -->
-            <section class="section">
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="placeholder-university.jpg" alt="Tilburg University Sports Center">
-                        <img src="placeholder-FOSST.jpg" alt="FOSST">
-                    </div>
-                    <div class="about-text">
-                        <h2 class="section-title">Our Affiliation</h2>
-                        <p>T.S.K.V. Spartacus operates in close partnership with the Tilburg University Sports Center, where all our training sessions and most clinics take place.</p>
-                        <p>This collaboration allows us to provide our members with access to top-quality equipment and facilities, ensuring the best possible training experience.</p>
-                        <p>We're proud to be an official student association recognized by Tilburg University, adhering to the university's standards of inclusivity, safety, and excellence.</p>
-                        <div class="button-container">
-                            <a href="https://www.tilburguniversity.edu" class="btn" target="_blank">Tilburg University</a>
-                            <a href="https://www.fosst.nl/" class="btn" target="_blank">FOSST</a>
+        <!-- Main Content -->
+        <main>
+            <div class="container">
+                <!-- Mission -->
+                <section class="section">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2 class="section-title">Our Mission</h2>
+                            <p>At T.S.K.V. Spartacus, our mission is clear: to promote strength sports among students at Tilburg University and create a supportive community for athletes of all levels.</p>
+                            <p>We believe that strength training is not only about physical improvement but also about developing discipline, confidence, and mental resilience. Our association offers a platform for students to explore various strength sports, connect with like-minded individuals, and achieve their fitness goals in a motivating environment.</p>
+                            <p>All our activities are conducted in English, making us fully accessible to the international student community at Tilburg University.</p>
+                        </div>
+                        <div class="about-image">
+                            <img src="placeholder-mission.jpg" alt="Spartacus members training together">
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-<!-- History Link -->
-<section class="section text-center">
-    <h2 class="section-title">Our History</h2>
-    <p class="mb-40">Founded in 2012, T.S.K.V. Spartacus has grown from a small group of enthusiasts to the largest student strength sports association in the Benelux.</p>
-    <a href="/history" class="btn">Explore our History</a>
-    <div class="about-image">
-        <img src="Old-Spartacus.jpg" alt="Old-Spartacus">
-    </div>
-</section>
+                <!-- Board Section -->
+                <section class="section board-section">
+                    <h2 class="section-title">BOARD OF DIRECTORS</h2>
+                    <p>T.S.K.V. Spartacus is entirely student-led, with a dedicated board and volunteers who work tirelessly to create the best experience for our members.</p>
+                    
+                    <div class="board-members">
+                        <div class="board-member">
+                            <img src="placeholder-board1.jpg" alt="Board Chair">
+                            <h3 class="board-member-name">Merel van Buren</h3>
+                            <p class="board-member-role">Chair</p>
+                            <p class="board-member-email"><a href="mailto:Voorzitter@tskvspartacus.nl">Voorzitter@tskvspartacus.nl</a></p>
+                        </div>
+                        
+                        <div class="board-member">
+                            <img src="placeholder-board2.jpg" alt="Board Secretary">
+                            <h3 class="board-member-name">Jelle Smitss</h3>
+                            <p class="board-member-role">Vice Chair</p>
+                            <p class="board-member-email"><a href="mailto:Vicevoorzitter@tskvspartacus.nl">Vicevoorzitter@tskvspartacus.nl</a></p>
+                        </div>
+                        
+                        <div class="board-member">
+                            <img src="placeholder-board3.jpg" alt="Board Treasurer">
+                            <h3 class="board-member-name">Herman Skledar</h3>
+                            <p class="board-member-role">Treasurer</p>
+                            <p class="board-member-email"><a href="mailto:Penningmeester@tskvspartacus.nl">Penningmeester@tskvspartacus.nl</a></p>
+                        </div>
+                        
+                        <div class="board-member">
+                            <img src="placeholder-board4.jpg" alt="Internal Affairs">
+                            <h3 class="board-member-name">Sam Aras</h3>
+                            <p class="board-member-role">Secretary</p>
+                            <p class="board-member-email"><a href="mailto:Secretaris@tskvspartacus.nl">Secretaris@tskvspartacus.nl</a></p>
+                        </div>
+                    </div>
+                </section>
 
-<!-- Become Member Link -->
-<section class="section text-center">
-    <h2 class="section-title">Our Future</h2>
-    <p class="mb-40">Join T.S.K.V. Spartacus today and become part of our continuing story. Your journey with us starts now!</p>
-    <a href="/become-a-member" class="btn">Be part of Our Future</a>
-</section>
+                <!-- Affiliation -->
+                <section class="section">
+                    <div class="about-content">
+                        <div class="about-image">
+                            <img src="placeholder-university.jpg" alt="Tilburg University Sports Center">
+                            <img src="placeholder-FOSST.jpg" alt="FOSST">
+                        </div>
+                        <div class="about-text">
+                            <h2 class="section-title">Our Affiliation</h2>
+                            <p>T.S.K.V. Spartacus operates in close partnership with the Tilburg University Sports Center, where all our training sessions and most clinics take place.</p>
+                            <p>This collaboration allows us to provide our members with access to top-quality equipment and facilities, ensuring the best possible training experience.</p>
+                            <p>We're proud to be an official student association recognized by Tilburg University, adhering to the university's standards of inclusivity, safety, and excellence.</p>
+                            <div class="button-container">
+                                <a href="https://www.tilburguniversity.edu" class="btn" target="_blank">Tilburg University</a>
+                                <a href="https://www.fosst.nl/" class="btn" target="_blank">FOSST</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <script is:inline src="/script.js"></script>
-</body>
+                <!-- History Link -->
+                <section class="section text-center">
+                    <h2 class="section-title">Our History</h2>
+                    <p class="mb-40">Founded in 2012, T.S.K.V. Spartacus has grown from a small group of enthusiasts to the largest student strength sports association in the Benelux.</p>
+                    <a href="/history" class="btn">Explore our History</a>
+                    <div class="about-image">
+                        <img src="Old-Spartacus.jpg" alt="Old-Spartacus">
+                    </div>
+                </section>
 
-<Footer />
+                <!-- Become Member Link -->
+                <section class="section text-center">
+                    <h2 class="section-title">Our Future</h2>
+                    <p class="mb-40">Join T.S.K.V. Spartacus today and become part of our continuing story. Your journey with us starts now!</p>
+                    <a href="/become-a-member" class="btn">Be part of Our Future</a>
+                </section>
+            </div>
+        </main>
 
+        <script is:inline src="/script.js"></script>
+        
+        <Footer />
+    </body>
 </html>
-

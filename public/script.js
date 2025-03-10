@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     // Only run on mobile
     if (window.innerWidth < 768) {

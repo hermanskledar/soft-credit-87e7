@@ -1068,3 +1068,36 @@ footer {
             font-weight: bold;
             color: #555;
         }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+/* Button header */    
+    .cta-button {
+        background-color: #ba131a;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 16px;
+        white-space: nowrap;
+    }
+    
+    .cta-button:hover {
+        background-color: #950f15;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+        .header-right {
+            margin-left: auto;
+        }
+        
+        .cta-button {
+            font-size: 0.9em;
+            padding: 6px 12px;
+            margin-right: 12px;
+        }
+    }

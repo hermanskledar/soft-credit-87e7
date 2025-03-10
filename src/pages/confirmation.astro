@@ -12,11 +12,86 @@ import Footer from '../components/Footer.astro';
 <body>
     <Header />
 
-    <main class="container text-center">
-        <section class="confirmation">
-            <h1>Registration Successful 🎉</h1>
-            <p>Thank you for becoming a member of T.S.K.V. Spartacus! We’ve received your details, and you’ll get a confirmation email shortly.</p>
-            <a href="/" class="btn">Back to Home</a>
+
+    <main class="container">
+        <section class="confirmation-section">
+            <div class="confirmation-card">
+                <h1 class="confirmation-title">REGISTRATION SUCCESSFUL 🎉</h1>
+                <p class="confirmation-message">Thank you for becoming a member of T.S.K.V. Spartacus! We've received your details, and you'll get a confirmation email shortly.</p>
+                
+                <div class="next-steps">
+                    <h2 class="next-steps-title">NEXT STEPS:</h2>
+                    <ul class="steps-list">
+                        <li class="step-item">
+                            <span class="step-icon"><i class="fas fa-users"></i></span>
+                            <span class="step-text">You'll be added to our WhatsApp community groups in the next 24 hours</span>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-icon"><i class="fas fa-calendar-alt"></i></span>
+                            <span class="step-text">Add our <a href="#calendar" class="spartacus-link">events calendar</a> to stay updated with all activities</span>
+                        </li>
+                        <li class="step-item">
+                            <span class="step-icon"><i class="fas fa-share-alt"></i></span>
+                            <span class="step-text">Follow our social media accounts for the latest news and community updates</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-follow">
+                        <h3 class="social-title">FOLLOW US:</h3>
+                        <div class="social-links-large">
+                            <a href="https://www.instagram.com/tskvspartacus/" target="_blank" class="social-btn">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.facebook.com/T.S.K.V.Spartacus/" target="_blank" class="social-btn">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </a>
+                            <a href="https://www.linkedin.com/company/t.s.k.v.-spartacus/posts/?feedView=all" target="_blank" class="social-btn">
+                                <i class="fab fa-linkedin-in"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <a href="/" class="btn">BACK TO HOME</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar" class="section">
+            <h2 class="section-title centered-title">EVENTS CALENDAR</h2>
+            <div class="calendar-intro text-center mb-40">
+                <p>Stay up-to-date with all Spartacus activities, competitions, clinics, and social events. Our calendar is regularly updated with important dates throughout the academic year.</p>
+                <p>Whether you're looking for upcoming powerlifting competitions, training sessions, or social gatherings, you'll find everything in our official calendar below.</p>
+                <p class="mb-20">You can add this calendar to your own Google Calendar by clicking the "Add to Google Calendar" button in the bottom right corner of the calendar.</p>
+            </div>
+            
+            <div class="calendar-container">
+                <!-- Responsive wrapper for the calendar -->
+                <div class="calendar-wrapper">
+                    <!-- Desktop calendar (hidden on small screens) -->
+                    <div class="calendar-desktop">
+                        <iframe src="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels&bgcolor=%23ffffff&color=%23ba131a&color=%2337001b&color=%23e7c55e" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    
+                    <!-- Mobile calendar (agenda view, visible only on small screens) -->
+                    <div class="calendar-mobile">
+                        <iframe src="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels&bgcolor=%23ffffff&color=%23ba131a&color=%2337001b&color=%23e7c55e&mode=AGENDA&hl=en" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+                
+                <!-- Mobile alternate option -->
+                <div class="mobile-calendar-alternative">
+                    <h3 class="calendar-subtitle">CALENDAR NOT DISPLAYING PROPERLY?</h3>
+                    <p>For the best experience on mobile devices, you can:</p>
+                    <a href="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels" class="btn btn-secondary mobile-calendar-btn" target="_blank">OPEN CALENDAR IN BROWSER</a>
+                </div>
+            </div>
+            
+            <div class="calendar-help text-center mt-40">
+                <p class="mt-20">For any questions about specific events or to suggest an addition to the calendar, please <a href="/contact" class="spartacus-link">contact us</a>.</p>
+            </div>
         </section>
     </main>
 

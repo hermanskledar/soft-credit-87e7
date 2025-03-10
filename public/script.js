@@ -124,17 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Make price boxes clickable to navigate
-        boxes.forEach((box, i) => {
+        boxes.forEach((box) => {
             box.addEventListener('click', (event) => {
-                // Only trigger navigation if not clicking a button or link inside
+                // Only trigger if not clicking a button or link inside
                 if (!event.target.closest('a') && !event.target.closest('button')) {
-                    // Go to next card (or first card if at the end)
-                    const nextIndex = (i + 1) % boxes.length;
-                    const boxWidth = boxes[0].offsetWidth;
-                    const scrollPosition = nextIndex * (boxWidth + 20);
+                    // Calculate the left position of the clicked box
+                    const boxLeft = box.offsetLeft;
+                    const boxWidth = box.offsetWidth;
+                    const sliderWidth = slider.offsetWidth;
+                    
+                    // Center the clicked box in the viewport
+                    const centerPosition = boxLeft - (sliderWidth / 2) + (boxWidth / 2);
                     
                     slider.scrollTo({
-                        left: scrollPosition,
+                        left: centerPosition,
                         behavior: 'smooth'
                     });
                 }

@@ -1,0 +1,41 @@
+---
+// calendar.astro
+---
+
+<!-- Calendar Section -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title centered-title" id="calendar">Events Calendar</h2>
+        <div class="calendar-intro text-center mb-40">
+            <p>Stay up-to-date with all Spartacus activities, competitions, clinics, and social events. Our calendar is regularly updated with important dates throughout the academic year.</p>
+            <p>Whether you're looking for upcoming powerlifting competitions, training sessions, or social gatherings, you'll find everything in our official calendar below.</p>
+            <p class="mb-20">You can add this calendar to your own Google Calendar by clicking the "Add to Google Calendar" button in the bottom right corner of the calendar.</p>
+        </div>
+        
+        <div class="calendar-container">
+            <!-- Responsive wrapper for the calendar -->
+            <div class="calendar-wrapper">
+                <!-- Desktop calendar (hidden on small screens) -->
+                <div class="calendar-desktop">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels&bgcolor=%23ffffff&color=%23ba131a&color=%2337001b&color=%23e7c55e" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+                
+                <!-- Mobile calendar (agenda view, visible only on small screens) -->
+                <div class="calendar-mobile">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels&bgcolor=%23ffffff&color=%23ba131a&color=%2337001b&color=%23e7c55e&mode=AGENDA&hl=en" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+            
+            <!-- Mobile alternate option -->
+            <div class="mobile-calendar-alternative">
+                <h3 class="calendar-subtitle">Calendar not displaying properly?</h3>
+                <p>For the best experience on mobile devices, you can:</p>
+                <a href="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels" class="btn btn-secondary mobile-calendar-btn" target="_blank">Open Calendar in Browser</a>
+            </div>
+        </div>
+        
+        <div class="calendar-help text-center mt-40">
+            <p class="mt-20">For any questions about specific events or to suggest an addition to the calendar, please <a href="/contact" class="spartacus-link">contact us</a>.</p>
+        </div>
+    </div>
+</section>

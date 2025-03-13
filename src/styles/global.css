@@ -535,3 +535,216 @@ footer { background-color: #37001b; color: #fff; padding: 60px 0 20px; }
                 gap: 10px;
             }
         }
+
+        /* Feature Cards */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .feature {
+            flex-basis: calc(33.333% - 20px);
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ba131a; /* Spartacus red */
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #37001b; /* Spartacus burgundy */
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .info-box p {
+            margin-bottom: 15px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .info-box li {
+            margin-bottom: 5px;
+        }
+
+        /* Student registration steps */
+        .steps {
+            counter-reset: step-counter;
+            list-style-type: none;
+            margin: 20px 0;
+        }
+
+        .steps li {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 50px;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: #ba131a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        /* Highlighted text */
+        .highlight {
+            color: #ba131a;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .feature {
+                flex-basis: calc(50% - 20px);
+            }
+            
+            .hero-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feature {
+                flex-basis: 100%;
+            }
+            
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 26px;
+            }
+            
+            .hero h2 {
+                font-size: 16px;
+            }
+            
+            .hero-content {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .steps li {
+                padding-left: 40px;
+            }
+
+            .steps li::before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* KNKF Registration */
+        .knkf-registration {
+            background-color: rgba(186, 19, 26, 0.05);
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .knkf-registration h3 {
+            margin-bottom: 15px;
+        }
+
+        .knkf-registration p {
+            margin-bottom: 10px;
+        }
+
+        /* Schedule Table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table th {
+            background-color: #37001b;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }

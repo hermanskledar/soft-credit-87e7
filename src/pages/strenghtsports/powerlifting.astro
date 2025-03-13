@@ -1,0 +1,265 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead />
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="background-overlay"></div>
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>POWERLIFTING AT T.S.K.V. SPARTACUS</h1>
+                    <h2>STRENGTH THROUGH DISCIPLINE</h2>
+                    <p>Welcome to the powerlifting section of T.S.K.V. Spartacus, where we combine technique, strength, and community to help you reach your full potential in the sport of powerlifting.</p>
+                    <div class="hero-buttons">
+                        <a href="#coaching" class="btn">APPLY FOR COACHING</a>
+                        <a href="#training" class="btn btn-secondary">VIEW TRAINING SCHEDULE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Powerlifting Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">ABOUT OUR POWERLIFTING SECTION</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>T.S.K.V. Spartacus' powerlifting section is dedicated to developing strong, technical lifters in a supportive community. We focus on the three main powerlifting movements: squat, bench press, and deadlift.</p>
+                        <p>Our section welcomes lifters of all experience levels, from complete beginners to competitive athletes. We provide structured training programs, technical coaching, and competition opportunities throughout the academic year.</p>
+                        <p>As part of the Royal Dutch Strength Sports and Fitness Federation (KNKF), our members have the opportunity to compete at regional and national powerlifting competitions.</p>
+                        <div class="button-container">
+                            <a href="#competitions" class="btn">UPCOMING COMPETITIONS</a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="/api/placeholder/500/300" alt="Spartacus Powerlifting">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coaching Application Section -->
+        <section id="coaching" class="section">
+            <div class="container">
+                <h2 class="section-title">POWERLIFTING COACHING</h2>
+                <p>Our experienced coaches provide personalized training to help you develop proper technique, build strength, and prepare for competitions. Whether you're new to powerlifting or looking to take your lifts to the next level, our coaching team is here to support you.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>TECHNIQUE COACHING</h3>
+                        <p>Learn proper form for the squat, bench press, and deadlift to maximize your strength gains and minimize injury risk.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>PERSONALIZED PROGRAMS</h3>
+                        <p>Receive training programs tailored to your goals, experience level, and schedule to ensure consistent progress.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>COMPETITION PREP</h3>
+                        <p>Get specialized coaching to prepare for powerlifting competitions, including attempt selection and competition strategy.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="contacts.html" class="btn">APPLY FOR COACHING</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Training Schedule Section -->
+        <section id="training" class="section">
+            <div class="container">
+                <h2 class="section-title">POWERLIFTING TRAININGS</h2>
+                <p>We offer structured powerlifting training sessions throughout the week, with dedicated times for coached sessions and open training. Our training environment is supportive and motivating, with experienced lifters always willing to help newcomers.</p>
+                
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>18:00 - 20:00</td>
+                            <td>Coached Session</td>
+                            <td>Spartacus Gym</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>17:00 - 19:00</td>
+                            <td>Open Training</td>
+                            <td>Spartacus Gym</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>19:00 - 21:00</td>
+                            <td>Technique Workshop</td>
+                            <td>Spartacus Gym</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>14:00 - 16:00</td>
+                            <td>Coached Session</td>
+                            <td>Spartacus Gym</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-box">
+                    <h3>WHAT TO BRING</h3>
+                    <ul>
+                        <li>Appropriate gym clothing</li>
+                        <li>Flat-soled shoes (for squatting and deadlifting)</li>
+                        <li>Water bottle</li>
+                        <li>Optionally: lifting belt, wrist wraps, knee sleeves</li>
+                    </ul>
+                    <p><strong>Note:</strong> New members should attend a coached session first to learn proper technique and gym etiquette.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beginner Programs Section -->
+        <section id="programs" class="section">
+            <div class="container">
+                <h2 class="section-title">BEGINNER PROGRAMS</h2>
+                <p>Getting started with powerlifting can be overwhelming. That's why we offer structured beginner programs to help you build a solid foundation in the sport. Our programs focus on technique development, progressive overload, and injury prevention.</p>
+                
+                <div class="info-box">
+                    <h3>OUR BEGINNER PROGRAMS INCLUDE:</h3>
+                    <ul>
+                        <li><strong>Foundations of Powerlifting</strong> - A 6-week program teaching the basics of the squat, bench press, and deadlift</li>
+                        <li><strong>Strength Fundamentals</strong> - An 8-week program focusing on building baseline strength and work capacity</li>
+                        <li><strong>Technical Development</strong> - A 4-week program refining movement patterns and addressing individual technique issues</li>
+                    </ul>
+                    <p>All beginner programs include twice-weekly coached sessions with experienced lifters who will guide you through proper form and programming.</p>
+                    <p>To join one of our beginner programs, attend a Monday coached session or contact our coaching team directly.</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>PROGRAM STRUCTURE</h3>
+                        <p>Our beginner programs follow a logical progression to build your skills and strength safely:</p>
+                        <ul>
+                            <li>Weeks 1-2: Movement pattern development with light loads</li>
+                            <li>Weeks 3-4: Technique refinement with moderate loads</li>
+                            <li>Weeks 5-6: Strength building with progressive overload</li>
+                            <li>Weeks 7-8: Introduction to accessory exercises and program variation</li>
+                        </ul>
+                        <div class="button-container">
+                            <a href="contacts.html" class="btn">JOIN A BEGINNER PROGRAM</a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="/api/placeholder/500/300" alt="Beginner Program Training">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KNKF Student Status Section -->
+        <section id="knkf" class="section">
+            <div class="container">
+                <h2 class="section-title">SUBMITTING YOUR STUDENT STATUS TO THE KNKF</h2>
+                <p>As a student powerlifter, you can register with the Royal Dutch Strength Sports and Fitness Federation (KNKF) at a discounted rate. Here's how to submit your student status:</p>
+                
+                <ol class="steps">
+                    <li>
+                        <h3>FIND YOUR ENROLLMENT CERTIFICATE</h3>
+                        <p>Locate your current enrollment certificate in OSIRIS (for university students) or StudieLink (for HBO students).</p>
+                        <p><strong>Osiris:</strong> Go to profile > My Details > Documents. Download your 2024/2025 enrollment certificate.</p>
+                        <p><strong>StudieLink:</strong> Make a screenshot of your enrollment under 'Opleidingen'.</p>
+                    </li>
+                    <li>
+                        <h3>SEND YOUR DOCUMENTATION</h3>
+                        <p>Email your enrollment certificate and the location of your education to <span class="highlight">powerlifting@tskvspartacus.nl</span></p>
+                        <p>Our competition secretary will ensure the KNKF receives the document to register your student status.</p>
+                    </li>
+                    <li>
+                        <h3>COMPLETE KNKF REGISTRATION</h3>
+                        <p>Register with the KNKF through the Banster member portal:</p>
+                        <ul>
+                            <li>Select "Competition member" for the billing model</li>
+                            <li>Select "Powerlifting" for the sport</li>
+                            <li>Complete the mandatory e-learning module at the Doping Authority</li>
+                            <li>Inform our competition secretary of your KNKF membership number and date of birth</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="knkf-registration">
+                    <h3>IMPORTANT NOTES</h3>
+                    <p>For competition registrations, it can take up to one day for your membership to synchronize with our systems.</p>
+                    <p>The automatic collection by the KNKF will only take place later. Do not transfer any fees without asking first.</p>
+                    <p>If you need assistance with the registration process, please contact our competition secretary at <span class="highlight">powerlifting@tskvspartacus.nl</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competition Section -->
+        <section id="competitions" class="section">
+            <div class="container">
+                <h2 class="section-title">POWERLIFTING COMPETITIONS</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>EXTERNAL COMPETITIONS</h3>
+                        <p>T.S.K.V. Spartacus regularly hosts official KNKF powerlifting competitions, providing our members with the opportunity to compete in a familiar environment. We also organize teams to compete at regional and national events throughout the Netherlands.</p>
+                        <p>Hosting a competition requires many volunteers for tasks such as spotting, loading, scoring, and general organization. It's a great way to get involved with the powerlifting community even if you're not competing.</p>
+                        <p>If you're interested in volunteering at our next competition, please contact us through our contacts page. No previous experience is required, and we provide all necessary training.</p>
+                        <div class="button-container">
+                            <a href="contacts.html" class="btn">VOLUNTEER FOR COMPETITIONS</a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="/api/placeholder/500/300" alt="Powerlifting Competition">
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3>INTERNAL COMPETITIONS</h3>
+                    <p>Throughout the academic year, we organize several internal competitions to help our members gain competition experience in a supportive environment:</p>
+                    <ul>
+                        <li><strong>Spartacus Novice Cup</strong> - A beginner-friendly competition for those new to powerlifting</li>
+                        <li><strong>Spartacus Strength Classic</strong> - Our mid-year club championship open to all members</li>
+                        <li><strong>End-of-Year Showdown</strong> - The final club competition of the academic year</li>
+                    </ul>
+                    <p>Internal competitions follow simplified rules and provide a perfect stepping stone to official competitions. They're also a great social event for our club members.</p>
+                    <p>Announcements for upcoming internal competitions are made during training sessions and through our social media channels. To participate, simply sign up with our competition coordinator.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+<Footer />
+
+<script is:inline src="/script.js"></script>
+</body>
+</html>

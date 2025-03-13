@@ -1,17 +1,4 @@
 ---
-//Import google analytics
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCYQ222PL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WKCYQ222PL');
-</script>
-
-
 // Import your CSS file
 import '../styles/global.css';
 
@@ -26,6 +13,17 @@ const {
   description = "The largest student strength sports association in the Benelux, promoting powerlifting, bodybuilding, and fitness among students at Tilburg University."
 } = Astro.props;
 ---
+
+//Import google analytics
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WKCYQ222PL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WKCYQ222PL');
+</script>
 
 <!-- Common head elements -->
 <meta charset="UTF-8">

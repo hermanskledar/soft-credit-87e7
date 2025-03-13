@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import calendar from '../../components/calendar.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 ---
 
@@ -11,6 +12,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 <head>
     <BaseHead />
 </head>
+
+<!-- Header -->
+    <Header />
 
 <body>
     <!-- Hero Section -->
@@ -23,8 +27,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
                     <h2>STRENGTH THROUGH DISCIPLINE</h2>
                     <p>Welcome to the powerlifting section of T.S.K.V. Spartacus, where we combine technique, strength, and community to help you reach your full potential in the sport of powerlifting.</p>
                     <div class="hero-buttons">
-                        <a href="#coaching" class="btn">APPLY FOR COACHING</a>
-                        <a href="#training" class="btn btn-secondary">VIEW TRAINING SCHEDULE</a>
+                        <a href="/../contact" class="btn">APPLY FOR COACHING</a>
+                        <a href="/../index#calendar" class="btn btn-secondary">VIEW TRAINING SCHEDULE</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +90,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
                 </div>
                 
                 <div class="text-center">
-                    <a href="contacts.html" class="btn">APPLY FOR COACHING</a>
+                    <a href="/../contacts" class="btn">APPLY FOR COACHING</a>
                 </div>
             </div>
         </section>
@@ -97,42 +101,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
                 <h2 class="section-title">POWERLIFTING TRAININGS</h2>
                 <p>We offer structured powerlifting training sessions throughout the week, with dedicated times for coached sessions and open training. Our training environment is supportive and motivating, with experienced lifters always willing to help newcomers.</p>
                 
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Time</th>
-                            <th>Type</th>
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Monday</td>
-                            <td>18:00 - 20:00</td>
-                            <td>Coached Session</td>
-                            <td>Spartacus Gym</td>
-                        </tr>
-                        <tr>
-                            <td>Wednesday</td>
-                            <td>17:00 - 19:00</td>
-                            <td>Open Training</td>
-                            <td>Spartacus Gym</td>
-                        </tr>
-                        <tr>
-                            <td>Thursday</td>
-                            <td>19:00 - 21:00</td>
-                            <td>Technique Workshop</td>
-                            <td>Spartacus Gym</td>
-                        </tr>
-                        <tr>
-                            <td>Saturday</td>
-                            <td>14:00 - 16:00</td>
-                            <td>Coached Session</td>
-                            <td>Spartacus Gym</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <calendar />
                 
                 <div class="info-box">
                     <h3>WHAT TO BRING</h3>
@@ -147,7 +116,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
             </div>
         </section>
 
-        <!-- Beginner Programs Section -->
+<!--       
+    <!-- Beginner Programs Section -->
         <section id="programs" class="section">
             <div class="container">
                 <h2 class="section-title">BEGINNER PROGRAMS</h2>
@@ -184,7 +154,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
                 </div>
             </div>
         </section>
-
+-->
         <!-- KNKF Student Status Section -->
         <section id="knkf" class="section">
             <div class="container">
@@ -224,38 +194,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
             </div>
         </section>
 
-        <!-- Competition Section -->
-        <section id="competitions" class="section">
-            <div class="container">
-                <h2 class="section-title">POWERLIFTING COMPETITIONS</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>EXTERNAL COMPETITIONS</h3>
-                        <p>T.S.K.V. Spartacus regularly hosts official KNKF powerlifting competitions, providing our members with the opportunity to compete in a familiar environment. We also organize teams to compete at regional and national events throughout the Netherlands.</p>
-                        <p>Hosting a competition requires many volunteers for tasks such as spotting, loading, scoring, and general organization. It's a great way to get involved with the powerlifting community even if you're not competing.</p>
-                        <p>If you're interested in volunteering at our next competition, please contact us through our contacts page. No previous experience is required, and we provide all necessary training.</p>
-                        <div class="button-container">
-                            <a href="contacts.html" class="btn">VOLUNTEER FOR COMPETITIONS</a>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img src="/api/placeholder/500/300" alt="Powerlifting Competition">
-                    </div>
-                </div>
+            <!-- Competitions -->
+            <section class="section">
+                <h2 class="section-title centered-title">COMPETITIONS</h2>
+                <p class="text-center mb-40">T.S.K.V. Spartacus regularly participates in powerlifting competitions and also organizes internal meets for members to gain experience.</p>
                 
-                <div class="info-box">
-                    <h3>INTERNAL COMPETITIONS</h3>
-                    <p>Throughout the academic year, we organize several internal competitions to help our members gain competition experience in a supportive environment:</p>
-                    <ul>
-                        <li><strong>Spartacus Novice Cup</strong> - A beginner-friendly competition for those new to powerlifting</li>
-                        <li><strong>Spartacus Strength Classic</strong> - Our mid-year club championship open to all members</li>
-                        <li><strong>End-of-Year Showdown</strong> - The final club competition of the academic year</li>
-                    </ul>
-                    <p>Internal competitions follow simplified rules and provide a perfect stepping stone to official competitions. They're also a great social event for our club members.</p>
-                    <p>Announcements for upcoming internal competitions are made during training sessions and through our social media channels. To participate, simply sign up with our competition coordinator.</p>
-                </div>
-            </div>
-        </section>
+                <ul class="competition-list">
+                    <li class="competition-item">
+                        <h3>INTERNAL COMPETITIONS</h3>
+                        <p>Throughout the academic year, we organize several internal competitions exclusively for Spartacus members. These events are perfect for first-time competitors to experience a competition environment in a supportive setting.</p>
+                        <p>Our internal competitions follow official powerlifting rules but in a less pressured atmosphere, allowing lifters to focus on technique and personal improvement.</p>
+                    </li>
+                    <li class="competition-item">
+                        <h3>KNKF REGIONAL AND NATIONAL COMPETITIONS</h3>
+                        <p>For members looking to compete at a higher level, we facilitate participation in KNKF regional and national competitions. These events require registration through the federation and adherence to their weight classes and regulations.</p>
+                        <p>Our coaches provide guidance on meet preparation, weight management, attempt selection, and competition strategy to ensure you're ready for the platform.</p>
+                    </li>
+                </ul>
+            </section>
+
+
+
     </main>
     <!-- Footer -->
 <Footer />

@@ -1,0 +1,152 @@
+/* Discounts Page Specific Styles */
+
+/* Hero Section */
+.hero {
+  min-height: 40vh; /* Shorter hero for inner pages */
+}
+
+/* Discount Items */
+.discounts {
+  margin-top: 40px;
+}
+
+.discount-item {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.discount-item:hover {
+  transform: translateY(-5px);
+}
+
+.discount-img {
+  flex: 0 0 250px;
+  overflow: hidden;
+}
+
+.discount-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.discount-item:hover .discount-img img {
+  transform: scale(1.05);
+}
+
+.discount-content {
+  flex: 1;
+  padding: 25px;
+  min-width: 300px;
+}
+
+.discount-content h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  color: #37001b;
+  margin-bottom: 10px;
+}
+
+.discount-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.discount-content ul {
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.discount-content li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.discount-content .btn {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.feature {
+  flex-basis: calc(33.333% - 20px);
+  margin-bottom: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #ba131a;
+}
+
+.feature h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #37001b;
+  letter-spacing: 1px;
+}
+
+/* Section Introduction */
+.section p {
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Call to Action */
+.text-center {
+  text-align: center;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .feature {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .discount-img {
+    flex: 0 0 100%;
+    height: 200px;
+  }
+  
+  .discount-content {
+    flex: 0 0 100%;
+    padding: 20px;
+  }
+  
+  .feature {
+    flex-basis: 100%;
+  }
+}

@@ -2,6 +2,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// Import your CSS file
+import '../styles/registration-style.css';
 ---
 
 <!DOCTYPE html>
@@ -13,7 +16,8 @@ import Footer from '../components/Footer.astro';
     <Header />
 
 <main>
-<link rel="stylesheet" href="https://leden.conscribo.nl/common_resources/css/WebForm.css">
+<link rel="stylesheet" href=/registration-style.css
+>
 <div id="cwfForm">Form is being loaded</div>
 <script type="text/javascript" src="https://leden.conscribo.nl/testorganisatie/jsForm/load/f7f1/cwfForm" ></script>
 </main>

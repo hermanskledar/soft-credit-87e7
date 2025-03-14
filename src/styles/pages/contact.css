@@ -1,0 +1,124 @@
+/* Contact Page Specific Styles */
+
+/* Contact Section */
+.about-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  color: #37001b;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.about-text a {
+  color: #ba131a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.about-text a:hover {
+  color: #37001b;
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ba131a;
+  color: white;
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background-color: #e7c55e;
+  transform: translateY(-3px);
+}
+
+.spartacus-red {
+  color: #ba131a;
+}
+
+/* Contact Form */
+.contact-form {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 150px;
+}
+
+.contact-button {
+  background-color: #ba131a;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #d01520;
+}
+
+/* FAQ Section */
+.section h3 {
+  color: #37001b;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+}

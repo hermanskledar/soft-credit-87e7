@@ -1,0 +1,267 @@
+/* Committee Page Specific Styles */
+
+/* Hero Section */
+.hero {
+  min-height: 40vh; /* Shorter hero for inner pages */
+}
+
+/* Committee Grid */
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.committee-card {
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.committee-card:hover {
+  transform: translateY(-10px);
+}
+
+.committee-header {
+  height: 160px;
+  background-color: #f8f8f8;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.committee-icon {
+  font-size: 60px;
+  color: #ba131a;
+  position: relative;
+  z-index: 2;
+}
+
+.committee-content {
+  padding: 25px;
+}
+
+.committee-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #37001b;
+}
+
+.committee-description {
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.committee-members {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.committee-head {
+  font-weight: bold;
+  color: #37001b;
+  margin-bottom: 10px;
+}
+
+.committee-list {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.committee-list li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.committee-join {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Board Section */
+.board-section {
+  margin-bottom: 60px;
+}
+
+.board-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.board-member {
+  width: 220px;
+  text-align: center;
+}
+
+.board-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ba131a;
+  margin-bottom: 15px;
+}
+
+.board-member-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: #37001b;
+  margin-bottom: 5px;
+}
+
+.board-member-role {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.board-member-email {
+  font-size: 14px;
+  color: #555;
+}
+
+.board-member-email a {
+  color: #ba131a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.board-member-email a:hover {
+  color: #37001b;
+  text-decoration: underline;
+}
+
+/* Volunteer Section */
+.volunteer-section {
+  background-color: #f8f8f8;
+  padding: 40px;
+  border-radius: 5px;
+  margin-top: 60px;
+}
+
+.join-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.step {
+  flex-basis: 22%;
+  min-width: 200px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: #ba131a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 15px;
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #37001b;
+}
+
+/* Testimonial */
+.testimonial {
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  position: relative;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 80px;
+  color: rgba(186, 19, 26, 0.1);
+  font-family: serif;
+}
+
+.testimonial-content {
+  padding-left: 25px;
+  line-height: 1.8;
+}
+
+.testimonial-author {
+  text-align: right;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .committee-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .join-steps {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .step {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .committee-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .board-members {
+    gap: 20px;
+  }
+  
+  .step {
+    flex-basis: 100%;
+  }
+  
+  .volunteer-section {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .board-member {
+    width: 100%;
+    max-width: 220px;
+  }
+  
+  .testimonial {
+    padding: 20px 15px;
+  }
+  
+  .testimonial::before {
+    font-size: 60px;
+  }
+}

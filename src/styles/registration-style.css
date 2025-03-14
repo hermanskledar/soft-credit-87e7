@@ -1,0 +1,130 @@
+/* Spartacus Form Styles */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #000;
+    line-height: 1.5;
+}
+
+/* Form Styles */
+#cwfForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ba131a; /* Spartacus red */
+    border-radius: 5px;
+}
+
+/* Form Title */
+#cwfForm .textDiv {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #e7c55e; /* Spartacus yellow */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Input Labels */
+#cwfForm .inputLabel {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields */
+#cwfForm input[type="text"],
+#cwfForm input[type="number"],
+#cwfForm select {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Combined Inputs */
+#cwfForm .element-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#cwfForm .element-group .element-group-container {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Submit Button */
+#cwfForm .submitButton {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #37001b; /* Spartacus burgundy */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+#cwfForm .submitButton:hover {
+    background-color: #5a0030;
+}
+
+/* Horizontal Rule */
+#cwfForm .hr {
+    border: 0;
+    height: 1px;
+    background-color: #e7c55e; /* Spartacus yellow */
+    margin: 20px 0;
+}
+
+/* Error Messages */
+#cwfForm .invalidLabel {
+    color: #e7c55e; /* Spartacus yellow */
+    font-size: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#cwfForm .invalidValue {
+    border-color: #e7c55e !important; /* Spartacus yellow */
+}
+
+/* Grid Layout Adjustments */
+#cwfForm .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Spartacus Logo */
+.spartacus-logo {
+    max-width: 150px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #cwfForm .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    #cwfForm .element-group {
+        flex-direction: column;
+    }
+}

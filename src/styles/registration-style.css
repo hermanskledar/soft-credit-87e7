@@ -3,128 +3,149 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap');
 
-/* Global Styles */
-body {
+/* Form Container */
+#cwfForm {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
-    color: #000;
-    line-height: 1.5;
-}
-
-/* Form Styles */
-#cwfForm {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ba131a; /* Spartacus red */
-    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-/* Form Title */
+/* Form Header */
 #cwfForm .textDiv {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 26px;
-    font-weight: bold;
-    color: #e7c55e; /* Spartacus yellow */
+    color: #37001b; /* Spartacus burgundy */
     margin-bottom: 20px;
-    text-align: center;
 }
 
-/* Input Labels */
+/* Labels */
 #cwfForm .inputLabel {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    color: #fff;
-    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
     display: block;
 }
 
-/* Input Fields */
+/* First label in a group */
+#cwfForm .inputLabel.first {
+    font-weight: 600;
+    color: #37001b; /* Spartacus burgundy */
+}
+
+/* Form Fields */
 #cwfForm input[type="text"],
 #cwfForm input[type="number"],
 #cwfForm select {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
     width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
+    padding: 6px 8px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
     box-sizing: border-box;
 }
 
-/* Combined Inputs */
-#cwfForm .element-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
+/* Form Field Focus State */
+#cwfForm input:focus,
+#cwfForm select:focus {
+    outline: none;
+    border-color: #ba131a; /* Spartacus red */
+    box-shadow: 0 0 3px rgba(186, 19, 26, 0.3);
 }
 
-#cwfForm .element-group .element-group-container {
-    flex: 1;
-    min-width: 150px;
+/* Required Fields */
+#cwfForm .obligatory .inputLabel:after {
+    content: " *";
+    color: #ba131a; /* Spartacus red */
+}
+
+/* Layout Elements */
+#cwfForm .element-group {
+    margin-bottom: 10px;
+}
+
+#cwfForm .element-group-container {
+    padding: 0 5px;
+}
+
+/* Main Container */
+#cwfForm .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+
+/* Section dividers */
+#cwfForm .hr {
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+    border: none;
 }
 
 /* Submit Button */
 #cwfForm .submitButton {
+    background-color: #ba131a; /* Spartacus red */
+    color: white;
+    border: none;
+    padding: 8px 20px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 16px;
-    color: #fff;
-    background-color: #37001b; /* Spartacus burgundy */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
     cursor: pointer;
+    border-radius: 3px;
     margin-top: 15px;
-    text-transform: uppercase;
 }
 
 #cwfForm .submitButton:hover {
-    background-color: #5a0030;
+    background-color: #a11116;
 }
 
-/* Horizontal Rule */
-#cwfForm .hr {
-    border: 0;
-    height: 1px;
-    background-color: #e7c55e; /* Spartacus yellow */
-    margin: 20px 0;
-}
-
-/* Error Messages */
-#cwfForm .invalidLabel {
-    color: #e7c55e; /* Spartacus yellow */
-    font-size: 10px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-
+/* Error Styles */
 #cwfForm .invalidValue {
-    border-color: #e7c55e !important; /* Spartacus yellow */
+    border-color: #ba131a !important; /* Spartacus red */
 }
 
-/* Grid Layout Adjustments */
-#cwfForm .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+#cwfForm .invalidLabel {
+    color: #ba131a; /* Spartacus red */
+    font-size: 10px;
+    margin-top: 2px;
 }
 
-/* Spartacus Logo */
-.spartacus-logo {
-    max-width: 150px;
-    margin: 0 auto 20px;
-    display: block;
+/* File Upload Container */
+#cwfForm .uploadContainer {
+    border: 1px dashed #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 3px;
 }
 
-/* Responsive Design */
+#cwfForm .uploadStatusContainer {
+    margin-top: 8px;
+    font-size: 10px;
+    color: #555;
+}
+
+/* Input Container */
+#cwfForm .inputDiv,
+#cwfForm .inputDivWithLabel {
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
-    #cwfForm .grid-container {
-        grid-template-columns: 1fr;
+    #cwfForm input[type="text"],
+    #cwfForm input[type="number"] {
+        width: 100% !important; /* Override inline styles */
     }
     
-    #cwfForm .element-group {
-        flex-direction: column;
+    #cwfForm .element-group-container {
+        flex-basis: 100%;
+        margin-bottom: 5px;
     }
 }

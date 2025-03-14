@@ -22,21 +22,20 @@ import Footer from '../components/Footer.astro';
     --light-gray: #f6f6f6;
     --medium-gray: #e0e0e0;
     --dark-gray: #333333;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Form Container */
-.signup-container {
+.spartacus-form-container {
     max-width: 800px;
     margin: 40px auto;
     background-color: white;
     border-radius: 8px;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 /* Form Header */
-.form-header {
+.spartacus-form-header {
     background-color: var(--spartacus-burgundy);
     color: white;
     padding: 20px 30px;
@@ -44,7 +43,7 @@ import Footer from '../components/Footer.astro';
     position: relative;
 }
 
-.form-header h1 {
+.spartacus-form-header h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 26px;
     text-transform: uppercase;
@@ -52,13 +51,13 @@ import Footer from '../components/Footer.astro';
     color: var(--spartacus-yellow);
 }
 
-.form-header p {
+.spartacus-form-header p {
     margin-top: 10px;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
 
-.logo-container {
+.spartacus-logo-container {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -66,43 +65,59 @@ import Footer from '../components/Footer.astro';
     height: auto;
 }
 
-.logo-container img {
+.spartacus-logo-container img {
     width: 100%;
     height: auto;
 }
 
 /* Form Content */
-.form-content {
+.spartacus-form-content {
     padding: 30px;
 }
 
-/* Form Styling from CWF */
-#spartacusSignupForm {
+/* Override CWF default styles for better appearance */
+#cwfForm {
     position: relative;
     font-family: 'Montserrat', sans-serif;
 }
 
-#spartacusSignupForm .grid-container {
+/* Grid layout for the form */
+#cwfForm .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
 
-#spartacusSignupForm .element-group-container {
+/* Style form elements */
+#cwfForm .textDiv {
+    grid-column: 1 / -1;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--spartacus-burgundy);
+    margin: 15px 0;
+}
+
+#cwfForm .element-group-container {
     margin-bottom: 15px;
 }
 
-#spartacusSignupForm .inputLabel {
+#cwfForm .inputLabel {
     font-weight: 500;
     margin-bottom: 5px;
     color: var(--spartacus-burgundy);
     display: block;
 }
 
-#spartacusSignupForm input[type="text"],
-#spartacusSignupForm input[type="number"],
-#spartacusSignupForm input[type="email"],
-#spartacusSignupForm select {
+#cwfForm .inputDivWithLabel,
+#cwfForm .inputDiv {
+    margin-bottom: 10px;
+}
+
+/* Style form inputs */
+#cwfForm input[type="text"],
+#cwfForm input[type="number"],
+#cwfForm input[type="email"],
+#cwfForm select {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--medium-gray);
@@ -112,37 +127,26 @@ import Footer from '../components/Footer.astro';
     transition: border-color 0.3s ease;
 }
 
-#spartacusSignupForm input:focus,
-#spartacusSignupForm select:focus {
+#cwfForm input:focus,
+#cwfForm select:focus {
     outline: none;
     border-color: var(--spartacus-red);
     box-shadow: 0 0 0 2px rgba(186, 19, 26, 0.2);
 }
 
-#spartacusSignupForm .inputDivWithLabel {
-    margin-bottom: 5px;
-}
-
-#spartacusSignupForm .invalidValue {
+/* Style validation states */
+#cwfForm .invalidValue {
     border-color: var(--spartacus-red) !important;
 }
 
-#spartacusSignupForm .invalidLabel {
+#cwfForm .invalidLabel {
     color: var(--spartacus-red);
     font-size: 12px;
     margin-top: 5px;
 }
 
-#spartacusSignupForm .textDiv {
-    grid-column: 1 / -1;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    color: var(--spartacus-burgundy);
-    margin: 15px 0;
-}
-
-/* Submit Button */
-#spartacusSignupForm .submitButton {
+/* Custom submit button */
+#cwfForm .submitButton {
     background-color: var(--spartacus-red);
     color: white;
     border: none;
@@ -161,12 +165,12 @@ import Footer from '../components/Footer.astro';
     letter-spacing: 1px;
 }
 
-#spartacusSignupForm .submitButton:hover {
+#cwfForm .submitButton:hover {
     background-color: #a01116;
 }
 
 /* Loading Indicator */
-#form-loader {
+.spartacus-form-loader {
     display: none;
     position: absolute;
     top: 0;
@@ -179,7 +183,7 @@ import Footer from '../components/Footer.astro';
     z-index: 10;
 }
 
-.loader {
+.spartacus-loader {
     border: 5px solid var(--medium-gray);
     border-top: 5px solid var(--spartacus-red);
     border-radius: 50%;
@@ -194,7 +198,7 @@ import Footer from '../components/Footer.astro';
 }
 
 /* Error Message */
-#form-error {
+.spartacus-form-error {
     display: none;
     background-color: #fff0f0;
     border-left: 4px solid var(--spartacus-red);
@@ -205,21 +209,21 @@ import Footer from '../components/Footer.astro';
 }
 
 /* Confirmation Screen */
-#confirmation-screen {
+.spartacus-confirmation-screen {
     display: none;
     text-align: center;
     padding: 40px 30px;
     font-family: 'Montserrat', sans-serif;
 }
 
-#confirmation-screen h2 {
+.spartacus-confirmation-screen h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 26px;
     color: var(--spartacus-burgundy);
     margin-bottom: 20px;
 }
 
-#confirmation-screen p {
+.spartacus-confirmation-screen p {
     font-size: 16px;
     margin-bottom: 30px;
     max-width: 600px;
@@ -227,7 +231,7 @@ import Footer from '../components/Footer.astro';
     margin-right: auto;
 }
 
-.confirmation-buttons {
+.spartacus-confirmation-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -235,7 +239,7 @@ import Footer from '../components/Footer.astro';
     margin-top: 30px;
 }
 
-.btn {
+.spartacus-btn {
     padding: 12px 25px;
     border-radius: 4px;
     font-family: 'Montserrat', sans-serif;
@@ -247,42 +251,42 @@ import Footer from '../components/Footer.astro';
     transition: all 0.3s ease;
 }
 
-.btn-primary {
+.spartacus-btn-primary {
     background-color: var(--spartacus-red);
     color: white;
 }
 
-.btn-primary:hover {
+.spartacus-btn-primary:hover {
     background-color: #a01116;
 }
 
-.btn-secondary {
+.spartacus-btn-secondary {
     background-color: var(--spartacus-yellow);
     color: var(--spartacus-burgundy);
 }
 
-.btn-secondary:hover {
+.spartacus-btn-secondary:hover {
     background-color: #d3b44c;
 }
 
-.social-links {
+.spartacus-social-links {
     margin-top: 40px;
 }
 
-.social-links h3 {
+.spartacus-social-links h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 18px;
     color: var(--spartacus-burgundy);
     margin-bottom: 15px;
 }
 
-.social-icons {
+.spartacus-social-icons {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.social-icon {
+.spartacus-social-icon {
     width: 40px;
     height: 40px;
     display: flex;
@@ -294,89 +298,88 @@ import Footer from '../components/Footer.astro';
     transition: transform 0.3s ease;
 }
 
-.social-icon:hover {
+.spartacus-social-icon:hover {
     transform: scale(1.1);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .signup-container {
+    .spartacus-form-container {
         margin: 20px auto;
         width: auto;
     }
     
-    #spartacusSignupForm .grid-container {
+    #cwfForm .grid-container {
         grid-template-columns: 1fr;
     }
     
-    .form-header {
+    .spartacus-form-header {
         padding: 15px;
     }
     
-    .form-content {
+    .spartacus-form-content {
         padding: 20px;
     }
     
-    .confirmation-buttons {
+    .spartacus-confirmation-buttons {
         flex-direction: column;
         align-items: center;
     }
     
-    .btn {
+    .spartacus-btn {
         width: 100%;
         max-width: 280px;
     }
 }
 </style>
 
-<main>
-<div class="signup-container">
-    <div class="form-header">
+<div class="spartacus-form-container">
+    <div class="spartacus-form-header">
         <h1>Join Spartacus</h1>
         <p>Become a member of our community by filling out the form below</p>
-        <div class="logo-container">
+        <div class="spartacus-logo-container">
             <img src="/images/spartacus-logo.png" alt="Spartacus Logo">
         </div>
     </div>
     
-    <div class="form-content">
-        <div id="form-error"></div>
+    <div class="spartacus-form-content">
+        <div class="spartacus-form-error" id="spartacus-form-error"></div>
         
-        <!-- Form Container - This will be filled by the CWF script -->
-        <div id="spartacusSignupForm">
+        <!-- Original form container - Do not change ID -->
+        <div id="cwfForm">
             <!-- Form will be rendered here by CWF.MutateRelationForm -->
         </div>
         
         <!-- Loading Indicator -->
-        <div id="form-loader">
-            <div class="loader"></div>
+        <div class="spartacus-form-loader" id="spartacus-form-loader">
+            <div class="spartacus-loader"></div>
         </div>
         
         <!-- Confirmation Screen (hidden initially) -->
-        <div id="confirmation-screen">
+        <div class="spartacus-confirmation-screen" id="spartacus-confirmation-screen">
             <h2>Welcome to Spartacus!</h2>
             <p>Thank you for joining our community! Your registration has been successfully submitted. We're excited to have you as a member.</p>
             <p>Check your email for more information about your membership and next steps.</p>
             
-            <div class="confirmation-buttons">
-                <a href="/members/calendar" class="btn btn-primary">
+            <div class="spartacus-confirmation-buttons">
+                <a href="/members/calendar" class="spartacus-btn spartacus-btn-primary">
                     <i class="far fa-calendar-alt"></i> View Members Calendar
                 </a>
-                <a href="/members/buddy-signup" class="btn btn-secondary">
+                <a href="/members/buddy-signup" class="spartacus-btn spartacus-btn-secondary">
                     <i class="fas fa-user-friends"></i> Join Buddy System
                 </a>
             </div>
             
-            <div class="social-links">
+            <div class="spartacus-social-links">
                 <h3>Follow Us on Social Media</h3>
-                <div class="social-icons">
-                    <a href="https://instagram.com/spartacus" class="social-icon" aria-label="Instagram">
+                <div class="spartacus-social-icons">
+                    <a href="https://instagram.com/spartacus" class="spartacus-social-icon" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://facebook.com/spartacus" class="social-icon" aria-label="Facebook">
+                    <a href="https://facebook.com/spartacus" class="spartacus-social-icon" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://twitter.com/spartacus" class="social-icon" aria-label="Twitter">
+                    <a href="https://twitter.com/spartacus" class="spartacus-social-icon" aria-label="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
@@ -385,107 +388,78 @@ import Footer from '../components/Footer.astro';
     </div>
 </div>
 
-</main>
-
 <script>
-/**
- * Spartacus Web Form
- * Handles form submission and validation for Spartacus signup
- */
-function SpartacusForm() {
-    this.init = function() {
-        var formInfo = [ {"items":{"1":{"id":1,"itemType":"text","htmlContents":"Join Spartacus"},"2":{"itemType":"inputItem","fieldSelector":"{aanhef}","fieldType":"enum","default":"Dhr.","obligatory":false,"combineWithLeft":false,"options":{"8":{"value":"Dhr.","label":"Dhr.","enabled":true},"9":{"value":"Mevr.","label":"Mevr.","enabled":true}},"includeLabel":true,"labelHtmlContents":"Aanhef","id":2},"3":{"itemType":"inputItem","fieldSelector":"{voornaam}","fieldType":"text","default":"","obligatory":true,"combineWithLeft":true,"width":"100px","includeLabel":true,"labelHtmlContents":"Voornaam","id":3},"4":{"itemType":"inputItem","fieldSelector":"{tussenvoegsel}","fieldType":"text","default":"","obligatory":false,"combineWithLeft":true,"width":"50px","includeLabel":true,"labelHtmlContents":"Tussenvoegsel","id":4},"5":{"itemType":"inputItem","fieldSelector":"{naam}","fieldType":"text","default":"","obligatory":true,"combineWithLeft":true,"width":"200px","includeLabel":true,"labelHtmlContents":"Naam","id":5},"6":{"itemType":"inputItem","fieldSelector":"{postcode}","fieldType":"text","default":"","obligatory":false,"combineWithLeft":false,"width":"100px","includeLabel":true,"labelHtmlContents":"Postcode","id":6},"7":{"itemType":"inputItem","fieldSelector":"{huisnr}","fieldType":"number","default":"","obligatory":false,"combineWithLeft":true,"width":"50px","includeLabel":true,"labelHtmlContents":"Huisnr","id":7},"8":{"itemType":"inputItem","fieldSelector":"{straat}","fieldType":"text","default":"","obligatory":false,"combineWithLeft":false,"width":"200px","includeLabel":true,"labelHtmlContents":"Straatnaam","id":8},"9":{"itemType":"inputItem","fieldSelector":"{plaats}","fieldType":"text","default":"","obligatory":false,"combineWithLeft":true,"width":"200px","includeLabel":true,"labelHtmlContents":"Plaatsnaam","id":9},"10":{"itemType":"inputItem","fieldSelector":"{telefoon}","fieldType":"text","default":"","obligatory":false,"combineWithLeft":false,"width":"440px","includeLabel":true,"labelHtmlContents":"Telefoonnummer","id":10},"11":{"itemType":"inputItem","fieldSelector":"{rekening}","fieldType":"account","default":{"iban":"","bic":"","name":""},"obligatory":false,"combineWithLeft":false,"width":"440px","includeLabel":true,"labelHtmlContents":"Bankrekeningnummer","id":11},"12":{"itemType":"inputItem","fieldSelector":"{email}","fieldType":"mailadres","default":"","obligatory":true,"combineWithLeft":false,"width":"440px","includeLabel":true,"labelHtmlContents":"E-mailadres","id":12}},"fixedItems":[],"planeOrganizer":{"1":{"id":1,"x":0,"y":0,"width":4,"height":1,"contents":null,"combineWithLeft":false},"2":{"id":2,"x":0,"y":1,"width":1,"height":1,"contents":null,"combineWithLeft":false},"3":{"id":3,"x":1,"y":1,"width":1,"height":1,"contents":null,"combineWithLeft":true},"4":{"id":4,"x":2,"y":1,"width":1,"height":1,"contents":null,"combineWithLeft":true},"5":{"id":5,"x":3,"y":1,"width":1,"height":1,"contents":null,"combineWithLeft":true},"6":{"id":6,"x":0,"y":2,"width":1,"height":1,"contents":null,"combineWithLeft":false},"7":{"id":7,"x":1,"y":2,"width":1,"height":1,"contents":null,"combineWithLeft":true},"8":{"id":8,"x":0,"y":3,"width":1,"height":1,"contents":null,"combineWithLeft":false},"9":{"id":9,"x":1,"y":3,"width":1,"height":1,"contents":null,"combineWithLeft":true},"10":{"id":10,"x":0,"y":4,"width":1,"height":1,"contents":null,"combineWithLeft":false},"11":{"id":11,"x":0,"y":5,"width":1,"height":1,"contents":null,"combineWithLeft":false},"12":{"id":12,"x":0,"y":6,"width":1,"height":1,"contents":null,"combineWithLeft":false}},"postalcodeSearchInfo":{"street":"straat","city":"plaats","housenr":"huisnr","postalcode":"postcode"},"formRenderMethod":"gridflow"} ][0];
-        var containerName = [ "spartacusSignupForm" ][0];
-        var webForm = new CWF.MutateRelationForm();
-        webForm.setActionStrategy(new CWF.CwfRuntimeFormActionStrategy(new RunTime()));
-        webForm.init(formInfo, containerName);
-        
-        // Track form submission
-        setTimeout(function() {
-            const submitButton = document.querySelector('.submitButton');
-            if (submitButton) {
-                submitButton.addEventListener('click', function() {
-                    showLoadingIndicator();
-                });
-            }
-        }, 1000);
-        
-        // Handle success/failure
-        webForm.bindAll({
-            'FormSubmitted': handleFormSuccess,
-            'FormSubmitError': handleFormError
-        });
-    };
+// Wait for document to be ready
+document.addEventListener('DOMContentLoaded', function() {
+    initSpartacusForm();
+});
 
-    function handleFormSuccess(response) {
-        hideLoadingIndicator();
-        showConfirmation();
-    }
-
-    function handleFormError(errorMsg) {
-        hideLoadingIndicator();
-        showErrorMessage(errorMsg);
-    }
-
-    function showLoadingIndicator() {
-        const loader = document.getElementById('form-loader');
-        if (loader) loader.style.display = 'flex';
-    }
-
-    function hideLoadingIndicator() {
-        const loader = document.getElementById('form-loader');
-        if (loader) loader.style.display = 'none';
-    }
-
-    function showConfirmation() {
-        document.getElementById('spartacusSignupForm').style.display = 'none';
-        document.getElementById('confirmation-screen').style.display = 'block';
-        
-        // Scroll to top of confirmation
-        window.scrollTo(0, 0);
-    }
-
-    function showErrorMessage(message) {
-        const errorContainer = document.getElementById('form-error');
-        if (errorContainer) {
-            errorContainer.textContent = message || 'Something went wrong. Please try again.';
-            errorContainer.style.display = 'block';
+function initSpartacusForm() {
+    // Initialize the CWF form
+    var cwf = new CWF();
+    cwf.init();
+    
+    // Find submit button after form is rendered and attach event listener
+    setTimeout(function() {
+        const submitButton = document.querySelector('#cwfForm .submitButton');
+        if (submitButton) {
+            submitButton.addEventListener('click', function() {
+                showSpartacusLoader();
+            });
         }
-    }
+    }, 1000);
+    
+    // Add event observers to handle form submission
+    // Implementation of mutation observer to detect form completion
+    // This is necessary because the original form doesn't have good hooks for completion events
+    const formContainer = document.getElementById('cwfForm');
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            // Check if form has been replaced with success message
+            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+                const successMessage = formContainer.textContent.toLowerCase();
+                if (successMessage.includes('success') || 
+                    successMessage.includes('thank you') || 
+                    successMessage.includes('received') ||
+                    successMessage.includes('bedankt') ||
+                    successMessage.includes('bevestiging')) {
+                    hideSpartacusLoader();
+                    showSpartacusConfirmation();
+                }
+            }
+        });
+    });
+    
+    observer.observe(formContainer, { childList: true, subtree: true });
 }
 
-/**
- * @class RunTime
- * Class responsible for form runtime information
- */
-var RunTime = function() {
-    this.host = 'https://leden.conscribo.nl/';
-    this.accountName = 'testorganisatie';
-    this.formName = 'f7f1';
-    this.sessionId = 'bi9i42526q5voi1nufqc7vg1qn';
+function showSpartacusLoader() {
+    const loader = document.getElementById('spartacus-form-loader');
+    if (loader) loader.style.display = 'flex';
+}
 
-    this.getPostUrl = function() {
-        return this.host + this.accountName +'/jsForm/postForm/'+ this.formName+'/?sessionId='+ this.sessionId;
-    };
+function hideSpartacusLoader() {
+    const loader = document.getElementById('spartacus-form-loader');
+    if (loader) loader.style.display = 'none';
+}
 
-    this.getBinaryPostUrl = function() {
-        return this.host + this.accountName +'/jsForm/uploadBinary/'+ this.formName +'/?sessionId='+ this.sessionId;
-    };
+function showSpartacusConfirmation() {
+    document.getElementById('cwfForm').style.display = 'none';
+    document.getElementById('spartacus-confirmation-screen').style.display = 'block';
+    
+    // Scroll to top of confirmation
+    window.scrollTo(0, 0);
+}
 
-    this.getPostalcodeUrl = function(postalCode, houseNr) {
-        return this.host + this.accountName +'/postalCode/'+ this.formName +'/'+ postalCode +'/'+ parseInt(houseNr) +'/?sessionId='+ this.sessionId;
+function showSpartacusErrorMessage(message) {
+    const errorContainer = document.getElementById('spartacus-form-error');
+    if (errorContainer) {
+        errorContainer.textContent = message || 'Something went wrong. Please try again.';
+        errorContainer.style.display = 'block';
     }
-
-    this.getResourceUrl = function() {
-        return this.host + 'common_resources/';
-    }
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-    var spartacusForm = new SpartacusForm();
-    spartacusForm.init();
-});
+}
 </script>
+</main>
 
 <footer />
 

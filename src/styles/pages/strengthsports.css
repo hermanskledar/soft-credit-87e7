@@ -1,0 +1,151 @@
+/* Strength Sports Page Specific Styles */
+
+/* Hero Section */
+.hero {
+  min-height: 40vh; /* Shorter hero for inner pages */
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 70px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Lists */
+.about-text ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.about-text li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 5px;
+}
+
+/* Competition List */
+.competition-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+}
+
+.competition-item {
+  background-color: white;
+  border-radius: 5px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.competition-item h3 {
+  color: #ba131a;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.competition-item p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Features */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px 0;
+  gap: 20px;
+}
+
+.feature {
+  flex-basis: calc(33.333% - 20px);
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #ba131a;
+}
+
+.feature h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #37001b;
+  letter-spacing: 1px;
+}
+
+/* Buttons */
+.about-text .btn {
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.text-center .btn {
+  margin: 0 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .feature {
+    flex-basis: calc(50% - 20px);
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature {
+    flex-basis: 100%;
+  }
+  
+  .competition-item {
+    padding: 20px;
+  }
+  
+  .about-text .btn {
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .text-center .btn {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+  }
+}

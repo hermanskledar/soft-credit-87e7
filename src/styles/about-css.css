@@ -1,0 +1,110 @@
+/* About Page Specific Styles */
+
+/* Hero Section */
+.hero {
+  min-height: 40vh; /* Shorter hero for inner pages */
+}
+
+/* Board Section */
+.board-section {
+  margin-bottom: 60px;
+}
+
+.board-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.board-member {
+  width: 220px;
+  text-align: center;
+}
+
+.board-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ba131a;
+  margin-bottom: 15px;
+}
+
+.board-member-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: #37001b;
+  margin-bottom: 5px;
+}
+
+.board-member-role {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.board-member-email {
+  font-size: 14px;
+  color: #555;
+}
+
+.board-member-email a {
+  color: #ba131a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.board-member-email a:hover {
+  color: #37001b;
+  text-decoration: underline;
+}
+
+/* Affiliation Section */
+.about-image {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-image img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .board-members {
+    gap: 20px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-container .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .board-member {
+    width: 100%;
+    max-width: 220px;
+  }
+}

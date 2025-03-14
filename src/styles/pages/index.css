@@ -1,9 +1,10 @@
-/* Home Page Specific Styles */
+/* Home Page Specific Styles - Leveraging Global CSS */
 
-/* Hero Section */
+/* Hero Section - Building on global hero styles */
 .hero {
   min-height: 100vh;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .background-overlay {
@@ -14,6 +15,7 @@
   height: 100%;
   background: linear-gradient(135deg, rgba(55, 0, 27, 0.95) 0%, rgba(186, 19, 26, 0.8) 100%);
   z-index: 1;
+  backdrop-filter: blur(2px);
 }
 
 .hero-container {
@@ -24,6 +26,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  width: 100%;
 }
 
 .hero-content {
@@ -33,8 +36,26 @@
   padding: 40px;
   border-radius: 8px;
   backdrop-filter: blur(5px);
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(231, 197, 94, 0.3);
+  animation: fadeIn 1s ease-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Using global h1/h2 styles with text shadow enhancement */
+.hero-content h1,
+.hero-content h2 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  margin-bottom: 25px;
+  line-height: 1.8;
 }
 
 .hero-video {
@@ -48,8 +69,14 @@
   height: 0;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(231, 197, 94, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .video-wrapper iframe {
@@ -64,125 +91,226 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
+/* Extending global button styles with additional effects */
 .hero .btn {
-  padding: 12px 30px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Features */
+.hero .btn:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero .btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .btn-secondary:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(231, 197, 94, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.hero .btn-secondary:hover:before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Features - Enhancing the global section styles */
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 40px;
-  gap: 20px;
+  gap: 25px;
 }
 
 .feature {
-  flex-basis: calc(33.333% - 20px);
+  flex-basis: calc(33.333% - 25px);
   margin-bottom: 40px;
   background: white;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 35px 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   text-align: center;
-  transition: transform 0.3s;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid transparent;
 }
 
 .feature:hover {
   transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  border-bottom: 3px solid var(--spartacus-red);
 }
 
+.feature:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to bottom, rgba(186, 19, 26, 0.05), transparent);
+  transition: height 0.4s ease;
+}
+
+.feature:hover:before {
+  height: 100%;
+}
+
+/* Using the global feature-icon with enhancements */
 .feature-icon {
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: #ba131a;
+  transition: transform 0.4s ease, color 0.4s ease;
 }
 
+.feature:hover .feature-icon {
+  transform: scale(1.1);
+  color: var(--spartacus-burgundy);
+}
+
+/* Extending global h3 with animated underline */
 .feature h3 {
-  margin-bottom: 15px;
-  font-size: 16px;
-  color: #37001b;
-  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
 }
 
-/* Pricing */
+.feature h3:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: var(--spartacus-red);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.feature:hover h3:after {
+  width: 50px;
+}
+
+/* Pricing - Building on global section styles */
 .pricing-cards-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 35px;
+  margin-top: 50px;
 }
 
 .price-box {
   flex-basis: 300px;
   background: white;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 0.4s ease;
+  position: relative;
 }
 
 .price-box:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .price-header {
-  background: #ba131a;
+  background: var(--spartacus-red);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 25px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-header:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.price-box:hover .price-header:before {
+  opacity: 1;
 }
 
 .price-header h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .price-amount {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .price-amount span {
   font-size: 16px;
   font-weight: normal;
+  opacity: 0.8;
 }
 
 .price-features {
-  padding: 30px;
+  padding: 35px 30px;
   list-style: none;
 }
 
 .price-features li {
-  margin-bottom: 15px;
-  padding-left: 25px;
+  margin-bottom: 18px;
+  padding-left: 28px;
   position: relative;
-  font-size: 11px;
+  transition: transform 0.3s ease;
 }
 
+.price-features li:hover {
+  transform: translateX(5px);
+}
+
+/* Enhancing the check mark from global */
 .price-features li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #ba131a;
-  font-weight: bold;
+  background: rgba(186, 19, 26, 0.1);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .price-action {
   text-align: center;
-  padding: 0 30px 30px;
+  padding: 0 30px 35px;
 }
 
-/* Mobile view - with slider */
+.price-action .btn {
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(186, 19, 26, 0.2);
+}
+
+.price-action .btn:hover {
+  box-shadow: 0 7px 14px rgba(186, 19, 26, 0.3);
+}
+
+/* Mobile view - with slider (keeping consistent with global responsive approach) */
 .desktop-only {
   display: flex;
 }
@@ -195,7 +323,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 0 0 40px;
+  padding: 10px 0 40px;
 }
 
 .pricing-slider {
@@ -205,42 +333,83 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
-  gap: 20px;
-  padding: 0 15px;
+  gap: 25px;
+  padding: 10px 15px;
 }
 
 .pricing-slider::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
 
+.pricing-slider .price-box {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+}
+
 .slider-indicators {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 25px;
 }
 
 .indicator {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: #ddd;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .indicator.active {
-  background-color: #333;
+  background-color: var(--spartacus-red);
+  transform: scale(1.2);
 }
 
-/* Call to Action */
-.section.text-center .btn {
-  margin: 0 10px;
+/* About Section Enhancements - Building on global about styles */
+.about-content {
+  gap: 50px;
 }
 
-/* Responsive */
+.about-image img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-image:hover img {
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Calendar Section Enhancement */
+.calendar-container {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.calendar-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Using global responsive classes with home-specific modifications */
 @media (max-width: 992px) {
   .feature {
-    flex-basis: calc(50% - 20px);
+    flex-basis: calc(50% - 25px);
   }
   
   .hero-container {
@@ -248,8 +417,15 @@
   }
   
   .hero-content, .hero-video {
-    flex-basis: 100%;
     max-width: 100%;
+  }
+  
+  .hero-content {
+    margin-top: 20px;
+  }
+  
+  .hero-video {
+    margin-bottom: 20px;
   }
 }
 
@@ -263,38 +439,38 @@
   }
   
   .hero {
-    padding: 60px 20px;
+    padding: 90px 20px 60px;
+    min-height: auto;
   }
   
   .hero-video {
     display: none;
   }
   
-  .hero h1 {
-    font-size: 26px;
-  }
-  
-  .hero h2 {
-    font-size: 16px;
-  }
-  
-  .hero-content {
-    padding: 30px 20px;
-  }
-  
   .feature {
     flex-basis: 100%;
   }
   
-  .section.text-center .btn {
-    display: block;
-    margin: 10px auto;
-    max-width: 80%;
+  .features {
+    gap: 15px;
+  }
+  
+  .slider-indicators {
+    display: flex;
   }
 }
 
-@media (min-width: 768px) {
-  .slider-indicators {
-    display: none;
+@media (max-width: 576px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .hero .btn {
+    width: 100%;
+  }
+  
+  .pricing-slider .price-box {
+    flex: 0 0 90%;
   }
 }

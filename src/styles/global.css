@@ -60,6 +60,19 @@ header {
   position: relative;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .top-row {
   display: flex;
   justify-content: space-between;
@@ -90,6 +103,7 @@ header {
   transition: all 0.3s ease;
   text-transform: none;
   font-size: 14px;
+  margin-left: 20px;
 }
 
 .cta-button:hover {
@@ -101,6 +115,7 @@ nav {
   display: flex; 
   align-items: center; 
   justify-content: space-between; 
+  width: 100%;
 }
 
 .nav-toggle { 

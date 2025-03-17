@@ -22,7 +22,36 @@ import '../styles/Components/header.css';
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+            <button class="nav-toggle" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
         </div>
     </div>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+
+        navToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            
+            // Prevent body scrolling when menu is open
+            if (nav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when a nav link is clicked
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                navToggle.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    });
+</script>

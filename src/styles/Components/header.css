@@ -54,6 +54,7 @@
     margin: 0;
     padding: 0;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .nav-link {
@@ -84,6 +85,19 @@
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.desktop-join-button {
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color var(--transition);
+}
+
+.desktop-join-button:hover {
+    background-color: #d4b54e; /* Slightly darker yellow */
 }
 
 .mobile-menu-toggle {
@@ -157,6 +171,10 @@
 
     .mobile-menu-toggle {
         display: block;
+    }
+
+    .desktop-join-link {
+        display: none;
     }
 
     .mobile-join-link {

@@ -1,50 +1,81 @@
 ---
-// You can add any imports or frontmatter variables here
+// Footer.astro - Improved footer component with better links and organization
 ---
 
 <footer>
     <div class="container">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>T.S.K.V. Spartacus</h3>
+                <h3>About T.S.K.V. Spartacus</h3>
                 <p>The largest student strength sports association in the Benelux, promoting powerlifting, bodybuilding, and fitness at Tilburg University.</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/T.S.K.V.Spartacus/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/tskvspartacus/"target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/t.s.k.v.-spartacus/posts/?feedView=all"target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/T.S.K.V.Spartacus/" target="_blank" aria-label="Facebook"> 
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tskvspartacus/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/t.s.k.v.-spartacus/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
+            
             <div class="footer-column">
-                <h3>Quick Links</h3>
+                <h3>Main Navigation</h3>
                 <ul class="footer-links">
-                    <li><a href="/index">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/about">About Us</a></li>
-                    <li><a href="/strenghtsports">Strenghtsports</a></li>
+                    <li><a href="/strenghtsports">Strength Sports</a></li>
                     <li><a href="/become-a-member">Membership</a></li>
-                    <li><a href="/history">Our History</a></li>
+                    <li><a href="/committee">Committee</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
                 </ul>
             </div>
+            
             <div class="footer-column">
-                <h3>Member Benefits</h3>
+                <h3>Member Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="/contact">Contact us</a></li>
-                    <li><a href="/membership-discounts/bossers-vlees">Bossers Vlees</a></li>
-                    <li><a href="/membership-discounts/fysiofitaal">Fysio Fitaal</a></li>
-                    <li><a href="/webshop.html">Webshop</a></li>
+                    <li><a href="/membership-discounts">Member Discounts</a></li>
+                    <li><a href="https://knkf-sectiepowerliften.nl/" target="_blank">KNKF Registration</a></li>
+                    <li><a href="https://merch.tskvspartacus.nl/" target="_blank">Official Webshop</a></li>
+                    <li><a href="/important-documents">Important Documents</a></li>
+                    <li><a href="/strenghtsports/powerlifting">Powerlifting Info</a></li>
                 </ul>
             </div>
+            
             <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul class="footer-links">
-                    <li><a href="/membership-discounts">Membership Discounts</a></li>
-                    <li><a href="/membership-discounts/bossers-vlees" target="_blank">KNKF registration</a></li>
-                    <li><a href="/webshop">Webshop</a></li>
-                    <li><a href="/important-documents">Important documents</a></li>
+                <h3>Contact Information</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tilburg University Sports Center<br>Tilburg University Campus</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <a href="/#calendar">View Events Calendar</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <a href="/committee">Join a Committee</a>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 T.S.K.V. Spartacus. All rights reserved.</p>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; {new Date().getFullYear()} T.S.K.V. Spartacus. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom-links">
+                <a href="/important-documents">Privacy Policy</a>
+                <a href="/important-documents">Terms of Service</a>
+                <a href="/sitemap">Sitemap</a>
+            </div>
         </div>
     </div>
 </footer>

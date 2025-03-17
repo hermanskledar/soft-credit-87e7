@@ -1,57 +1,58 @@
 ---
 import '../styles/Components/header.css';
-
 ---
 
 <header>
-    <div class="cta-container">
-        <div class="top-row">
-            <a href="/index" class="logo">T.S.K.V. <span>Spartacus</span></a>
-            <a href="/register" class="cta-button">Become a Member!</a>
-        </div>
-        <div class="header-right">
-            <nav>
-                <ul>
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/strenghtsports">Strenghtsports</a></li>
-                    <li><a href="/become-a-member">Membership</a></li>
-                    <li><a href="/membership-discounts">Discounts</a></li>
-                    <li><a href="/committee">Committee</a></li>
-                    <li><a href="https://merch.tskvspartacus.nl/" target="_blank">Webshop</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="nav-toggle" aria-label="Toggle Navigation"><i class="fas fa-bars"></i></button>
-        </div>
+  <div class="cta-container">
+    <div class="top-row">
+      <a href="/index" class="logo">T.S.K.V. <span>Spartacus</span></a>
+      <a href="/register" class="cta-button">Become a Member!</a>
     </div>
+    <div class="header-right">
+      <button class="nav-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/strenghtsports">Strenghtsports</a></li>
+          <li><a href="/become-a-member">Membership</a></li>
+          <li><a href="/membership-discounts">Discounts</a></li>
+          <li><a href="/committee">Committee</a></li>
+          <li><a href="https://merch.tskvspartacus.nl/" target="_blank">Webshop</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
 
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('nav');
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
 
-        navToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            navToggle.classList.toggle('active');
-            
-            // Prevent body scrolling when menu is open
-            if (nav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Close menu when a nav link is clicked
-        const navLinks = document.querySelectorAll('nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                nav.classList.remove('active');
-                navToggle.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
+    navToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      navToggle.classList.toggle('active');
+      
+      // Prevent body scrolling when menu is open
+      if (nav.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
     });
+
+    // Close menu when a nav link is clicked
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        nav.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+  });
 </script>

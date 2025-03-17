@@ -20,11 +20,18 @@ import '../styles/Components/header.css';
                 <li><a href="/strenghtsports" class="nav-link">Strenghtsports</a></li>
                 <li><a href="/committee" class="nav-link">Committees</a></li>
                 <li><a href="/contact" class="nav-link">Contact</a></li>
-                <li><a href="https://merch.tskvspartacus.nl/" target="_blank" rel="noopener noreferrer" class="nav-link">Shop</a></li>
+                <li>
+                    <a href="https://merch.tskvspartacus.nl/" target="_blank" rel="noopener noreferrer" class="nav-link">Shop</a>
+                </li>
+                <!-- Desktop Join Button (hidden on mobile) -->
                 <li class="desktop-join-link">
                     <a href="/register" class="nav-link desktop-join-button">Join</a>
                 </li>
             </ul>
+            <!-- Mobile Join Button (visible on mobile) -->
+            <div class="mobile-join-link">
+                <a href="/register" class="mobile-join-button">Join</a>
+            </div>
         </nav>
         <button 
             class="mobile-menu-toggle" 
@@ -71,4 +78,3 @@ import '../styles/Components/header.css';
         });
     });
 </script>
-

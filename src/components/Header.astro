@@ -48,6 +48,143 @@ import '../styles/Components/header.css';
         const dropdowns = document.querySelectorAll('.dropdown');
 
         // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigation.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Dropdown functionality
+        dropdowns.forEach(dropdown => {
+            const dropdownToggle = dropdown.querySelector('.nav-link');
+            dropdownToggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('show-dropdown');
+                }
+            });
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navigation.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show-dropdown');
+                });
+            });
+        });
+
+        // Close dropdowns and mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown') && !e.target.closest('.mobile-menu-toggle')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show-dropdown');
+                });
+                navigation.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    });
+</script><script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navigation = document.querySelector('.main-navigation');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Mobile menu toggle
+        mobileMenuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigation.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Dropdown functionality
+        dropdowns.forEach(dropdown => {
+            const dropdownToggle = dropdown.querySelector('.nav-link');
+            dropdownToggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('show-dropdown');
+                }
+            });
+        });
+
+        // Close mobile menu when a link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navigation.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show-dropdown');
+                });
+            });
+        });
+
+        // Close dropdowns and mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown') && !e.target.closest('.mobile-menu-toggle')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show-dropdown');
+                });
+                navigation.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    });
+</script>---
+import '../styles/Components/header.css';
+---
+
+<header class="fixed-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <a href="/" class="logo">
+                <img src="/images/spartacus-logo.png" alt="Spartacus Logo" class="logo-image">
+                <span class="logo-text">T.S.K.V. <span class="highlight">Spartacus</span></span>
+            </a>
+        </div>
+
+        <nav class="main-navigation">
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li class="dropdown">
+                    <a href="/strenghtsports" class="nav-link">Strength Sports</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/strenghtsports/powerlifting">Powerlifting</a></li>
+                        <li><a href="/strenghtsports">All Sports</a></li>
+                    </ul>
+                </li>
+                <li><a href="/become-a-member" class="nav-link">Membership</a></li>
+                <li><a href="/committee" class="nav-link">Committees</a></li>
+                <li><a href="https://merch.tskvspartacus.nl/" target="_blank" class="nav-link">Webshop</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="/register" class="btn btn-primary desktop-cta">Join Spartacus</a>
+            <div class="mobile-actions">
+                <a href="/register" class="btn btn-mobile-cta">Join</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navigation = document.querySelector('.main-navigation');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Mobile menu toggle
         mobileMenuToggle.addEventListener('click', () => {
             navigation.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');

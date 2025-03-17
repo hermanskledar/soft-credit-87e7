@@ -1,74 +1,183 @@
-/* Membership Page Specific Styles */
+/* Membership Page Specific Styles - Optimized */
 
 /* Hero Section */
 .hero {
-  min-height: 40vh; /* Shorter hero for inner pages */
-}
-
-/* Features/Testimonials */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 40px;
-  gap: 20px;
-}
-
-.feature {
-  flex-basis: calc(33.333% - 20px);
-  margin-bottom: 40px;
-  background: white;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.feature:hover {
-  transform: translateY(-10px);
+  min-height: 40vh;
 }
 
 /* Membership Details */
 .about-text h3 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 16px;
-  color: #37001b;
+  color: var(--spartacus-burgundy);
   margin-top: 25px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.about-text h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--spartacus-red);
+  transition: width 0.3s ease;
+}
+
+.about-text:hover h3::after {
+  width: 100%;
+}
+
+.about-text strong {
+  color: var(--spartacus-burgundy);
+  font-weight: 600;
 }
 
 .about-text ul {
   margin-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .about-text li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+.about-text li:hover {
+  transform: translateX(5px);
+}
+
+.about-text li::before {
+  content: '→';
+  position: absolute;
+  left: -20px;
+  color: var(--spartacus-red);
+  transition: transform 0.2s ease;
+}
+
+.about-text li:hover::before {
+  transform: translateX(3px);
 }
 
 /* Registration Process */
 ol {
-  margin-left: 20px;
-  margin-bottom: 30px;
+  list-style-type: none;
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 ol li {
-  margin-bottom: 10px;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 15px;
+  counter-increment: item;
+}
+
+ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background-color: var(--spartacus-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+ol li:hover::before {
+  transform: scale(1.2);
+  background-color: var(--spartacus-burgundy);
+}
+
+ol li strong {
+  color: var(--spartacus-burgundy);
+  font-weight: 600;
 }
 
 /* FAQ Section */
 .section h3 {
-  color: #37001b;
+  color: var(--spartacus-burgundy);
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+  transition: transform 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.section h3:hover {
+  transform: translateX(5px);
+}
+
+.section h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 18px;
+  background-color: var(--spartacus-red);
+  border-radius: 3px;
+}
+
+/* Testimonials */
+.feature {
+  text-align: left;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature::before {
+  content: """;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 60px;
+  color: rgba(186, 19, 26, 0.1);
+  font-family: serif;
+}
+
+.feature p {
+  font-style: italic;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+.feature p:last-child {
   margin-top: 15px;
+  text-align: right;
+  font-style: normal;
+  color: var(--spartacus-burgundy);
+  font-weight: 600;
 }
 
 /* Call to Action */
 .text-center .btn {
-  margin: 0 10px;
+  margin: 0 10px 10px;
+  min-width: 180px;
 }
 
+/* Responsive design */
 @media (max-width: 992px) {
   .feature {
     flex-basis: calc(50% - 20px);
@@ -82,7 +191,17 @@ ol li {
   
   .text-center .btn {
     display: block;
-    margin: 10px auto;
-    max-width: 80%;
+    margin: 15px auto;
+    max-width: 250px;
+  }
+  
+  ol li {
+    padding-left: 35px;
+  }
+  
+  ol li::before {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
   }
 }

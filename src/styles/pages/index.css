@@ -1,21 +1,9 @@
-/* Home Page Specific Styles - Leveraging Global CSS */
+/* Home Page Specific Styles - Optimized */
 
-/* Hero Section - Building on global hero styles */
+/* Hero Section Enhancements */
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(55, 0, 27, 0.95) 0%, rgba(186, 19, 26, 0.8) 100%);
-  z-index: 1;
-  backdrop-filter: blur(2px);
+  background-attachment: fixed;
 }
 
 .hero-container {
@@ -45,17 +33,6 @@
 .hero-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-/* Using global h1/h2 styles with text shadow enhancement */
-.hero-content h1,
-.hero-content h2 {
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content p {
-  margin-bottom: 25px;
-  line-height: 1.8;
 }
 
 .hero-video {
@@ -94,115 +71,7 @@
   margin-top: 10px;
 }
 
-/* Extending global button styles with additional effects */
-.hero .btn {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.hero .btn:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.hero .btn-secondary {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero .btn-secondary:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(231, 197, 94, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-}
-
-.hero .btn-secondary:hover:before {
-  width: 300px;
-  height: 300px;
-}
-
-/* Features - Enhancing the global section styles */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 40px;
-  gap: 25px;
-}
-
-.feature {
-  flex-basis: calc(33.333% - 25px);
-  margin-bottom: 40px;
-  background: white;
-  padding: 35px 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid transparent;
-}
-
-.feature:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  border-bottom: 3px solid var(--spartacus-red);
-}
-
-.feature:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: linear-gradient(to bottom, rgba(186, 19, 26, 0.05), transparent);
-  transition: height 0.4s ease;
-}
-
-.feature:hover:before {
-  height: 100%;
-}
-
-/* Using the global feature-icon with enhancements */
-.feature-icon {
-  transition: transform 0.4s ease, color 0.4s ease;
-}
-
-.feature:hover .feature-icon {
-  transform: scale(1.1);
-  color: var(--spartacus-burgundy);
-}
-
-/* Extending global h3 with animated underline */
-.feature h3 {
-  position: relative;
-  display: inline-block;
-}
-
-.feature h3:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 50%;
-  background: var(--spartacus-red);
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.feature:hover h3:after {
-  width: 50px;
-}
-
-/* Pricing - Building on global section styles */
+/* Pricing Cards */
 .pricing-cards-container {
   display: flex;
   justify-content: center;
@@ -234,7 +103,7 @@
   overflow: hidden;
 }
 
-.price-header:before {
+.price-header::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -246,7 +115,7 @@
   transition: opacity 0.4s ease;
 }
 
-.price-box:hover .price-header:before {
+.price-box:hover .price-header::before {
   opacity: 1;
 }
 
@@ -284,8 +153,12 @@
   transform: translateX(5px);
 }
 
-/* Enhancing the check mark from global */
 .price-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--spartacus-red);
+  font-weight: bold;
   background: rgba(186, 19, 26, 0.1);
   width: 20px;
   height: 20px;
@@ -294,6 +167,12 @@
   align-items: center;
   justify-content: center;
   line-height: 1;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.price-features li:hover::before {
+  transform: scale(1.2);
+  background-color: rgba(186, 19, 26, 0.2);
 }
 
 .price-action {
@@ -301,24 +180,7 @@
   padding: 0 30px 35px;
 }
 
-.price-action .btn {
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(186, 19, 26, 0.2);
-}
-
-.price-action .btn:hover {
-  box-shadow: 0 7px 14px rgba(186, 19, 26, 0.3);
-}
-
-/* Mobile view - with slider (keeping consistent with global responsive approach) */
-.desktop-only {
-  display: flex;
-}
-
-.mobile-only {
-  display: none;
-}
-
+/* Mobile Pricing Slider */
 .pricing-slider-container {
   position: relative;
   overflow: hidden;
@@ -331,14 +193,14 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   gap: 25px;
   padding: 10px 15px;
 }
 
 .pricing-slider::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .pricing-slider .price-box {
@@ -367,65 +229,23 @@
   transform: scale(1.2);
 }
 
-/* About Section Enhancements - Building on global about styles */
-.about-content {
-  gap: 50px;
+/* Desktop/Mobile visibility */
+.desktop-only {
+  display: flex;
 }
 
-.about-image img {
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.mobile-only {
+  display: none;
 }
 
-.about-image:hover img {
-  transform: scale(1.03) rotate(1deg);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Calendar Section Enhancement */
-.calendar-container {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.calendar-container:hover {
-  transform: translateY(-5px);
-}
-
-/* Using global responsive classes with home-specific modifications */
+/* Media Queries */
 @media (max-width: 992px) {
-  .feature {
-    flex-basis: calc(50% - 25px);
-  }
-  
   .hero-container {
     flex-direction: column;
   }
   
   .hero-content, .hero-video {
     max-width: 100%;
-  }
-  
-  .hero-content {
-    margin-top: 20px;
-  }
-  
-  .hero-video {
-    margin-bottom: 20px;
   }
 }
 
@@ -439,20 +259,12 @@
   }
   
   .hero {
-    padding: 90px 20px 60px;
     min-height: auto;
+    padding: 90px 20px 60px;
   }
   
   .hero-video {
     display: none;
-  }
-  
-  .feature {
-    flex-basis: 100%;
-  }
-  
-  .features {
-    gap: 15px;
   }
   
   .slider-indicators {

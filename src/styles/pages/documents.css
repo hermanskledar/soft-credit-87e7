@@ -1,22 +1,22 @@
-/* Documents Page Specific Styles */
-
-/* Hero Section */
-.hero {
-  min-height: 40vh; /* Shorter hero for inner pages */
-}
+/* Documents Page Specific Styles - Optimized */
 
 /* Document Cards */
 .document-card {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .document-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid var(--spartacus-red);
 }
 
 .document-header {
@@ -25,12 +25,35 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.document-card:hover .document-header {
+  background-color: rgba(231, 197, 94, 0.1);
 }
 
 .document-title {
   margin: 0;
   font-size: 18px;
-  color: #37001b;
+  color: var(--spartacus-burgundy);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.document-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--spartacus-red);
+  transition: width 0.3s ease;
+}
+
+.document-card:hover .document-title::after {
+  width: 100%;
 }
 
 .document-actions {
@@ -42,16 +65,36 @@
 
 .document-actions .btn {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.document-actions .btn:hover {
+  transform: translateY(-3px);
+}
+
+.document-actions .btn::before {
+  display: none;
+}
+
+.document-actions .btn i {
+  transition: transform 0.3s ease;
+}
+
+.document-actions .btn:hover i {
+  transform: translateY(-2px);
 }
 
 /* Section Introduction */
 .section p {
   margin-bottom: 30px;
   max-width: 800px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
-/* Responsive */
+/* Media Queries */
 @media (max-width: 768px) {
   .document-header {
     padding: 15px 20px;
@@ -66,10 +109,11 @@
   .document-actions {
     padding: 15px 20px;
     justify-content: center;
+    width: 100%;
   }
   
   .document-actions .btn {
     width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 }

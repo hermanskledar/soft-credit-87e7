@@ -1,9 +1,4 @@
-/* Discounts Page Specific Styles */
-
-/* Hero Section */
-.hero {
-  min-height: 40vh; /* Shorter hero for inner pages */
-}
+/* Discounts Page Specific Styles - Optimized */
 
 /* Discount Items */
 .discounts {
@@ -14,31 +9,52 @@
   display: flex;
   flex-wrap: wrap;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
 }
 
 .discount-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid var(--spartacus-red);
 }
 
 .discount-img {
   flex: 0 0 250px;
   overflow: hidden;
+  position: relative;
 }
 
 .discount-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.5s ease;
 }
 
 .discount-item:hover .discount-img img {
   transform: scale(1.05);
+}
+
+.discount-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.discount-item:hover .discount-img::before {
+  opacity: 1;
 }
 
 .discount-content {
@@ -50,8 +66,27 @@
 .discount-content h3 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
-  color: #37001b;
-  margin-bottom: 10px;
+  color: var(--spartacus-burgundy);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.discount-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--spartacus-red);
+  transition: width 0.3s ease;
+}
+
+.discount-item:hover .discount-content h3::after {
+  width: 100%;
 }
 
 .discount-content p {
@@ -66,69 +101,42 @@
 }
 
 .discount-content li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   position: relative;
+  padding-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+.discount-content li:hover {
+  transform: translateX(5px);
+}
+
+.discount-content li::before {
+  content: '→';
+  position: absolute;
+  left: -18px;
+  color: var(--spartacus-red);
+  transition: transform 0.2s ease;
+}
+
+.discount-content li:hover::before {
+  transform: translateX(3px);
 }
 
 .discount-content .btn {
-  display: inline-block;
-  margin-top: 15px;
-}
-
-/* Features */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 40px;
-  gap: 20px;
-}
-
-.feature {
-  flex-basis: calc(33.333% - 20px);
-  margin-bottom: 40px;
-  background: white;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.feature:hover {
-  transform: translateY(-10px);
-}
-
-.feature-icon {
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: #ba131a;
-}
-
-.feature h3 {
-  margin-bottom: 15px;
-  font-size: 16px;
-  color: #37001b;
-  letter-spacing: 1px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Section Introduction */
 .section p {
   max-width: 800px;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 20px;
 }
 
-/* Call to Action */
-.text-center {
-  text-align: center;
-}
-
-.mb-40 {
-  margin-bottom: 40px;
-}
-
-/* Responsive */
+/* Media Queries */
 @media (max-width: 992px) {
   .feature {
     flex-basis: calc(50% - 20px);
@@ -144,9 +152,5 @@
   .discount-content {
     flex: 0 0 100%;
     padding: 20px;
-  }
-  
-  .feature {
-    flex-basis: 100%;
   }
 }

@@ -1,4 +1,4 @@
-/* Confirmation Page Specific Styles */
+/* Confirmation Page Specific Styles - Optimized */
 
 /* Confirmation Section */
 .confirmation-section {
@@ -13,14 +13,14 @@
   border-radius: 8px;
   padding: 40px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border-top: 5px solid #ba131a;
+  border-top: 5px solid var(--spartacus-red);
+  animation: fadeIn 0.8s ease-out;
 }
 
 .confirmation-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px;
-  color: #ba131a;
+  color: var(--spartacus-red);
   margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 .confirmation-message {
@@ -28,22 +28,23 @@
   line-height: 1.6;
   margin-bottom: 30px;
   color: #333;
+  animation: fadeInDown 0.8s ease-out 0.2s;
+  animation-fill-mode: both;
 }
 
 .next-steps {
   background-color: #f8f8f8;
   padding: 25px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin: 30px 0;
   text-align: left;
+  animation: fadeInDown 0.8s ease-out 0.4s;
+  animation-fill-mode: both;
 }
 
 .next-steps-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-  color: #37001b;
   margin-bottom: 20px;
-  border-bottom: 2px solid #e7c55e;
+  border-bottom: 2px solid var(--spartacus-yellow);
   padding-bottom: 10px;
 }
 
@@ -57,10 +58,15 @@
   align-items: flex-start;
   margin-bottom: 20px;
   font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateX(5px);
 }
 
 .step-icon {
-  background-color: #ba131a;
+  background-color: var(--spartacus-red);
   color: white;
   width: 30px;
   height: 30px;
@@ -70,6 +76,7 @@
   justify-content: center;
   margin-right: 15px;
   flex-shrink: 0;
+  box-shadow: 0 3px 6px rgba(186, 19, 26, 0.2);
 }
 
 .step-text {
@@ -78,12 +85,11 @@
 
 .social-follow {
   margin-top: 30px;
+  animation: fadeInUp 0.8s ease-out 0.6s;
+  animation-fill-mode: both;
 }
 
 .social-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 16px;
-  color: #37001b;
   margin-bottom: 15px;
 }
 
@@ -97,13 +103,14 @@
 .social-btn {
   display: inline-flex;
   align-items: center;
-  background-color: #37001b;
+  background-color: var(--spartacus-burgundy);
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.3s;
   font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .social-btn i {
@@ -112,28 +119,18 @@
 }
 
 .social-btn:hover {
-  background-color: #ba131a;
+  background-color: var(--spartacus-red);
   transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .confirmation-actions {
   margin-top: 30px;
+  animation: fadeInUp 0.8s ease-out 0.8s;
+  animation-fill-mode: both;
 }
 
-.spartacus-link {
-  color: #ba131a;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.spartacus-link:hover {
-  color: #37001b;
-  text-decoration: underline;
-}
-
-
-/* Responsive */
+/* Media Queries */
 @media (max-width: 768px) {
   .confirmation-card {
     padding: 30px 20px;
@@ -146,10 +143,12 @@
   .social-links-large {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
   
-  .calendar-wrapper iframe {
-    height: 400px;
+  .social-btn {
+    width: 100%;
+    max-width: 250px;
   }
 }
 
@@ -164,4 +163,4 @@
     margin-right: 0;
     margin-bottom: 10px;
   }
-  
+}

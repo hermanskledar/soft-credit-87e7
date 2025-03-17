@@ -6,12 +6,20 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  canonicalURL?: URL | string;
 }
 
 const { 
   title = "T.S.K.V. Spartacus - Student Strength Sports Association",
-  description = "The largest student strength sports association in the Benelux, promoting powerlifting, bodybuilding, and fitness among students at Tilburg University."
+  description = "The largest student strength sports association in the Benelux, promoting powerlifting, bodybuilding, and fitness among students at Tilburg University.",
+  image = "/images/spartacus-social-share.jpg", // Default social sharing image
+  canonicalURL = new URL(Astro.url.pathname, Astro.site)
 } = Astro.props;
+
+// Construct absolute URL for OG image
+const siteURL = Astro.site || "https://tskvspartacus.nl";
+const ogImageURL = new URL(image, siteURL).toString();
 ---
 
 <!-- Google tag (gtag.js) -->
@@ -29,11 +37,33 @@ const {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
+<link rel="canonical" href={canonicalURL}>
 
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonicalURL}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={ogImageURL}>
+<meta property="og:image:alt" content="T.S.K.V. Spartacus">
+<meta property="og:site_name" content="T.S.K.V. Spartacus">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content={canonicalURL}>
+<meta property="twitter:title" content={title}>
+<meta property="twitter:description" content={description}>
+<meta property="twitter:image" content={ogImageURL}>
+
+<!-- Font Awesome for icons (using a more performant loading method) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">

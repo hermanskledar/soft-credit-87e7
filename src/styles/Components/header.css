@@ -169,41 +169,40 @@ nav ul li a.active::after {
   }
 
   nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
+    position: absolute;
+    top: 100%; /* Below header */
+    left: 0;
     width: 100%;
-    height: 100vh; /* Full viewport height */
     background-color: var(--spartacus-burgundy);
-    transition: left 0.3s ease;
+    transition: all 0.3s ease;
     z-index: 1000;
-    padding-top: 80px; /* Space for header */
-    overflow-y: auto;
+    max-height: 0; /* Closed by default */
+    overflow: hidden;
   }
 
   nav.active {
-    left: 0;
+    max-height: 500px; /* Adjust based on content height, large enough to fit */
   }
 
   nav ul {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 0;
-    padding: 0;
+    margin: 0;
+    padding: var(--space-2) 0;
   }
 
   nav ul li {
-    margin: var(--space-2) 0;
+    margin: var(--space-1) 0;
     text-align: center;
     width: 100%;
   }
 
   nav ul li a {
-    padding: 15px;
+    padding: 10px;
     display: block;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
   }
 
@@ -212,21 +211,25 @@ nav ul li a.active::after {
   }
 
   .top-row {
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-2);
   }
 
   .logo {
-    margin-bottom: 0; /* No need for margin since it’s beside toggle */
+    flex: 1 1 auto;
+    text-align: left;
   }
 
   .cta-button {
-    display: none; /* Hide on mobile to simplify header */
+    flex: 0 0 auto;
+    padding: 8px 15px;
+    font-size: 12px;
   }
 
   .header-right {
-    width: auto; /* Only as wide as toggle */
+    width: auto;
     justify-content: flex-end;
   }
 
@@ -248,7 +251,12 @@ nav ul li a.active::after {
     font-size: 20px;
   }
 
+  .cta-button {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
   nav ul li a {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

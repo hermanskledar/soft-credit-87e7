@@ -37,12 +37,7 @@ import '../styles/Components/header.css';
       nav.classList.toggle('active');
       navToggle.classList.toggle('active');
       
-      // Prevent body scrolling when menu is open
-      if (nav.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = 'auto';
-      }
+      // No body scroll lock since it’s a dropdown now
     });
 
     // Close menu when a nav link is clicked
@@ -51,7 +46,6 @@ import '../styles/Components/header.css';
       link.addEventListener('click', function() {
         nav.classList.remove('active');
         navToggle.classList.remove('active');
-        document.body.style.overflow = 'auto';
       });
     });
   });

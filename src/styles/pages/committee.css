@@ -412,3 +412,166 @@ main {
     margin: 40px 5px;
   }
 }
+
+/* Fixed Committee Page CSS - Addressing Spacing Issues */
+
+/* Reset container styles to fix spacing issues */
+main .container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+/* Reset section styles */
+.section {
+  margin-bottom: 70px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix the committee grid spacing */
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure committee cards fill the right amount of space */
+.committee-card {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: 0; /* Remove any bottom margin that might cause spacing issues */
+  box-sizing: border-box;
+}
+
+.committee-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  border-bottom: 3px solid var(--spartacus-red);
+}
+
+/* Fix board section spacing */
+.board-section {
+  width: 100%;
+  margin-bottom: 70px;
+  box-sizing: border-box;
+}
+
+/* Ensure board members are properly centered */
+.board-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix volunteer section spacing */
+.volunteer-section {
+  width: 100%;
+  max-width: 1080px; /* Slightly smaller than container to create visual difference */
+  margin: 70px auto;
+  padding: 40px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--spartacus-red);
+  box-sizing: border-box;
+}
+
+/* Fix testimonial section spacing */
+.testimonial {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-left: 4px solid var(--spartacus-yellow);
+  box-sizing: border-box;
+}
+
+/* Fix spacing for the committee content and descriptions */
+.committee-content {
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+/* Make sure all committee sections use the correct width */
+.committee-section, .board-section, .volunteer-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Media queries to ensure proper spacing on different devices */
+@media (max-width: 992px) {
+  main .container {
+    padding: 0 25px;
+  }
+  
+  .committee-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .volunteer-section {
+    padding: 35px;
+    max-width: calc(100% - 50px);
+  }
+}
+
+@media (max-width: 768px) {
+  main .container {
+    padding: 0 20px;
+  }
+  
+  .committee-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .board-members {
+    gap: 30px;
+  }
+  
+  .volunteer-section {
+    padding: 30px;
+    margin: 50px auto;
+    max-width: calc(100% - 40px);
+  }
+  
+  .testimonial {
+    margin: 50px auto;
+    max-width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 576px) {
+  main .container {
+    padding: 0 15px;
+  }
+  
+  .volunteer-section {
+    padding: 25px;
+    margin: 40px auto;
+    max-width: calc(100% - 30px);
+  }
+  
+  .testimonial {
+    padding: 25px;
+    margin: 40px auto;
+    max-width: calc(100% - 30px);
+  }
+}

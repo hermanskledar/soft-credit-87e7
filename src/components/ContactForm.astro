@@ -1,24 +1,24 @@
 ---
-// ContactForm.astro
+// EnhancedContactForm.astro
+// A more stylish contact form component with built-in form handling
 ---
 
-<section class="section" id="email">
-    <h2 class="section-title">SEND US A MESSAGE</h2>
-    <p class="mb-40">Fill out the form below and we'll get back to you as soon as possible.</p>
+<div class="contact-form-container">
+    <h2>SEND US A MESSAGE</h2>
     
     <form id="contactForm" class="contact-form" method="POST">
         <div class="form-group">
-            <label for="name">NAME *</label>
+            <label for="name" class="form-label">NAME *</label>
             <input type="text" id="name" name="name" class="form-control" required>
         </div>
         
         <div class="form-group">
-            <label for="email">EMAIL *</label>
+            <label for="email" class="form-label">EMAIL *</label>
             <input type="email" id="email" name="email" class="form-control" required>
         </div>
         
         <div class="form-group">
-            <label for="subject">SUBJECT *</label>
+            <label for="subject" class="form-label">SUBJECT *</label>
             <select id="subject" name="subject" class="form-control" required>
                 <option value="">Select a subject</option>
                 <option value="general">General Inquiry</option>
@@ -33,138 +33,54 @@
         </div>
         
         <div class="form-group">
-            <label for="message">MESSAGE *</label>
+            <label for="message" class="form-label">MESSAGE *</label>
             <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
         </div>
         
-        <button type="submit" class="btn">SEND MESSAGE</button>
+        <button type="submit" class="form-submit-btn">SEND MESSAGE</button>
         <div id="formStatus"></div>
     </form>
-</section>
+</div>
 
 <script>
     // Client-side form handling
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formStatus = document.getElementById('formStatus');
-        formStatus.textContent = 'Sending message...';
-        formStatus.style.color = '#ba131a'; // Spartacus red
-        
-        const formData = new FormData(e.target);
-        const formObject = Object.fromEntries(formData.entries());
-        
-        try {
-            // Update this URL to your Cloudflare Worker URL
-            const response = await fetch('https://contact-form-handler.tskvspartacus.workers.dev', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formObject),
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            const result = await response.json();
+            const formStatus = document.getElementById('formStatus');
+            formStatus.className = '';
+            formStatus.textContent = 'Sending message...';
+            formStatus.style.display = 'block';
             
-            if (response.ok) {
-                formStatus.textContent = 'Message sent successfully!';
-                formStatus.style.color = 'green';
-                document.getElementById('contactForm').reset();
-            } else {
-                formStatus.textContent = result.message || 'There was an error sending your message. Please try again.';
-                formStatus.style.color = '#ba131a';
+            const formData = new FormData(e.target);
+            const formObject = Object.fromEntries(formData.entries());
+            
+            try {
+                // Update this URL to your Cloudflare Worker URL
+                const response = await fetch('https://contact-form-handler.tskvspartacus.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObject),
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+                    formStatus.className = 'success';
+                    document.getElementById('contactForm').reset();
+                } else {
+                    formStatus.textContent = result.message || 'There was an error sending your message. Please try again.';
+                    formStatus.className = 'error';
+                }
+            } catch (error) {
+                formStatus.textContent = 'There was an error sending your message. Please try again.';
+                formStatus.className = 'error';
+                console.error('Error:', error);
             }
-        } catch (error) {
-            formStatus.textContent = 'There was an error sending your message. Please try again.';
-            formStatus.style.color = '#ba131a';
-            console.error('Error:', error);
-        }
+        });
     });
 </script>
-
-<style>
-    .contact-form {
-        width: 100%;
-        max-width: 600px;
-        background-color: white;
-        padding: 30px;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-left: none;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-control {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 14px;
-    }
-
-    .form-control:focus {
-        border-color: #ba131a;
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(186, 19, 26, 0.2);
-    }
-
-    textarea.form-control {
-        min-height: 150px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-        font-size: 14px;
-        font-family: 'Bebas Neue', sans-serif;
-        color: #37001b;
-    }
-
-    .btn {
-        background-color: #ba131a;
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 4px;
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 16px;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-        background-color: #37001b;
-    }
-
-    #formStatus {
-        margin-top: 15px;
-        text-align: center;
-        font-weight: bold;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .section-title {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 26px;
-        color: #37001b;
-        margin-bottom: 20px;
-        position: relative;
-        padding-bottom: 10px;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 3px;
-        background-color: #ba131a;
-        bottom: 0;
-        left: 0;
-    }
-</style>

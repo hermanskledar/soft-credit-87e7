@@ -158,6 +158,27 @@
     .mobile-menu-toggle {
         display: block;
     }
+
+    .mobile-join-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-join-button {
+        background: var(--clr-secondary);
+        color: var(--clr-dark);
+        font-family: var(--font-primary);
+        font-weight: 500;
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        display: inline-block;
+        transition: background var(--transition);
+    }
+
+    .mobile-join-button:hover {
+        background: #d4b54e; /* Slightly darker yellow */
+    }
 }
 
 @media (max-width: 480px) {

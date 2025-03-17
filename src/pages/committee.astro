@@ -2,25 +2,22 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ContactForm from '../components/ContactForm.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import '../styles/pages/committee.css';
-import BoardOfDirectors from '../components/BoardOfDirectors.astro';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <BaseHead />
+    <BaseHead title="Our Committees | T.S.K.V. Spartacus" description="Meet the dedicated committees and board members who lead T.S.K.V. Spartacus, the largest student strength sports association in the Benelux." />
 </head>
 
 <body>
     <!-- Header -->
     <Header />
 
-
-   <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>OUR COMMITTEES</h1>
@@ -29,14 +26,48 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
     </section>
 
     <!-- Main Content -->
-        <main>
-                <!-- Board Section -->
-                <BoardOfDirectors />
+    <main>
+        <div class="committee-container">
+            <!-- Board Section -->
+            <section class="section board-section">
+                <h2 class="section-title">BOARD OF DIRECTORS</h2>
+                <p class="section-description">T.S.K.V. Spartacus is entirely student-led, with a dedicated board and volunteers who work tirelessly to create the best experience for our members. Our 2024-2025 board leads all association activities and ensures that Spartacus continues to grow.</p>
+                
+                <div class="board-members">
+                    <div class="board-member">
+                        <img src="/images/Board_1.png" alt="Merel van Buren - Chair">
+                        <h3 class="board-member-name">Merel van Buren</h3>
+                        <p class="board-member-role">Chair</p>
+                        <p class="board-member-email"><a href="mailto:Voorzitter@tskvspartacus.nl">Voorzitter@tskvspartacus.nl</a></p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="/images/Board_2.png" alt="Jelle Smits - Vice Chair">
+                        <h3 class="board-member-name">Jelle Smits</h3>
+                        <p class="board-member-role">Vice Chair</p>
+                        <p class="board-member-email"><a href="mailto:Vicevoorzitter@tskvspartacus.nl">Vicevoorzitter@tskvspartacus.nl</a></p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="/images/Board_3.png" alt="Herman Skledar - Treasurer">
+                        <h3 class="board-member-name">Herman Skledar</h3>
+                        <p class="board-member-role">Treasurer</p>
+                        <p class="board-member-email"><a href="mailto:Penningmeester@tskvspartacus.nl">Penningmeester@tskvspartacus.nl</a></p>
+                    </div>
+                    
+                    <div class="board-member">
+                        <img src="/images/Board_4.png" alt="Sam Aras - Secretary">
+                        <h3 class="board-member-name">Sam Aras</h3>
+                        <p class="board-member-role">Secretary</p>
+                        <p class="board-member-email"><a href="mailto:Secretaris@tskvspartacus.nl">Secretaris@tskvspartacus.nl</a></p>
+                    </div>
+                </div>
+            </section>
 
             <!-- Committees Section -->
             <section class="section">
                 <h2 class="section-title">OUR COMMITTEES</h2>
-                <p>T.S.K.V. Spartacus operates through several specialized committees that focus on different aspects of our association. These committees are made up of dedicated volunteers who contribute their time and talents to enhance the Spartacus experience for all members.</p>
+                <p class="section-description">T.S.K.V. Spartacus operates through specialized committees that focus on different aspects of our association. These committees are made up of dedicated volunteers who contribute their time and talents to enhance the Spartacus experience for all members.</p>
                 
                 <div class="committee-grid">
                     <!-- Powerlifting Committee -->
@@ -45,17 +76,21 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             <div class="committee-icon">
                                 <i class="fas fa-trophy"></i>
                             </div>
+                            <div class="committee-title-wrapper">
+                                <h3 class="committee-title">POWERLIFTING COMMITTEE</h3>
+                                <p class="committee-head">Led by: Matthijs Weltens</p>
+                            </div>
                         </div>
                         <div class="committee-content">
-                            <h3 class="committee-title">POWERLIFTING COMMITTEE</h3>
-                            <p class="committee-description">The Powerlifting Committee is responsible for organizing and executing all internal and external competitions and coordinating participation in external events. They handle everything from registration and equipment setup to judging and result recording.</p>
+                            <p class="committee-description">The Powerlifting Committee is responsible for organizing and executing all internal and external competitions, as well as coordinating participation in external events. They handle everything from registration and equipment setup to judging and result recording.</p>
                             
-                            <div class="committee-members">
-                                <p class="committee-head">Committee Head: Matthijs Weltens</p>
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>5-7 active members</li>
-                                    <li>Meets every few months, more frequently before competitions</li>
+                                    <li>Meets bi-monthly, more frequently before competitions</li>
                                     <li>Technical knowledge of powerlifting preferred</li>
+                                    <li>Opportunity to network with KNKF officials</li>
                                 </ul>
                             </div>
                             
@@ -71,17 +106,21 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             <div class="committee-icon">
                                 <i class="fas fa-calendar-alt"></i>
                             </div>
+                            <div class="committee-title-wrapper">
+                                <h3 class="committee-title">ACTIVITIES COMMITTEE</h3>
+                                <p class="committee-head">Led by: Charlotte de Jong</p>
+                            </div>
                         </div>
                         <div class="committee-content">
-                            <h3 class="committee-title">ACTIVITIES COMMITTEE</h3>
                             <p class="committee-description">The Activities Committee plans and coordinates social gatherings, workshops, seminars, and other non-competition events. They focus on creating opportunities for members to connect, learn, and have fun outside of regular training.</p>
                             
-                            <div class="committee-members">
-                                <p class="committee-head">Committee Head: Charlotte de Jong</p>
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>4-6 active members</li>
-                                    <li>Meets every few months</li>
+                                    <li>Meets monthly</li>
                                     <li>Creativity and organizational skills valued</li>
+                                    <li>Great for those who enjoy event planning</li>
                                 </ul>
                             </div>
                             
@@ -97,17 +136,21 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             <div class="committee-icon">
                                 <i class="fas fa-camera"></i>
                             </div>
+                            <div class="committee-title-wrapper">
+                                <h3 class="committee-title">MEDIA COMMITTEE</h3>
+                                <p class="committee-head">Led by: Sam Aras</p>
+                            </div>
                         </div>
                         <div class="committee-content">
-                            <h3 class="committee-title">MEDIA COMMITTEE</h3>
                             <p class="committee-description">The Media Committee handles all aspects of the association's visual presence, including photography, videography, social media content creation, and website maintenance. They document events and create engaging content to showcase Spartacus activities.</p>
                             
-                            <div class="committee-members">
-                                <p class="committee-head">Committee Head: Sam Aras</p>
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>3-5 active members</li>
-                                    <li>Meets every few months, plus event coverage</li>
+                                    <li>Meets monthly, plus event coverage</li>
                                     <li>Photography, videography, or social media experience helpful</li>
+                                    <li>Perfect for creatively minded members</li>
                                 </ul>
                             </div>
                             
@@ -117,24 +160,27 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                         </div>
                     </div>
                                                                     
-                    
                     <!-- Merchandise Committee -->
                     <div class="committee-card">
                         <div class="committee-header">
                             <div class="committee-icon">
                                 <i class="fas fa-tshirt"></i>
                             </div>
+                            <div class="committee-title-wrapper">
+                                <h3 class="committee-title">MERCHANDISE COMMITTEE</h3>
+                                <p class="committee-head">Led by: Elle Vanderbilt</p>
+                            </div>
                         </div>
                         <div class="committee-content">
-                            <h3 class="committee-title">MERCHANDISE COMMITTEE</h3>
-                            <p class="committee-description">The Merchandise Committee handles all aspects of Spartacus branded products. They designs new merch.</p>
+                            <p class="committee-description">The Merchandise Committee handles all aspects of Spartacus branded products. They design, source, and manage the distribution of clothing, accessories, and other merchandise that showcases our brand and creates a sense of community among members.</p>
                             
-                            <div class="committee-members">
-                                <p class="committee-head">Committee Head: Elle?</p>
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>2-4 active members</li>
-                                    <li>Meets Yearly</li>
+                                    <li>Meets quarterly</li>
                                     <li>Design skills and organizational abilities valuable</li>
+                                    <li>Interest in fashion and branding appreciated</li>
                                 </ul>
                             </div>
                             
@@ -150,18 +196,21 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             <div class="committee-icon">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
+                            <div class="committee-title-wrapper">
+                                <h3 class="committee-title">AUDIT COMMITTEE</h3>
+                                <p class="committee-head">Led by: Tim van den Berg</p>
+                            </div>
                         </div>
                         <div class="committee-content">
-                            <h3 class="committee-title">AUDIT COMMITTEE</h3>
                             <p class="committee-description">The Audit Committee serves as an independent body that reviews the association's financial records, ensuring transparency and accountability. They verify that all financial transactions are properly documented and that the association's resources are being used appropriately.</p>
                             
-                            <div class="committee-members">
-                                <p class="committee-head">Committee Head: Tim van den Berg</p>
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>2-4 active members</li>
                                     <li>Meets quarterly and before General Members Meeting</li>
                                     <li>Financial knowledge or accounting background preferred</li>
-                                    <li>Also consists of previous treasures</li>
+                                    <li>Includes previous treasurers for institutional knowledge</li>
                                 </ul>
                             </div>
                             
@@ -177,17 +226,21 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             <div class="committee-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
+                            <div class="committee-title-wrapper">
+                                <h3 class="committee-title">TECH COMMITTEE</h3>
+                                <p class="committee-head">Led by: Chris Jansen</p>
+                            </div>
                         </div>
                         <div class="committee-content">
-                            <h3 class="committee-title">TECH COMMITTEE</h3>
                             <p class="committee-description">The Tech Committee manages all technological aspects of T.S.K.V. Spartacus. They maintain the website, develop and manage digital tools for membership administration, competition management, and provide technical support to other committees.</p>
                             
-                            <div class="committee-members">
-                                <p class="committee-head">Committee Head: Chris Jansen</p>
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>3-5 active members</li>
                                     <li>Meets biweekly</li>
                                     <li>Programming, web development, or IT skills required</li>
+                                    <li>Opportunity to develop real-world technical solutions</li>
                                 </ul>
                             </div>
                             
@@ -198,37 +251,41 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                     </div>    
 
                     <!-- Advisory Board Committee Card -->
-                        <div class="committee-card">
-                            <div class="committee-header">
-                                <div class="committee-icon">
-                                    <i class="fas fa-users-cog"></i>
-                                </div>
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-users-cog"></i>
                             </div>
-                            <div class="committee-content">
+                            <div class="committee-title-wrapper">
                                 <h3 class="committee-title">ADVISORY BOARD</h3>
-                                <p class="committee-description">The Advisory Board consists of former board members who provide guidance, institutional knowledge, and continuity to the current Board of Directors. They offer valuable perspective and help maintain Spartacus traditions while supporting innovation.</p>
-                                
-                                <div class="committee-members">
-                                    <p class="committee-head">Board Coordinator: Ezra (Former President)</p>
-                                    <ul class="committee-list">
-                                        <li> 2-4 former board members</li>
-                                        <li>Meets quarterly with current Board</li>
-                                        <li>Previous leadership experience in the association required</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="committee-join">
-                                    <a href="#advisory-board-section" class="btn">VIEW DETAILS</a>
-                                </div>
+                                <p class="committee-head">Coordinated by: Ezra Janssen</p>
                             </div>
                         </div>
+                        <div class="committee-content">
+                            <p class="committee-description">The Advisory Board consists of former board members who provide guidance, institutional knowledge, and continuity to the current Board of Directors. They offer valuable perspective and help maintain Spartacus traditions while supporting innovation.</p>
+                            
+                            <div class="committee-details">
+                                <h4>Committee Details</h4>
+                                <ul class="committee-list">
+                                    <li>2-4 former board members</li>
+                                    <li>Meets quarterly with current Board</li>
+                                    <li>Previous leadership experience in the association required</li>
+                                    <li>Provides mentorship to new board members</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="committee-join">
+                                <a href="#volunteer-section" class="btn">LEARN MORE</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Volunteer Section -->
             <section id="volunteer-section" class="volunteer-section">
                 <h2 class="section-title">GET INVOLVED</h2>
-                <p>Volunteering with T.S.K.V. Spartacus is a rewarding way to contribute to our community, develop new skills, and make lasting connections. We welcome members of all experience levels to join our committees and help shape the future of our association.</p>
+                <p class="section-description">Volunteering with T.S.K.V. Spartacus is a rewarding way to contribute to our community, develop new skills, and make lasting connections. We welcome members of all experience levels to join our committees and help shape the future of our association.</p>
                 
                 <div class="join-steps">
                     <div class="step">
@@ -256,27 +313,55 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="/contact" class="btn">EXPRESS INTEREST</a>
+                <div class="volunteer-cta">
+                    <a href="/contact" class="btn">EXPRESS YOUR INTEREST</a>
                 </div>
             </section>
 
             <!-- Testimonial -->
             <div class="testimonial">
                 <div class="testimonial-content">
-                    <p>Joining the Competition Committee was one of the most fun decisions I made at Spartacus. It was super cool to see how I together with friends organised huge competitions such as the National Championships 2024 and the West-Regional Championship for 2025!</p>
-                    <p class="testimonial-author">— Herman Skledar, Competition Committee Member (2024-Present)</p>
+                    <p>"Joining the Competition Committee was one of the best decisions I made at Spartacus. It was incredibly rewarding to work with friends to organize major events like the National Championships 2024 and the West-Regional Championship for 2025. Not only did I gain valuable organizational skills, but I also made lasting connections within the strength sports community that extend far beyond university."</p>
+                    <p class="testimonial-author">— Herman Skledar, Competition Committee Member (2023-2025)</p>
                 </div>
             </div>
         </div>
     </main>
 
-
-
-
     <!-- Footer -->
-<Footer />
+    <Footer />
 
-<script is:inline src="/script.js"></script>
-</body>
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effects for committee cards
+        document.querySelectorAll('.committee-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.committee-icon').classList.add('animated');
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.committee-icon').classList.remove('animated');
+            });
+        });
+    </script>
+    </body>
 </html>

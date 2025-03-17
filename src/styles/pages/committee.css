@@ -1,199 +1,131 @@
-/* Committee Page Specific Styles - Optimized with Better Spacing */
+/* Rewritten Committee Page Styles */
 
-/* Page structure spacing */
-main {
-  padding: 60px 0;
-}
-
-.container {
+/* Main container styles */
+.committee-container {
   max-width: 1140px;
-  padding: 0 30px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
-.section {
-  margin-bottom: 60px;
-  padding: 0 15px;
-}
-
-/* Committee Grid */
-.committee-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
-}
-
-.committee-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  border-bottom: 3px solid transparent;
-  margin-bottom: 20px;
-}
-
-.committee-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  border-bottom: 3px solid var(--spartacus-red);
-}
-
-.committee-header {
-  height: 160px;
-  background-color: #f8f8f8;
+/* Hero section specific styles */
+.hero {
+  min-height: 40vh;
+  background-image: url('/images/committee-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
   position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.committee-icon {
-  font-size: 60px;
-  color: var(--spartacus-red);
-  position: relative;
-  z-index: 2;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.committee-card:hover .committee-icon {
-  transform: scale(1.1);
-  color: var(--spartacus-burgundy);
-}
-
-.committee-content {
-  padding: 25px;
-}
-
-.committee-title {
-  font-size: 20px;
-  margin-bottom: 15px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 8px;
-}
-
-.committee-title::after {
+.hero::before {
   content: '';
   position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: var(--spartacus-red);
-  bottom: 0;
+  top: 0;
   left: 0;
-  transition: width 0.3s ease;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(55, 0, 27, 0.85) 0%, rgba(186, 19, 26, 0.75) 100%);
+  z-index: 1;
 }
 
-.committee-card:hover .committee-title::after {
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section styling */
+.section {
+  margin-bottom: 70px;
   width: 100%;
 }
 
-.committee-description {
-  margin-bottom: 20px;
-  color: #555;
-  line-height: 1.6;
+.section-title {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
 }
 
-.committee-members {
-  margin-top: 15px;
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: rgba(231, 197, 94, 0.1);
-  border-radius: 5px;
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--spartacus-red);
+  transition: width 0.3s ease;
 }
 
-.committee-head {
-  font-weight: bold;
-  color: var(--spartacus-burgundy);
-  margin-bottom: 10px;
+.section:hover .section-title::after {
+  width: 80px;
 }
 
-.committee-list {
-  margin-top: 10px;
-  padding-left: 20px;
+.section-description {
+  max-width: 800px;
+  margin-bottom: 40px;
+  line-height: 1.8;
 }
 
-.committee-list li {
-  margin-bottom: 8px;
-  line-height: 1.4;
-  transition: transform 0.2s ease;
-}
-
-.committee-list li:hover {
-  transform: translateX(5px);
-}
-
-.committee-join {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Board Section */
+/* Board section */
 .board-section {
-  margin-bottom: 60px;
-  padding: 0 15px;
+  margin-bottom: 80px;
 }
 
 .board-members {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  gap: 30px;
+  margin: 40px 0;
 }
 
 .board-member {
   width: 220px;
   text-align: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: white;
   border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 3px solid var(--spartacus-burgundy);
 }
 
 .board-member:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  border-top-color: var(--spartacus-red);
 }
 
 .board-member img {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--spartacus-red);
-  margin-bottom: 15px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
 }
 
 .board-member:hover img {
-  box-shadow: 0 5px 15px rgba(186, 19, 26, 0.3);
-  border-color: var(--spartacus-yellow);
   transform: scale(1.05);
 }
 
 .board-member-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px;
-  color: var(--spartacus-burgundy);
   margin-bottom: 5px;
+  font-size: 20px;
   position: relative;
   display: inline-block;
+  padding-bottom: 8px;
 }
 
 .board-member-name::after {
   content: '';
   position: absolute;
-  bottom: -3px;
+  bottom: 0;
   left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
   background-color: var(--spartacus-red);
-  transform: translateX(-50%);
   transition: width 0.3s ease;
 }
 
@@ -202,376 +134,355 @@ main {
 }
 
 .board-member-role {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
-  color: #555;
-}
-
-.board-member-email {
-  font-size: 14px;
-  color: #555;
+  color: var(--spartacus-burgundy);
 }
 
 .board-member-email a {
   color: var(--spartacus-red);
   text-decoration: none;
   transition: color 0.3s ease;
-  position: relative;
-  padding-bottom: 2px;
-}
-
-.board-member-email a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--spartacus-burgundy);
-  transition: width 0.3s ease;
+  font-size: 14px;
 }
 
 .board-member-email a:hover {
   color: var(--spartacus-burgundy);
 }
 
-.board-member-email a:hover::after {
-  width: 100%;
+/* Committee grid */
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
 }
 
-/* Volunteer Section */
-.volunteer-section {
-  background-color: #f8f8f8;
-  padding: 40px;
+.committee-card {
+  background-color: white;
   border-radius: 8px;
-  margin: 60px 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 3px solid transparent;
+}
+
+.committee-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  border-top-color: var(--spartacus-red);
+}
+
+.committee-header {
+  padding: 30px;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.committee-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--spartacus-red);
+  color: white;
+  border-radius: 50%;
+  font-size: 26px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.committee-card:hover .committee-icon {
+  transform: scale(1.1) rotate(10deg);
+  background-color: var(--spartacus-burgundy);
+}
+
+.committee-title-wrapper {
+  flex-grow: 1;
+}
+
+.committee-title {
+  font-size: 20px;
+  color: var(--spartacus-burgundy);
+  margin-bottom: 5px;
+}
+
+.committee-head {
+  font-size: 14px;
+  color: #666;
+}
+
+.committee-content {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.committee-description {
+  margin-bottom: 25px;
+  line-height: 1.7;
+  color: #444;
+  flex-grow: 1;
+}
+
+.committee-details {
+  background-color: rgba(231, 197, 94, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.committee-details h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--spartacus-burgundy);
+}
+
+.committee-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.committee-list li {
+  padding: 5px 0 5px 25px;
+  position: relative;
+  font-size: 14px;
+}
+
+.committee-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--spartacus-red);
+}
+
+.committee-join {
+  text-align: center;
+  margin-top: auto;
+}
+
+.committee-join .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--spartacus-red);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.committee-join .btn:hover {
+  background-color: var(--spartacus-burgundy);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Volunteer section */
+.volunteer-section {
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 60px 0;
+  position: relative;
   border-left: 4px solid var(--spartacus-red);
+  overflow: hidden;
+}
+
+.volunteer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(186, 19, 26, 0.05);
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  z-index: 0;
+}
+
+.volunteer-section h2 {
+  position: relative;
+  z-index: 1;
 }
 
 .join-steps {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 30px;
+  gap: 30px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .step {
-  flex-basis: 22%;
+  flex: 1;
   min-width: 200px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
   text-align: center;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease;
-  padding: 0 10px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .step:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .step-number {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: var(--spartacus-red);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0 auto 15px;
-  box-shadow: 0 4px 8px rgba(186, 19, 26, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.step:hover .step-number {
-  transform: scale(1.1);
-  background-color: var(--spartacus-burgundy);
+.step h3 {
+  margin-bottom: 10px;
+  color: var(--spartacus-burgundy);
+}
+
+.step p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.volunteer-cta {
+  text-align: center;
+  margin-top: 40px;
 }
 
 /* Testimonial */
 .testimonial {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  position: relative;
   max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
   border-left: 4px solid var(--spartacus-yellow);
 }
 
 .testimonial::before {
-  content: """;
+  content: '"';
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 20px;
   font-size: 80px;
   color: rgba(186, 19, 26, 0.1);
   font-family: serif;
 }
 
 .testimonial-content {
-  padding-left: 25px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-content p {
+  font-style: italic;
   line-height: 1.8;
+  margin-bottom: 15px;
 }
 
 .testimonial-author {
   text-align: right;
-  margin-top: 15px;
-  font-style: normal;
-  font-weight: bold;
-  color: #555;
+  font-weight: 600;
+  color: var(--spartacus-burgundy);
 }
 
-/* Media Queries */
+/* Media queries */
 @media (max-width: 992px) {
   .committee-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .volunteer-section {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .committee-container {
+    padding: 0 20px;
+  }
+  
+  .board-members {
+    gap: 20px;
+  }
+  
+  .committee-grid {
+    grid-template-columns: 1fr;
   }
   
   .join-steps {
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
-  }
-  
-  .step {
-    flex-basis: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
-  }
-  
-  .committee-grid {
-    grid-template-columns: 1fr;
-    margin: 30px 0;
-  }
-  
-  .board-members {
-    gap: 20px;
-  }
-  
-  .board-member {
-    width: 45%;
-    min-width: 150px;
-  }
-  
-  .board-member img {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .step {
-    flex-basis: 100%;
-  }
-  
-  .volunteer-section {
-    padding: 30px 20px;
-    margin: 40px 10px;
-  }
-  
-  .testimonial {
-    margin: 30px 15px;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    padding: 0 15px;
-  }
-  
-  .section, .board-section {
-    padding: 0 10px;
-  }
-  
-  .board-member {
-    width: 100%;
-    max-width: 220px;
-  }
-  
-  .board-member img {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .testimonial {
-    padding: 20px 15px;
-    margin: 30px 10px;
-  }
-  
-  .testimonial::before {
-    font-size: 60px;
-  }
-  
-  .volunteer-section {
-    padding: 25px 15px;
-    margin: 40px 5px;
-  }
-}
-
-/* Fixed Committee Page CSS - Addressing Spacing Issues */
-
-/* Reset container styles to fix spacing issues */
-main .container {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 30px;
-  box-sizing: border-box;
-}
-
-/* Reset section styles */
-.section {
-  margin-bottom: 70px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Fix the committee grid spacing */
-.committee-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Ensure committee cards fill the right amount of space */
-.committee-card {
-  width: 100%;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-bottom: 3px solid transparent;
-  margin-bottom: 0; /* Remove any bottom margin that might cause spacing issues */
-  box-sizing: border-box;
-}
-
-.committee-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  border-bottom: 3px solid var(--spartacus-red);
-}
-
-/* Fix board section spacing */
-.board-section {
-  width: 100%;
-  margin-bottom: 70px;
-  box-sizing: border-box;
-}
-
-/* Ensure board members are properly centered */
-.board-members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin: 40px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Fix volunteer section spacing */
-.volunteer-section {
-  width: 100%;
-  max-width: 1080px; /* Slightly smaller than container to create visual difference */
-  margin: 70px auto;
-  padding: 40px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid var(--spartacus-red);
-  box-sizing: border-box;
-}
-
-/* Fix testimonial section spacing */
-.testimonial {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  border-left: 4px solid var(--spartacus-yellow);
-  box-sizing: border-box;
-}
-
-/* Fix spacing for the committee content and descriptions */
-.committee-content {
-  padding: 25px;
-  box-sizing: border-box;
-}
-
-/* Make sure all committee sections use the correct width */
-.committee-section, .board-section, .volunteer-section {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Media queries to ensure proper spacing on different devices */
-@media (max-width: 992px) {
-  main .container {
-    padding: 0 25px;
-  }
-  
-  .committee-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-  }
-  
-  .volunteer-section {
-    padding: 35px;
-    max-width: calc(100% - 50px);
-  }
-}
-
-@media (max-width: 768px) {
-  main .container {
-    padding: 0 20px;
-  }
-  
-  .committee-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .board-members {
-    gap: 30px;
   }
   
   .volunteer-section {
     padding: 30px;
-    margin: 50px auto;
-    max-width: calc(100% - 40px);
   }
   
   .testimonial {
-    margin: 50px auto;
-    max-width: calc(100% - 40px);
+    padding: 30px;
   }
 }
 
 @media (max-width: 576px) {
-  main .container {
+  .committee-container {
     padding: 0 15px;
   }
   
+  .board-member {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .committee-header {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .committee-title-wrapper {
+    text-align: center;
+  }
+  
   .volunteer-section {
-    padding: 25px;
-    margin: 40px auto;
-    max-width: calc(100% - 30px);
+    padding: 25px 20px;
   }
   
   .testimonial {
-    padding: 25px;
-    margin: 40px auto;
-    max-width: calc(100% - 30px);
+    padding: 25px 20px;
+  }
+  
+  .testimonial::before {
+    font-size: 60px;
+    top: 5px;
+    left: 10px;
   }
 }

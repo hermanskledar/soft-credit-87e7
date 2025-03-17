@@ -180,6 +180,7 @@
     .mobile-join-link {
         width: 100%;
         text-align: center;
+        display: block !important; /* Ensure it's visible */
     }
 
     .mobile-join-button {
@@ -190,8 +191,10 @@
         font-size: 1.1rem;
         padding: 0.75rem 1.5rem;
         border-radius: 4px;
-        display: inline-block;
+        display: inline-block !important; /* Ensure it's visible */
         transition: background var(--transition);
+        width: auto; /* Allow button to size to content */
+        margin: 1rem 0; /* Add some margin for spacing */
     }
 
     .mobile-join-button:hover {

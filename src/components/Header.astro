@@ -1,7 +1,3 @@
----
-import '../styles/Components/header.css';
----
-
 <header class="spartacus-header" role="banner">
     <div class="header-container">
         <a href="/" class="logo" aria-label="Spartacus Home">
@@ -13,12 +9,11 @@ import '../styles/Components/header.css';
             >
             <span class="logo-text">Spartacus</span>
         </a>
-
         <nav class="main-navigation" role="navigation" aria-label="Main navigation">
             <ul class="nav-menu">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/strenghtsports" class="nav-link">Strenghtsports</a></li>
+                <li><a href="/strengthsports" class="nav-link">Strengthsports</a></li>
                 <li><a href="/become-a-member" class="nav-link">Membership</a></li>
                 <li><a href="/committee" class="nav-link">Committees</a></li>
                 <li><a href="https://merch.tskvspartacus.nl/" target="_blank" rel="noopener noreferrer" class="nav-link">Webshop</a></li>
@@ -28,23 +23,34 @@ import '../styles/Components/header.css';
                 </li>
             </ul>
         </nav>
-
         <button 
             class="mobile-menu-toggle" 
             aria-label="Toggle mobile menu" 
             aria-expanded="false"
             aria-controls="main-navigation"
         >
-            <span class="hamburger-icon" aria-hidden="true"></span>
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                class="hamburger-icon"
+            >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
         </button>
     </div>
 </header>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navigation = document.querySelector('.main-navigation');
-
         mobileMenuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             const isActive = navigation.classList.toggle('active');
@@ -52,7 +58,6 @@ import '../styles/Components/header.css';
             mobileMenuToggle.setAttribute('aria-expanded', isActive);
             document.body.style.overflow = isActive ? 'hidden' : 'auto';
         });
-
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.main-navigation') && !e.target.closest('.mobile-menu-toggle')) {
                 navigation.classList.remove('active');

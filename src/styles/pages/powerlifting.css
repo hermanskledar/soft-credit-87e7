@@ -1,0 +1,259 @@
+/* Hero Section - Powerlifting specific */
+.hero { 
+  position: relative; 
+  color: white; 
+  padding: 80px 0; 
+  overflow: hidden; 
+  min-height: 80vh; 
+  display: flex; 
+  align-items: center; 
+  background-color: var(--spartacus-burgundy); 
+}
+
+.background-overlay { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: linear-gradient(135deg, rgba(55, 0, 27, 0.95) 0%, rgba(186, 19, 26, 0.8) 100%); 
+  z-index: 1; 
+}
+
+.hero-container { 
+  position: relative; 
+  z-index: 2; 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 40px; 
+}
+
+.hero-content { 
+  flex: 1; 
+  min-width: 300px; 
+  background-color: rgba(55, 0, 27, 0.7); 
+  padding: 40px; 
+  border-radius: 8px; 
+  backdrop-filter: blur(5px); 
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3); 
+  border: 1px solid rgba(231, 197, 94, 0.3); 
+}
+
+.hero h1 { 
+  font-family: 'Bebas Neue', sans-serif; 
+  font-weight: bold; 
+  font-size: 40px; 
+  margin-bottom: 20px; 
+  color: #fff; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+}
+
+.hero h2 { 
+  font-family: 'Bebas Neue', sans-serif; 
+  font-weight: bold; 
+  font-size: 20px; 
+  margin-bottom: 30px; 
+  color: var(--spartacus-yellow); 
+  letter-spacing: 1px; 
+}
+
+.hero-buttons { 
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+/* About Content */
+.about-content { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 40px; 
+  align-items: center; 
+}
+
+.about-text { 
+  flex: 1; 
+  min-width: 300px; 
+}
+
+.about-image { 
+  flex: 1; 
+  min-width: 300px; 
+}
+
+.about-image img { 
+  width: 100%; 
+  border-radius: 5px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.button-container { 
+  display: flex; 
+  gap: 15px; 
+  margin-top: 20px; 
+}
+
+/* Features Section */
+.features { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  margin-top: 40px; 
+  gap: 20px;
+}
+
+.feature { 
+  flex-basis: calc(33.333% - 20px); 
+  margin-bottom: 40px; 
+  background: white; 
+  padding: 30px; 
+  border-radius: 5px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+  transition: transform 0.3s; 
+}
+
+.feature:hover { 
+  transform: translateY(-10px); 
+}
+
+.feature-icon { 
+  font-size: 40px; 
+  margin-bottom: 20px; 
+  color: var(--spartacus-red); 
+}
+
+.feature h3 { 
+  margin-bottom: 15px; 
+  font-size: 16px; 
+  color: var(--spartacus-burgundy); 
+  letter-spacing: 1px; 
+}
+
+/* Info Boxes */
+.info-box {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.info-box h3 {
+  margin-bottom: 15px;
+}
+
+.info-box p {
+  margin-bottom: 15px;
+}
+
+.info-box ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.info-box li {
+  margin-bottom: 5px;
+}
+
+/* KNKF Registration Section */
+.steps {
+  counter-reset: step-counter;
+  list-style-type: none;
+  margin: 20px 0;
+}
+
+.steps li {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.steps li::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  background-color: var(--spartacus-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.knkf-registration {
+  background-color: rgba(186, 19, 26, 0.05);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.knkf-registration h3 {
+  margin-bottom: 15px;
+}
+
+.knkf-registration p {
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: var(--spartacus-red);
+  font-weight: bold;
+}
+
+/* Responsive styles for powerlifting page */
+@media (max-width: 992px) {
+  .feature {
+    flex-basis: calc(50% - 20px);
+  }
+  
+  .hero-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  .hero h2 {
+    font-size: 16px;
+  }
+  
+  .hero-content {
+    padding: 30px 20px;
+  }
+  
+  .feature {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+  
+  .steps li {
+    padding-left: 40px;
+  }
+
+  .steps li::before {
+    width: 30px;
+    height: 30px;
+  }
+}

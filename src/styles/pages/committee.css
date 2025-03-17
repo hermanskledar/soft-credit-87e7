@@ -1,11 +1,17 @@
 /* Committee Page Specific Styles - Optimized */
 
+/* Container adjustment for committee page */
+.container {
+  max-width: 1140px;
+  padding: 0 30px;
+}
+
 /* Committee Grid */
 .committee-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin: 40px 10px 0;
 }
 
 .committee-card {
@@ -175,8 +181,8 @@
 }
 
 .testimonial::before {
-  content: """;
-  position: absolute;
+  content: "";
+    position: absolute;
   top: 10px;
   left: 10px;
   font-size: 80px;

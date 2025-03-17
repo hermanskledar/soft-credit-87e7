@@ -44,27 +44,60 @@
 .social-links {
   display: flex;
   margin-top: 15px;
-  gap: 10px;
+  gap: 15px;
 }
 
 .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   background-color: var(--spartacus-red);
   color: white;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   text-decoration: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px; /* Increased icon size */
 }
 
 .social-links a:hover {
   background-color: var(--spartacus-burgundy);
-  transform: translateY(-3px) rotate(8deg);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Social media labels for accessibility */
+.social-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--spartacus-burgundy);
+  color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.social-links a:first-child::before {
+  content: 'Facebook';
+}
+
+.social-links a:nth-child(2)::before {
+  content: 'Instagram';
+}
+
+.social-links a:nth-child(3)::before {
+  content: 'LinkedIn';
+}
+
+.social-links a:hover::before {
+  opacity: 1;
 }
 
 /* Contact Form */

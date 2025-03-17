@@ -1,13 +1,14 @@
 /* Enhanced Global CSS for T.S.K.V. Spartacus Website */
 
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap');
+
 /* Base and Typography */
 * { 
   margin: 0; 
   padding: 0; 
   box-sizing: border-box; 
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
   --spartacus-red: #ba131a;

@@ -4,64 +4,36 @@ import '../styles/Components/header.css';
 
 <header class="spartacus-header" role="banner">
     <div class="header-container">
-        <div class="logo-section" data-aos="fade-right">
-            <a href="/" class="logo" aria-label="Spartacus Home">
-                <div class="desktop-logo">
-                    <img 
-                        src="/images/spartacus-logo.png" 
-                        alt="Spartacus Logo" 
-                        class="logo-image" 
-                        loading="eager"
-                    >
-                    <span class="logo-text">T.S.K.V. <span class="highlight">Spartacus</span></span>
-                </div>
-                <div class="mobile-logo">
-                    <img 
-                        src="/images/spartacus-logo.png" 
-                        alt="Spartacus Logo" 
-                        class="mobile-logo-image" 
-                        loading="eager"
-                    >
-                    <span class="mobile-logo-text">Spartacus</span>
-                </div>
-            </a>
-        </div>
+        <a href="/" class="logo" aria-label="Spartacus Home">
+            <img 
+                src="/images/spartacus-logo.png" 
+                alt="Spartacus Logo" 
+                class="logo-image" 
+                loading="eager"
+            >
+            <span class="logo-text">Spartacus</span>
+        </a>
 
         <nav class="main-navigation" role="navigation" aria-label="Main navigation">
             <ul class="nav-menu">
-                <li><a href="/" class="nav-link" data-aos="fade-down" data-aos-delay="100">Home</a></li>
-                <li><a href="/about" class="nav-link" data-aos="fade-down" data-aos-delay="200">About</a></li>
-                <li><a href="/strenghtsports" class="nav-link" data-aos="fade-down" data-aos-delay="300">Strength Sports</a></li>
-                <li><a href="/become-a-member" class="nav-link" data-aos="fade-down" data-aos-delay="400">Membership</a></li>
-                <li><a href="/committee" class="nav-link" data-aos="fade-down" data-aos-delay="500">Committees</a></li>
-                <li>
-                    <a 
-                        href="https://merch.tskvspartacus.nl/" 
-                        target="_blank" 
-                        class="nav-link" 
-                        rel="noopener noreferrer" 
-                        data-aos="fade-down" 
-                        data-aos-delay="600"
-                    >Webshop</a>
-                </li>
-                <li><a href="/contact" class="nav-link" data-aos="fade-down" data-aos-delay="700">Contact</a></li>
-                <li class="mobile-join-link">
-                    <a href="/register" class="nav-link mobile-join-button">Join Spartacus</a>
-                </li>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/strenghtsports" class="nav-link">Strength</a></li>
+                <li><a href="/become-a-member" class="nav-link">Join</a></li>
+                <li><a href="/committee" class="nav-link">Committees</a></li>
+                <li><a href="https://merch.tskvspartacus.nl/" target="_blank" rel="noopener noreferrer" class="nav-link">Shop</a></li>
+                <li><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
 
-        <div class="header-actions" data-aos="fade-left">
-            <a href="/register" class="btn btn-primary desktop-join">Join Spartacus</a>
-            <button 
-                class="mobile-menu-toggle" 
-                aria-label="Toggle mobile menu" 
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >
-                <span class="hamburger-icon" aria-hidden="true"></span>
-            </button>
-        </div>
+        <button 
+            class="mobile-menu-toggle" 
+            aria-label="Toggle mobile menu" 
+            aria-expanded="false"
+            aria-controls="main-navigation"
+        >
+            <span class="hamburger-icon" aria-hidden="true"></span>
+        </button>
     </div>
 </header>
 
@@ -69,40 +41,15 @@ import '../styles/Components/header.css';
     document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navigation = document.querySelector('.main-navigation');
-        const navLinks = document.querySelectorAll('.nav-link');
 
-        // Mobile menu toggle with accessibility
         mobileMenuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             const isActive = navigation.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
             mobileMenuToggle.setAttribute('aria-expanded', isActive);
-            
-            // Prevent body scroll when menu is open
             document.body.style.overflow = isActive ? 'hidden' : 'auto';
         });
 
-        // Smooth scroll and close menu on link click
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.getAttribute('href').startsWith('/')) {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-                    const targetElement = targetId ? document.getElementById(targetId) : null;
-                    
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    
-                    navigation.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-
-        // Close menu on outside click
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.main-navigation') && !e.target.closest('.mobile-menu-toggle')) {
                 navigation.classList.remove('active');
@@ -110,20 +57,6 @@ import '../styles/Components/header.css';
                 mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = 'auto';
             }
-        });
-
-        // Add scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-            const header = document.querySelector('.spartacus-header');
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
-            lastScroll = currentScroll;
         });
     });
 </script>

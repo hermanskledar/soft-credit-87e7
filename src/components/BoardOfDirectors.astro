@@ -1,0 +1,205 @@
+---
+// BoardOfDirectors.astro
+// This component displays the Board of Directors section with members' information.
+
+// Define the interface for board members
+interface BoardMember {
+  name: string;
+  role: string;
+  email: string;
+  image: string;
+}
+
+// Define component props
+interface Props {
+  title?: string;
+  description?: string;
+  boardMembers?: BoardMember[];
+}
+
+// Default props
+const { 
+  title = "BOARD OF DIRECTORS",
+  description = "T.S.K.V. Spartacus is entirely student-led, with a dedicated board and volunteers who work tirelessly to create the best experience for our members.",
+  boardMembers = [
+    {
+      name: "Merel van Buren",
+      role: "Chair",
+      email: "Voorzitter@tskvspartacus.nl",
+      image: "/images/Board_1.png"
+    },
+    {
+      name: "Jelle Smitss",
+      role: "Vice Chair",
+      email: "Vicevoorzitter@tskvspartacus.nl",
+      image: "/images/Board_2.png"
+    },
+    {
+      name: "Herman Skledar",
+      role: "Treasurer",
+      email: "Penningmeester@tskvspartacus.nl",
+      image: "/images/Board_3.png"
+    },
+    {
+      name: "Sam Aras",
+      role: "Secretary",
+      email: "Secretaris@tskvspartacus.nl",
+      image: "/images/Board_4.png"
+    }
+  ]
+} = Astro.props;
+---
+
+<!-- Board Section -->
+<section class="section board-section">
+  <h2 class="section-title">{title}</h2>
+  <p>{description}</p>
+  
+  <div class="board-members">
+    {boardMembers.map((member) => (
+      <div class="board-member">
+        <img src={member.image} alt={`${member.name} - ${member.role}`}>
+        <h3 class="board-member-name">{member.name}</h3>
+        <p class="board-member-role">{member.role}</p>
+        <p class="board-member-email"><a href={`mailto:${member.email}`}>{member.email}</a></p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .board-section {
+    margin-bottom: 60px;
+  }
+
+  .board-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .board-member {
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .board-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+
+  .board-member img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--spartacus-red, #ba131a);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .board-member:hover img {
+    box-shadow: 0 5px 15px rgba(186, 19, 26, 0.3);
+    border-color: var(--spartacus-yellow, #e7c55e);
+    transform: scale(1.05);
+  }
+
+  .board-member-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--spartacus-burgundy, #37001b);
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .board-member-name::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--spartacus-red, #ba131a);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  .board-member:hover .board-member-name::after {
+    width: 50%;
+  }
+
+  .board-member-role {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+
+  .board-member:hover .board-member-role {
+    color: var(--spartacus-burgundy, #37001b);
+  }
+
+  .board-member-email a {
+    color: var(--spartacus-red, #ba131a);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .board-member-email a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--spartacus-burgundy, #37001b);
+    transition: width 0.3s ease;
+  }
+
+  .board-member-email a:hover {
+    color: var(--spartacus-burgundy, #37001b);
+  }
+
+  .board-member-email a:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .board-members {
+      gap: 20px;
+    }
+    
+    .board-member {
+      width: 45%;
+      min-width: 150px;
+    }
+    
+    .board-member img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .board-member {
+      width: 100%;
+      max-width: 220px;
+    }
+    
+    .board-member img {
+      width: 160px;
+      height: 160px;
+    }
+  }
+</style>

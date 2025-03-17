@@ -1,7 +1,6 @@
 ---
 // calendar.astro
 ---
-
 <!-- Calendar Section -->
 <section class="section">
     <div class="container">
@@ -16,18 +15,18 @@
             <!-- Responsive wrapper for the calendar -->
             <div class="calendar-wrapper">
                 <!-- Desktop calendar (hidden on small screens) -->
-                <div class="calendar-desktop">
+                <div class="desktop-only calendar-desktop">
                     <iframe src="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels&bgcolor=%23ffffff&color=%23ba131a&color=%2337001b&color=%23e7c55e" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
                 </div>
                 
                 <!-- Mobile calendar (agenda view, visible only on small screens) -->
-                <div class="calendar-mobile">
+                <div class="mobile-only calendar-mobile">
                     <iframe src="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels&bgcolor=%23ffffff&color=%23ba131a&color=%2337001b&color=%23e7c55e&mode=AGENDA&hl=en" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             
             <!-- Mobile alternate option -->
-            <div class="mobile-calendar-alternative">
+            <div class="mobile-only mobile-calendar-alternative">
                 <h3 class="calendar-subtitle">Calendar not displaying properly?</h3>
                 <p>For the best experience on mobile devices, you can:</p>
                 <a href="https://calendar.google.com/calendar/embed?src=6b350b0422e00092ace0662865d1528635db453bc4ec2ecb9d6d9c0e3356374d%40group.calendar.google.com&ctz=Europe%2FBrussels" class="btn btn-secondary mobile-calendar-btn" target="_blank">Open Calendar in Browser</a>
@@ -39,3 +38,25 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* Responsive styles for calendar */
+    .desktop-only {
+        display: block;
+    }
+    
+    .mobile-only {
+        display: none;
+    }
+    
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+        .desktop-only {
+            display: none;
+        }
+        
+        .mobile-only {
+            display: block;
+        }
+    }
+</style>

@@ -132,9 +132,9 @@
     width: 40px; 
     height: 40px; 
     background-color: var(--spartacus-red); 
-    color: white; 
+    color: white !important; /* Ensure icon color is always white */
     border-radius: 50%; 
-    transition: background-color 0.3s; 
+    transition: all 0.3s ease; 
     text-decoration: none; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -142,6 +142,12 @@
 .social-links a:hover { 
     background-color: var(--spartacus-yellow);
     transform: translateY(-3px);
+}
+
+/* Fix for social icons */
+.social-links a i {
+    color: white !important; /* Force icon color to white */
+    margin-right: 0; /* Reset margins for social icons */
 }
 
 /* Organization details in contact info */

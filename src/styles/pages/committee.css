@@ -291,12 +291,13 @@
 }
 
 /* Volunteer Section */
-.volunteer-section {
+#volunteer-section {
     background-color: white;
     padding: 60px;
     margin: 60px 0;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
 }
 
 .join-steps {
@@ -375,6 +376,7 @@
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
+    position: relative;
 }
 
 .testimonial-content p {
@@ -401,6 +403,7 @@
     justify-content: space-between;
     padding: 0 20px;
     pointer-events: none;
+    z-index: 2;
 }
 
 .carousel-btn {

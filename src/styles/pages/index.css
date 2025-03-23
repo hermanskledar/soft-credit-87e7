@@ -262,9 +262,21 @@
   transition: transform 0.3s ease;
 }
 
-.about-image img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* Additional media queries for the about section images */
+@media (max-width: 768px) {
+  .about-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .about-image img:last-child {
+    display: none; /* Hide the second image on mobile */
+  }
 }
 
 /* Media Queries */

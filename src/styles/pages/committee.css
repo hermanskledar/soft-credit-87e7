@@ -350,9 +350,18 @@
 
 /* Testimonials Section */
 .testimonials-section {
-    margin: 80px auto;
-    max-width: 1400px;
-    padding: 0 30px;
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    margin-top: 80px;
+}
+
+.testimonials-section .section-title {
+    text-align: center;
+}
+
+.testimonials-section .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .testimonials-carousel {
@@ -379,6 +388,8 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
     position: relative;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .testimonial-content p {
@@ -406,6 +417,8 @@
     padding: 0 20px;
     pointer-events: none;
     z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .carousel-btn {

@@ -370,6 +370,4 @@
   color: var(--spartacus-burgundy);
 }
 
-.spartacus-link:hover::after {
-  width: 100%;
-  background-color: var(--spartacus
+

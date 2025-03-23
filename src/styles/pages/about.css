@@ -145,7 +145,7 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 
 .history-image-container:hover {
@@ -157,7 +157,7 @@
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.5s ease;
+  /* transition: transform 0.5s ease; */
 }
 
 .history-image-container:hover .history-image {

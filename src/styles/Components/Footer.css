@@ -150,6 +150,13 @@ footer::before {
   color: var(--spartacus-yellow);
 }
 
+.footer-column p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* Responsive Footer */
 @media (max-width: 992px) {
   .footer-column {

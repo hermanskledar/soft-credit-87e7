@@ -182,7 +182,7 @@
       .mobile-join-link {
         width: 100%;
         text-align: center;
-        display: block !important;
+        display: none !important;
       }
 
       .mobile-join-button {

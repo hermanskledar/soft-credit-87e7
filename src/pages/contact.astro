@@ -2,91 +2,223 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ContactForm from '../components/ContactForm.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import '../styles/pages/contact.css';
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <BaseHead />
+    <BaseHead title="Contact Us | T.S.K.V. Spartacus" description="Get in touch with T.S.K.V. Spartacus, the largest student strength sports association in the Benelux. Contact us for inquiries about membership, competitions, or general questions." />
 </head>
 
 <body>
     <!-- Header -->
     <Header />
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>CONTACT US</h1>
+            <h2>GET IN TOUCH WITH T.S.K.V. SPARTACUS</h2>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main>
         <div class="container">
-            <!-- Contact Options -->
-            <section class="section">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">GET IN TOUCH</h2>
-                        <p>Have questions about joining T.S.K.V. Spartacus? Interested in our competitions? Or just want to learn more about our association? We're here to help!</p>
-                        <p>There are several ways to contact us:</p>
-                        
-                        <div style="margin-top: 25px;">
-                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">EMAIL</h3>
-                            <p><i class="fas fa-envelope spartacus-red"></i> <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a></p>
+            <div class="contact-section">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>GET IN TOUCH</h2>
+                    <div class="contact-method">
+                        <h3>EMAIL</h3>
+                        <p><i class="fas fa-envelope spartacus-red"></i> <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a></p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>LOCATION</h3>
+                        <p><i class="fas fa-map-marker-alt spartacus-red"></i> Tilburg University Sports Center<br>
+                        Tilburg University Campus<br>
+                        Tilburg, Netherlands</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>SOCIAL MEDIA</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/T.S.K.V.Spartacus/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/tskvspartacus/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/t.s.k.v.-spartacus/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        
-                        <div style="margin-top: 25px;">
-                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">LOCATION</h3>
-                            <p><i class="fas fa-map-marker-alt spartacus-red"></i> Tilburg University Sports Center<br>
-                            Tilburg University Campus<br>
-                            Tilburg, Netherlands</p>
-                        </div>
-                        
-                        <div style="margin-top: 25px;">
-                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">SOCIAL MEDIA</h3>
-                            <div class="social-links" style="margin-top: 10px;">
-                                <a href="https://www.facebook.com/T.S.K.V.Spartacus/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/tskvspartacus/"target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.linkedin.com/company/t.s.k.v.-spartacus/posts/?feedView=all"target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>ORGANIZATION DETAILS</h3>
+                        <div class="org-details">
+                            <div class="org-detail-item">
+                                <span class="detail-label">IBAN:</span>
+                                <span class="detail-value">NL03RABO0301097410</span>
+                            </div>
+                            <div class="org-detail-item">
+                                <span class="detail-label">BIC:</span>
+                                <span class="detail-value">RABONL2U</span>
+                            </div>
+                            <div class="org-detail-item">
+                                <span class="detail-label">KvK-number:</span>
+                                <span class="detail-value">55090176</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
 
-        <!-- Contact Form -->
-                <ContactForm />
+                <!-- Contact Form -->
+                <div id="email" class="contact-form-container">
+                    <h2>SEND US A MESSAGE</h2>
+                    
+                    <form id="contactForm" class="contact-form" action="/api/contact.php" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">NAME *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">EMAIL *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">SUBJECT *</label>
+                            <select id="subject" name="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="membership">Membership Information</option>
+                                <option value="strength-sports">Strength Sports Questions</option>
+                                <option value="competitions">Competition Information</option>
+                                <option value="committee">Committee Involvement</option>
+                                <option value="coaching application">Coaching Application</option>
+                                <option value="Competition Volunteering">Competition Volunteering</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">MESSAGE *</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit-btn">SEND MESSAGE</button>
+                        <div id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Confidential Contact Persons -->
+            <div class="confidential-contacts-container">
+                <h2>CONFIDENTIAL CONTACT PERSONS</h2>
+                <p>For sensitive matters or confidential concerns, please reach out directly to our contact persons:</p>
+                
+                <div class="confidential-contacts">
+                    <div class="confidential-contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Lisa Jansen</h3>
+                        <p>Confidential Contact Person</p>
+                        <a href="mailto:confidential1@tskvspartacus.nl" class="contact-email">confidential1@tskvspartacus.nl</a>
+                    </div>
+                    
+                    <div class="confidential-contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Mark de Groot</h3>
+                        <p>Confidential Contact Person</p>
+                        <a href="mailto:confidential2@tskvspartacus.nl" class="contact-email">confidential2@tskvspartacus.nl</a>
+                    </div>
+                </div>
+            </div>
 
             <!-- FAQ -->
-            <section class="section">
+            <section class="section faq-section">
                 <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-                <div class="mb-40">
-                    <h3>DO I NEED PREVIOUS EXPERIENCE?</h3>
-                    <p>No, we welcome members of all experience levels. Our community includes beginners, intermediate lifters, and advanced athletes.</p>
-                    </br>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>DO I NEED PREVIOUS EXPERIENCE?</h3>
+                        <p>No, we welcome members of all experience levels. Our community includes beginners, intermediate lifters, and advanced athletes.</p>
+                    </div>
 
-                    <h3>IS SPARTACUS ONLY FOR POWERLIFTERS?</h3>
-                    <p>While we have a strong focus on powerlifting, we support all strength sports including bodybuilding, Olympic weightlifting, and recreational fitness enthusiasts who enjoy training at their own pace.</p>
-                    </br>
+                    <div class="faq-item">
+                        <h3>IS SPARTACUS ONLY FOR POWERLIFTERS?</h3>
+                        <p>While we have a strong focus on powerlifting, we support all strength sports including bodybuilding, Olympic weightlifting and people who are less serious about the gym.</p>
+                    </div>
 
-                    <h3>ARE INTERNATIONAL STUDENTS WELCOME?</h3>
-                    <p>Absolutely! TSKV Spartacus is one of the few english first student assocations in Tilburg, meaning all offical communication will be in English! We also have many active international students. </p>
-                    </br>
+                    <div class="faq-item">
+                        <h3>ARE INTERNATIONAL STUDENTS WELCOME?</h3>
+                        <p>Absolutely! TSKV Spartacus is one of the few English-first student associations in Tilburg, meaning all official communication will be in English! We also have many active international students.</p>
+                    </div>
 
-                    <h3>WHEN CAN I JOIN?</h3>
-                    <p>You can join T.S.K.V. Spartacus at any time during the academic year.</p>
-                    </br>
+                    <div class="faq-item">
+                        <h3>WHEN CAN I JOIN?</h3>
+                        <p>You can join T.S.K.V. Spartacus at any time during the academic year.</p>
+                    </div>
 
-                    <h3>Can I try Spartacus out?</h3>
-                    <p>Of course! Email <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a> to get to know some board members during a training!</p>
-                    </br>               
+                    <div class="faq-item">
+                        <h3>CAN I TRY SPARTACUS OUT?</h3>
+                        <p>Of course! Email <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a> to get to know some board members during a training session!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map-section">
+                <h2 class="section-title">FIND US</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.7619254255144!2d5.051944315772768!3d51.56444997964419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6be0a5b299003%3A0xb5a72a2defe8458c!2sTilburg%20University%20Sports%20Center!5e0!3m2!1sen!2snl!4v1616776793939!5m2!1sen!2snl" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </section>
         </div>
     </main>
 
     <!-- Footer -->
-<Footer />
+    <Footer />
 
-<script is:inline src="/script.js"></script>
+    <script is:inline>
+        // Client-side form handling with AJAX
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formStatus = document.getElementById('formStatus');
+                formStatus.className = '';
+                formStatus.textContent = 'Sending message...';
+                formStatus.style.display = 'block';
+                
+                const formData = new FormData(this);
+                
+                fetch('/api/contact.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+                        formStatus.className = 'success';
+                        document.getElementById('contactForm').reset();
+                    } else {
+                        formStatus.textContent = data.message || 'There was an error sending your message. Please try again.';
+                        formStatus.className = 'error';
+                    }
+                })
+                .catch(error => {
+                    formStatus.textContent = 'There was an error sending your message. Please try again.';
+                    formStatus.className = 'error';
+                    console.error('Error:', error);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

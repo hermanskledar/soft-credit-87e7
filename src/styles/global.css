@@ -309,20 +309,11 @@ main {
   border-top: 4px solid var(--spartacus-red);
 }
 
-.feature:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box-shadow-lg);
-}
-
 .feature-icon {
   font-size: 40px;
   margin-bottom: 20px;
   color: var(--spartacus-red);
   transition: color var(--transition-normal);
-}
-
-.feature:hover .feature-icon {
-  color: var(--spartacus-burgundy);
 }
 
 .feature h3 {
@@ -346,9 +337,6 @@ main {
   transition: width var(--transition-normal);
 }
 
-.feature:hover h3::after {
-  width: 100%;
-}
 
 /* Utility Classes */
 .text-center { text-align: center; }

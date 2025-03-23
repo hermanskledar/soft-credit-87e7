@@ -231,6 +231,8 @@
   line-height: 1.7;
   color: #444;
   flex-grow: 1;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .committee-details {
@@ -248,18 +250,20 @@
 
 .committee-list {
   list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  text-align: justify;
 }
 
 .committee-list li {
-  padding: 5px 0 5px 25px;
+  margin-bottom: 8px;
+  line-height: 1.5;
   position: relative;
-  font-size: 14px;
+  padding-left: 20px;
 }
 
 .committee-list li::before {
-  content: '→';
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--spartacus-red);

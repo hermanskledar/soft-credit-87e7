@@ -1,207 +1,503 @@
-/* Membership Page Specific Styles - Optimized */
+/* 
+   Enhanced Membership Page Styles 
+   This file builds on top of the global styles in global.css
+*/
 
-/* Hero Section */
-.hero {
-  min-height: 40vh;
+/* Hero Section - Membership-specific */
+.membership-hero {
+    background-image: linear-gradient(rgba(55, 0, 27, 0.7), rgba(186, 19, 26, 0.7)), url('/images/hero-membership.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
 }
 
-/* Membership Details */
-.about-text h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 16px;
-  color: var(--spartacus-burgundy);
-  margin-top: 25px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 5px;
+/* Price Tag */
+.price-tag {
+    background-color: var(--spartacus-yellow);
+    color: var(--spartacus-burgundy);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    display: inline-block;
+    transform: rotate(-2deg);
+    margin: 10px 0 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-text h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background-color: var(--spartacus-red);
-  transition: width 0.3s ease;
+/* Benefits Cards */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.about-text:hover h3::after {
-  width: 100%;
+.benefits-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--spartacus-red);
 }
 
-.about-text strong {
-  color: var(--spartacus-burgundy);
-  font-weight: 600;
+.benefits-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.about-text ul {
-  margin-left: 20px;
-  margin-bottom: 20px;
+.benefits-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.about-text li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 5px;
-  transition: transform 0.2s ease;
+.benefits-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--spartacus-red);
+    transition: width 0.3s ease;
 }
 
-.about-text li:hover {
-  transform: translateX(5px);
+.benefits-card:hover h3::after {
+    width: 70px;
 }
 
-.about-text li::before {
-  content: '→';
-  position: absolute;
-  left: -20px;
-  color: var(--spartacus-red);
-  transition: transform 0.2s ease;
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-.about-text li:hover::before {
-  transform: translateX(3px);
+.benefit-icon {
+    background-color: var(--spartacus-red);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    font-size: 18px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Registration Process */
-ol {
-  list-style-type: none;
-  counter-reset: item;
-  margin-left: 0;
-  padding-left: 0;
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--spartacus-burgundy);
 }
 
-ol li {
-  position: relative;
-  padding-left: 40px;
-  margin-bottom: 15px;
-  counter-increment: item;
+.benefit-content h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 5px;
 }
 
-ol li::before {
-  content: counter(item);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 28px;
-  height: 28px;
-  background-color: var(--spartacus-red);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  transition: all 0.3s ease;
+.benefit-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
 }
 
-ol li:hover::before {
-  transform: scale(1.2);
-  background-color: var(--spartacus-burgundy);
+/* Membership Steps */
+.membership-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
 }
 
-ol li strong {
-  color: var(--spartacus-burgundy);
-  font-weight: 600;
+.step-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
-/* FAQ Section */
-.section h3 {
-  color: var(--spartacus-burgundy);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 15px;
-  transition: transform 0.2s ease;
-  letter-spacing: 1px;
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.section h3:hover {
-  transform: translateX(5px);
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--spartacus-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(186, 19, 26, 0.3);
 }
 
-.section h3::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 18px;
-  background-color: var(--spartacus-red);
-  border-radius: 3px;
+.step-icon {
+    font-size: 40px;
+    color: var(--spartacus-red);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
 
-/* Testimonials */
-.feature {
-  text-align: left;
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
+.step-card:hover .step-icon {
+    transform: scale(1.2);
 }
 
-.feature::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 60px;
-  color: rgba(186, 19, 26, 0.1);
-  font-family: serif;
+.step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 10px;
 }
 
-.feature p {
-  font-style: italic;
-  line-height: 1.8;
-  position: relative;
-  z-index: 1;
+/* Testimonial Slider */
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    padding: 30px 0;
 }
 
-.feature p:last-child {
-  margin-top: 15px;
-  text-align: right;
-  font-style: normal;
-  color: var(--spartacus-burgundy);
-  font-weight: 600;
+.testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-/* Call to Action */
-.text-center .btn {
-  margin: 0 10px 10px;
-  min-width: 180px;
+.testimonial-card {
+    flex: 0 0 100%;
+    padding: 0 20px;
 }
 
-/* Responsive design */
+.testimonial-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    margin-top: 40px;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--spartacus-red);
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-top: 20px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.testimonial-text::before {
+    content: """;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-size: 40px;
+    color: var(--spartacus-red);
+    font-family: Georgia, serif;
+    opacity: 0.5;
+}
+
+.testimonial-author {
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--spartacus-burgundy);
+}
+
+.testimonial-role {
+    font-size: 14px;
+    color: #777;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.slider-btn {
+    background-color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.slider-btn:hover {
+    background-color: var(--spartacus-red);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* FAQ Accordion */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--spartacus-burgundy);
+    cursor: pointer;
+    position: relative;
+    padding-right: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: var(--spartacus-red);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-item.active .faq-question {
+    background-color: #f9f9f9;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 500px;
+}
+
+/* CTA Box */
+.cta-box {
+    background: linear-gradient(135deg, var(--spartacus-burgundy) 0%, var(--spartacus-red) 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin: 50px 0;
+    box-shadow: 0 10px 30px rgba(186, 19, 26, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/pattern-overlay.svg');
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--spartacus-yellow);
+}
+
+.cta-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* Spartacus Link Style */
+.spartacus-link {
+    color: var(--spartacus-red);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.spartacus-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--spartacus-red);
+    transition: width 0.3s ease;
+}
+
+.spartacus-link:hover {
+    color: var(--spartacus-burgundy);
+}
+
+.spartacus-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Media Queries */
 @media (max-width: 992px) {
-  .feature {
-    flex-basis: calc(50% - 20px);
-  }
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+    
+    .cta-title {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 768px) {
-  .feature {
-    flex-basis: 100%;
-  }
-  
-  .text-center .btn {
-    display: block;
-    margin: 15px auto;
-    max-width: 250px;
-  }
-  
-  ol li {
-    padding-left: 35px;
-  }
-  
-  ol li::before {
-    width: 24px;
-    height: 24px;
-    font-size: 12px;
-  }
+    .membership-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .step-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .cta-box {
+        padding: 30px 20px;
+    }
+    
+    .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        top: -30px;
+        left: 20px;
+    }
+    
+    .slider-controls {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .faq-question {
+        font-size: 16px;
+        padding: 15px;
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .benefit-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .benefit-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    .testimonial-text {
+        padding-left: 0;
+    }
+    
+    .testimonial-text::before {
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

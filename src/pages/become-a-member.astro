@@ -2,8 +2,11 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ContactForm from '../components/ContactForm.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import MembershipBenefits from '../components/MembershipBenefits.astro';
+import MembershipSteps from '../components/MembershipSteps.astro';
+import Testimonials from '../components/Testimonials.astro';
+import MembershipFAQ from '../components/MembershipFAQ.astro';
+import MembershipCTA from '../components/MembershipCTA.astro';
 import '../styles/pages/membership.css';
 ---
 
@@ -11,124 +14,97 @@ import '../styles/pages/membership.css';
 <html lang="en">
 
 <head>
-    <BaseHead />
+    <BaseHead title="Join Spartacus - Largest Student Strength Sports Association" description="Become a member of T.S.K.V. Spartacus and join the largest student strength sports community in the Benelux. Only €25/year for coaching, competitions, and exclusive benefits." />
 </head>
 
 <body>
     <!-- Header -->
     <Header />
 
- <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero membership-hero">
         <div class="container">
-            <h1>BECOME A MEMBER</h1>
-            <h2>JOIN THE LARGEST STUDENT STRENGTH SPORTS ASSOCIATION</h2>
+            <div class="hero-content">
+                <h1>JOIN THE SPARTACUS STRENGTH COMMUNITY</h1>
+                <h2>UNLEASH YOUR POTENTIAL FOR JUST €25/YEAR</h2>
+                <p>Become part of the largest student strength sports association in the Benelux. Whether you're a beginner or experienced lifter, Spartacus provides everything you need to excel in powerlifting, bodybuilding, and strength training.</p>
+                <div class="hero-buttons">
+                    <a href="#benefits" class="btn">SEE MEMBERSHIP BENEFITS</a>
+                    <a href="/register" class="btn btn-secondary">JOIN NOW</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
         <div class="container">
-            <!-- Membership Info -->
+            <!-- Value Proposition Section -->
+            <section id="benefits" class="section">
+                <h2 class="section-title centered-title">WHY JOIN SPARTACUS?</h2>
+                <p class="text-center">T.S.K.V. Spartacus provides exceptional value for students passionate about strength sports.</p>
+                <div class="price-tag">JUST €25 PER YEAR</div>
+                
+                <MembershipBenefits />
+            </section>
+
+            <!-- How to Join Section -->
             <section class="section">
-                <h2 class="section-title">MEMBERSHIP DETAILS</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Joining T.S.K.V. Spartacus gives you access to high-quality training facilities, expert guidance, and a supportive community of strength sports enthusiasts.</p>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 25px;">ANNUAL FEE</h3>
-                        <p>Membership costs <strong>€25 per year</strong> - an investment in your strength journey that provides exceptional value.</p>
-                        
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b; margin-top: 25px;">MEMBERSHIP BENEFITS</h3>
-                        <ul>
-                            <li>Guidance from experienced lifters and coaches</li>
-                            <li>Participation in internal competitions and events</li>
-                            <li>Eligibility for KNKF competitions</li>
-                            <li>Exclusive member discounts at partner businesses</li>
-                            <li>Regular social events and clinics</li>
-                            <li>International community of like-minded students</li>
-                        </ul>
-                    </div>
-                    <div class="about-image">
-                        <img src="placeholder-membership.jpg" alt="Spartacus members training">
-                    </div>
+                <h2 class="section-title centered-title">HOW TO JOIN</h2>
+                <p class="text-center mb-40">Becoming a member of T.S.K.V. Spartacus is simple and takes just a few minutes.</p>
+                
+                <MembershipSteps />
+                
+                <div class="text-center">
+                    <p class="mb-40"><strong>Note:</strong> To join Spartacus, you must also have a valid <a href="https://www.tilburguniversity.edu/campus/sports-center/sportsmembership" target="_blank" class="spartacus-link">Tilburg University Sports Center membership</a>.</p>
+                    <a href="/register" class="btn btn-large">BECOME A MEMBER TODAY!</a>
                 </div>
             </section>
 
-            <!-- Registration Process -->
+            <!-- Testimonials Section -->
             <section class="section">
-                <h2 class="section-title">HOW TO JOIN</h2>
-                <ol style="margin-left: 20px; margin-bottom: 30px;">
-                    <li><strong>Complete the Spartacus registration form</strong> - Fill out the registration form after clicking on the link "become a member!".</li>
-                    <li><strong>Pay the annual membership fee</strong> - The €25 fee will be automatically subtracted by incasso either around September or Februari</li>
-                    <li><strong>Join our community</strong> - Get added to our WhatsApp groups to stay updated on all activities and add the Members Calendar</li>
-                </ol>
-                <p><strong>Note:</strong> To join Spartacus, you must also have a valid Tilburg University Sports Center membership.</p>
-                <div class="text-center mb-40">
-                <br>
-                    <a href="/register" class="btn">BECOME A MEMBER!</a>
-                </div>
+                <h2 class="section-title centered-title">WHAT OUR MEMBERS SAY</h2>
+                <Testimonials />
             </section>
 
-            <!-- FAQ -->
+            <!-- FAQ Section -->
             <section class="section">
-                <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-                <div class="mb-40">
-                    <h3>DO I NEED PREVIOUS EXPERIENCE?</h3>
-                    <p>No, we welcome members of all experience levels. Our community includes beginners, intermediate lifters, and advanced athletes.</p>
-                    </br>
-
-                    <h3>IS SPARTACUS ONLY FOR POWERLIFTERS?</h3>
-                    <p>While we have a strong focus on powerlifting, we support all strength sports including bodybuilding Olympic weightlifting and people who are less serious abotu the gym.</p>
-                    </br>
-
-                    <h3>ARE INTERNATIONAL STUDENTS WELCOME?</h3>
-                    <p>Absolutely! TSKV Spartacus is one of the few english first student assocations in Tilburg, meaning all offical communication will be in English! We also have many active international students. </p>
-                    </br>
-
-                    <h3>WHEN CAN I JOIN?</h3>
-                    <p>You can join T.S.K.V. Spartacus at any time during the academic year.</p>
-                    </br>
-
-                    <h3>Can I try Spartacus out?</h3>
-                    <p>Of course! Email <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a> to get to know some board members during a training!</p>
-                    </br>               
-                </div>
+                <h2 class="section-title centered-title">FREQUENTLY ASKED QUESTIONS</h2>
+                <MembershipFAQ />
             </section>
 
-            <!-- Testimonials -->
-            <section class="section">
-                <h2 class="section-title centered-title">MEMBER TESTIMONIALS</h2>
-                <div class="features">
-                    <div class="feature">
-                        <p>"Joining Spartacus was the best decision I made at university. I've improved my strength significantly and made great friends in the process."</p>
-                        <p style="text-align: right; font-style: italic;">— First-year student</p>
-                    </div>
-                    <div class="feature">
-                        <p>"As an international student, Spartacus helped me find a community. The coaches are knowledgeable and everyone is supportive."</p>
-                        <p style="text-align: right; font-style: italic;">— Exchange student</p>
-                    </div>
-                    <div class="feature">
-                        <p>"I Joined in my second year, and have been loving it so far. I am an officially coached atlete and its amazing!"</p>
-                        <p style="text-align: right; font-style: italic;">— Third-year member</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Call to Action -->
-            <section class="section text-center">
-                <h2 class="section-title centered-title">READY TO JOIN?</h2>
-                <p class="mb-40">Fill out the registration form after clicking on the link "become a member!" to register with T.S.K.V. Spartacus.</p>
-                <div>
-                    <a href="/register" class="btn">BECOME A MEMBER!</a>
-                    <a href="/contact" class="btn btn-secondary">CONTACT US WITH QUESTIONS</a>
-                </div>
-            </section>
+            <!-- CTA Box -->
+            <MembershipCTA />
         </div>
     </main>
 
     <!-- Footer -->
-<Footer />
+    <Footer />
 
-<script is:inline src="/script.js"></script>
+    <script>
+        // For better code organization, we moved the JavaScript to a dedicated file
+        // This is just a minimal script to handle scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

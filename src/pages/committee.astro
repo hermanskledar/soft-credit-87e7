@@ -28,6 +28,7 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
 
     <!-- Main Content -->
     <main>
+        <div class="container">
             <!-- Board Section -->
             <BoardOfDirectors />
 
@@ -55,9 +56,9 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                                 <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>5-7 active members</li>
-                                    <li>Meets bi-monthly, more frequently before competitions</li>
-                                    <li>Technical knowledge of powerlifting preferred</li>
-                                    <li>Opportunity to network with KNKF officials</li>
+                                    <li>Meets frequently before competitions</li>
+                                    <li>Basic knowledge of powerlifting preferred</li>
+                                    <li>Opportunity to work with KNKF officials</li>
                                 </ul>
                             </div>
                             
@@ -97,7 +98,7 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                         </div>
                     </div>
                     
-                    <!-- Media Committee -->
+                    <!-- Social Media Committee -->
                     <div class="committee-card">
                         <div class="committee-header">
                             <div class="committee-icon">
@@ -105,7 +106,7 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             </div>
                             <div class="committee-title-wrapper">
                                 <h3 class="committee-title">MEDIA COMMITTEE</h3>
-                                <p class="committee-head">Led by: Sam Aras</p>
+                                <p class="committee-head">Led by: Milan van Uitert </p>
                             </div>
                         </div>
                         <div class="committee-content">
@@ -205,7 +206,7 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                                 <h4>Committee Details</h4>
                                 <ul class="committee-list">
                                     <li>3-5 active members</li>
-                                    <li>Meets biweekly</li>
+                                    <li>Meets when tech support is needed</li>
                                     <li>Programming, web development, or IT skills required</li>
                                     <li>Opportunity to develop real-world technical solutions</li>
                                 </ul>
@@ -216,36 +217,6 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                             </div>
                         </div>
                     </div>    
-
-                    <!-- Advisory Board Committee Card -->
-                    <div class="committee-card">
-                        <div class="committee-header">
-                            <div class="committee-icon">
-                                <i class="fas fa-users-cog"></i>
-                            </div>
-                            <div class="committee-title-wrapper">
-                                <h3 class="committee-title">ADVISORY BOARD</h3>
-                                <p class="committee-head">Coordinated by: Ezra Janssen</p>
-                            </div>
-                        </div>
-                        <div class="committee-content">
-                            <p class="committee-description">The Advisory Board consists of former board members who provide guidance, institutional knowledge, and continuity to the current Board of Directors. They offer valuable perspective and help maintain Spartacus traditions while supporting innovation.</p>
-                            
-                            <div class="committee-details">
-                                <h4>Committee Details</h4>
-                                <ul class="committee-list">
-                                    <li>2-4 former board members</li>
-                                    <li>Meets quarterly with current Board</li>
-                                    <li>Previous leadership experience in the association required</li>
-                                    <li>Provides mentorship to new board members</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="committee-join">
-                                <a href="#volunteer-section" class="btn">LEARN MORE</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -281,17 +252,44 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                 </div>
                 
                 <div class="volunteer-cta">
-                    <a href="/contact" class="btn">EXPRESS YOUR INTEREST</a>
+                    <a href="mailto:secretary@tskvspartacus.nl" class="btn">EXPRESS YOUR INTEREST</a>
                 </div>
             </section>
 
-            <!-- Testimonial -->
-            <div class="testimonial">
-                <div class="testimonial-content">
-                    <p>"Joining the Competition Committee was one of the best decisions I made at Spartacus. It was incredibly rewarding to work with friends to organize major events like the National Championships 2024 and the West-Regional Championship for 2025. Not only did I gain valuable organizational skills, but I also made lasting connections within the strength sports community that extend far beyond university."</p>
-                    <p class="testimonial-author">— Herman Skledar, Competition Committee Member (2023-2025)</p>
+            <!-- Testimonials Section -->
+            <section class="testimonials-section">
+                <h2 class="section-title">MEMBER TESTIMONIALS</h2>
+                <div class="testimonials-carousel">
+                    <div class="testimonials-container">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Joining the Powerlifting Committee was one of the best decisions I made at Spartacus. It was incredibly rewarding to work with friends to organize major events like the National Championships 2024 and the West-Regional Championship for 2025. Not only did I gain valuable organizational skills, but I also made lasting connections within the strength sports community that extend far beyond university."</p>
+                                <p class="testimonial-author">— Herman Skledar, Powerlifting Committee Member (2023-2025)</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Being part of the social media committee for our student strength sports association is an absolute blast! It’s fun to create content, take sick photographs, share our members' achievements, and foster a supportive community. Every day is a new opportunity to inspire and be inspired. Come join us and experience the fun!"</p>
+                                <p class="testimonial-author">— Luca Simonetti, Social Media Committee Member (2024-2025)</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Joining the Powerlifting Committee was one of the best decisions I made at Spartacus. It was incredibly rewarding to work with friends to organize major events like the National Championships 2024 and the West-Regional Championship for 2025. Not only did I gain valuable organizational skills, but I also made lasting connections within the strength sports community that extend far beyond university."</p>
+                                <p class="testimonial-author">— Herman Skledar, Powerlifting Committee Member (2023-2025)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Previous testimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" aria-label="Next testimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     </main>
 
@@ -329,6 +327,35 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                 this.querySelector('.committee-icon').classList.remove('animated');
             });
         });
+
+        // Testimonial Carousel
+        const testimonialsContainer = document.querySelector('.testimonials-container');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            testimonialsContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonialCards.length;
+            updateCarousel();
+        }
+
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+            updateCarousel();
+        }
+
+        // Add event listeners
+        nextBtn.addEventListener('click', nextTestimonial);
+        prevBtn.addEventListener('click', prevTestimonial);
+
+        // Auto-advance every 5 seconds
+        setInterval(nextTestimonial, 5000);
     </script>
     </body>
 </html>

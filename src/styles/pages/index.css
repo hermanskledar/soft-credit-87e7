@@ -140,6 +140,7 @@
 .price-features {
   padding: 35px 30px;
   list-style: none;
+  text-align: left;
 }
 
 .price-features li {
@@ -147,6 +148,7 @@
   padding-left: 28px;
   position: relative;
   transition: transform 0.3s ease;
+  text-align: left;
 }
 
 .price-features li:hover {
@@ -166,6 +168,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
   line-height: 1;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -236,6 +239,47 @@
 
 .mobile-only {
   display: none;
+}
+
+.about-text .btn {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Additional media queries for the about section images */
+@media (max-width: 768px) {
+  .about-image {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .about-image img:last-child {
+    display: none; /* Hide the second image on mobile */
+  }
 }
 
 /* Media Queries */

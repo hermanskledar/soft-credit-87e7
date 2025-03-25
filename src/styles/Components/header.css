@@ -141,6 +141,11 @@
       transform: translateY(-8px) rotate(-45deg);
     }
 
+    /* Hide mobile join button on desktop by default */
+    .mobile-join-link {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .main-navigation {
         position: fixed;
@@ -182,7 +187,7 @@
       .mobile-join-link {
         width: 100%;
         text-align: center;
-        display: block !important;
+        display: block;
       }
 
       .mobile-join-button {
@@ -193,7 +198,7 @@
         font-size: 1.1rem;
         padding: 0.75rem 1.5rem;
         border-radius: 4px;
-        display: inline-block !important;
+        display: inline-block;
         transition: background var(--transition);
         width: auto;
         margin: 1rem 0;

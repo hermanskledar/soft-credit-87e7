@@ -132,18 +132,57 @@
     width: 40px; 
     height: 40px; 
     background-color: var(--spartacus-red); 
-    color: white; 
+    color: white !important; /* Ensure icon color is always white */
     border-radius: 50%; 
-    transition: background-color 0.3s; 
+    transition: all 0.3s ease; 
     text-decoration: none; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .social-links a:hover { 
     background-color: var(--spartacus-yellow);
+    transform: translateY(-3px);
 }
 
-/* Contact form styles */
+/* Fix for social icons */
+.social-links a i {
+    color: white !important; /* Force icon color to white */
+    margin-right: 0; /* Reset margins for social icons */
+}
+
+/* Organization details in contact info */
+.org-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.org-detail-item {
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 3px solid var(--spartacus-red);
+}
+
+.detail-label {
+    font-weight: bold;
+    color: var(--spartacus-burgundy);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.detail-value {
+    font-family: monospace;
+    font-size: 14px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    display: inline-block;
+}
+
+/* Contact Form Styles */
 .contact-form-container {
     background-color: white;
     padding: 40px;
@@ -258,6 +297,110 @@ textarea.form-control {
     color: var(--spartacus-red);
     border: 1px solid rgba(186, 19, 26, 0.2);
     display: block;
+}
+
+/* Confidential contacts section */
+.confidential-contacts-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--spartacus-red);
+    margin-bottom: 40px;
+}
+
+.confidential-contacts-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 15px;
+    color: var(--spartacus-burgundy);
+}
+
+.confidential-contacts-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--spartacus-red);
+}
+
+.confidential-contacts-container p {
+    margin-bottom: 30px;
+}
+
+.confidential-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.confidential-contact-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.confidential-contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--spartacus-burgundy);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.confidential-contact-card:hover .contact-icon {
+    transform: scale(1.1);
+    background-color: var(--spartacus-red);
+}
+
+.confidential-contact-card h3 {
+    font-size: 20px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 10px;
+}
+
+.confidential-contact-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.contact-email {
+    display: inline-block;
+    color: var(--spartacus-red);
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid var(--spartacus-red);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-email:hover {
+    background-color: var(--spartacus-red);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(186, 19, 26, 0.2);
 }
 
 /* FAQ Section */
@@ -397,8 +540,12 @@ iframe {
         padding: 0 20px;
     }
     
-    .contact-info, .contact-form-container {
-        padding: 30px;
+    .contact-info, .contact-form-container, .confidential-contacts-container {
+        padding: 30px 20px;
+    }
+    
+    .confidential-contacts {
+        flex-direction: column;
     }
     
     .map-container {
@@ -411,8 +558,8 @@ iframe {
         padding: 0 15px;
     }
     
-    .contact-info, .contact-form-container {
-        padding: 25px;
+    .contact-info, .contact-form-container, .confidential-contacts-container {
+        padding: 25px 15px;
     }
     
     .social-links {
@@ -421,5 +568,9 @@ iframe {
     
     .map-container {
         height: 300px;
+    }
+    
+    .form-submit-btn {
+        width: 100%;
     }
 }

@@ -1,156 +1,473 @@
-/* Discounts Page Specific Styles - Optimized */
+/* 
+   Enhanced Discounts Page Styles 
+   This file builds on top of the global styles in global.css
+*/
 
-/* Discount Items */
-.discounts {
-  margin-top: 40px;
+/* Hero Section - Discounts Page Specific */
+.discount-hero {
+    background-image: linear-gradient(rgba(55, 0, 27, 0.75), rgba(186, 19, 26, 0.65)), url('/images/discount-hero-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 40vh;
 }
 
-.discount-item {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  border-left: 4px solid transparent;
+/* Section Intro Styles */
+.section-intro {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
-.discount-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border-left: 4px solid var(--spartacus-red);
+/* Value Badge */
+.value-badge {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
 }
 
-.discount-img {
-  flex: 0 0 250px;
-  overflow: hidden;
-  position: relative;
+.value-badge-inner {
+    background-color: var(--spartacus-yellow);
+    color: var(--spartacus-burgundy);
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 1px;
+    display: inline-block;
+    transform: rotate(-3deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
-.discount-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+.value-badge-inner::before {
+    content: '✓';
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    background-color: var(--spartacus-red);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.discount-item:hover .discount-img img {
-  transform: scale(1.05);
+/* Discount Grid */
+.discount-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
 }
 
-.discount-img::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+/* Discount Card */
+.discount-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-top: 3px solid var(--spartacus-red);
 }
 
-.discount-item:hover .discount-img::before {
-  opacity: 1;
+.discount-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.discount-content {
-  flex: 1;
-  padding: 25px;
-  min-width: 300px;
+/* Featured Discount */
+.featured-discount {
+    border-top: 3px solid var(--spartacus-yellow);
 }
 
-.discount-content h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  color: var(--spartacus-burgundy);
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  position: relative;
-  display: inline-block;
-  padding-bottom: 8px;
+.discount-ribbon {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--spartacus-yellow);
+    color: var(--spartacus-burgundy);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.discount-content h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background-color: var(--spartacus-red);
-  transition: width 0.3s ease;
+/* Discount Header */
+.discount-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    position: relative;
 }
 
-.discount-item:hover .discount-content h3::after {
-  width: 100%;
+.discount-logo-container {
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.discount-content p {
-  margin-bottom: 15px;
-  line-height: 1.6;
+.discount-card:hover .discount-logo-container {
+    transform: scale(1.1);
 }
 
-.discount-content ul {
-  margin-top: 15px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+.discount-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
-.discount-content li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 5px;
-  transition: transform 0.2s ease;
+.discount-badge {
+    background-color: var(--spartacus-red);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.discount-content li:hover {
-  transform: translateX(5px);
+.featured-discount .discount-badge {
+    background-color: var(--spartacus-yellow);
+    color: var(--spartacus-burgundy);
 }
 
-.discount-content li::before {
-  content: '→';
-  position: absolute;
-  left: -18px;
-  color: var(--spartacus-red);
-  transition: transform 0.2s ease;
+/* Discount Body */
+.discount-body {
+    padding: 25px;
 }
 
-.discount-content li:hover::before {
-  transform: translateX(3px);
+.discount-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-.discount-content .btn {
-  margin-top: 10px;
-  position: relative;
-  overflow: hidden;
+.discount-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--spartacus-red);
+    transition: width 0.3s ease;
 }
 
-/* Section Introduction */
-.section p {
-  max-width: 800px;
-  line-height: 1.8;
-  margin-bottom: 20px;
+.discount-card:hover .discount-title::after {
+    width: 100%;
 }
 
-/* Media Queries */
+.featured-discount .discount-title::after {
+    background-color: var(--spartacus-yellow);
+}
+
+.discount-description {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.discount-subtitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--spartacus-red);
+}
+
+.featured-discount .discount-subtitle {
+    border-left-color: var(--spartacus-yellow);
+}
+
+.discount-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.discount-benefits-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.discount-benefits-list li:hover {
+    transform: translateX(5px);
+}
+
+.discount-benefits-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--spartacus-red);
+    font-weight: bold;
+}
+
+.featured-discount .discount-benefits-list li::before {
+    color: var(--spartacus-yellow);
+}
+
+.discount-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Discount Placeholder */
+.discount-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px dashed #ddd;
+    border-top: none;
+}
+
+.discount-placeholder-icon {
+    font-size: 40px;
+    color: #ccc;
+    margin-bottom: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.discount-placeholder:hover .discount-placeholder-icon {
+    color: var(--spartacus-red);
+    transform: scale(1.1);
+}
+
+.discount-placeholder-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 15px;
+}
+
+.discount-placeholder-text {
+    color: #777;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+/* How To Section */
+.how-to-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.how-to-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-top: 3px solid var(--spartacus-red);
+}
+
+.how-to-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.how-to-icon {
+    font-size: 40px;
+    color: var(--spartacus-red);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.how-to-card:hover .how-to-icon {
+    transform: scale(1.2);
+}
+
+.how-to-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 15px;
+}
+
+.how-to-text {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.how-to-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.how-to-step {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.how-to-step-number {
+    background-color: var(--spartacus-red);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.how-to-step:hover .how-to-step-number {
+    transform: scale(1.2);
+}
+
+.how-to-step-text {
+    font-size: 14px;
+}
+
+/* Discount Note */
+.discount-note {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 40px 0;
+    display: flex;
+    gap: 20px;
+    border-left: 4px solid var(--spartacus-yellow);
+}
+
+.discount-note-icon {
+    font-size: 24px;
+    color: var(--spartacus-yellow);
+    flex-shrink: 0;
+}
+
+.discount-note-text p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.discount-note-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Discount CTA */
+.discount-cta {
+    background: linear-gradient(135deg, var(--spartacus-burgundy) 0%, var(--spartacus-red) 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin: 60px 0 40px;
+    box-shadow: 0 10px 30px rgba(186, 19, 26, 0.3);
+}
+
+.discount-cta-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--spartacus-yellow);
+}
+
+.discount-cta-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.discount-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+}
+
+.discount-btn i {
+    font-size: 16px;
+}
+
+/* Responsive Media Queries */
 @media (max-width: 992px) {
-  .feature {
-    flex-basis: calc(50% - 20px);
-  }
+    .discount-grid,
+    .how-to-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
-  .discount-img {
-    flex: 0 0 100%;
-    height: 200px;
-  }
-  
-  .discount-content {
-    flex: 0 0 100%;
-    padding: 20px;
-  }
+    .discount-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .how-to-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .discount-note {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .discount-cta {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .discount-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .discount-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .discount-ribbon {
+        right: -40px;
+    }
+    
+    .how-to-card {
+        padding: 20px;
+    }
 }

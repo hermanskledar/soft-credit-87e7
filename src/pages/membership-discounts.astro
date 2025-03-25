@@ -1,8 +1,9 @@
- ---
+---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import DiscountPartners from '../components/DiscountPartners.astro';
+import DiscountHowTo from '../components/DiscountHowTo.astro';
 import '../styles/pages/discounts.css';
 ---
 
@@ -10,20 +11,18 @@ import '../styles/pages/discounts.css';
 <html lang="en">
 
 <head>
-    <BaseHead />
+    <BaseHead title="Member Discounts & Benefits | T.S.K.V. Spartacus" description="Exclusive discounts and special offers for T.S.K.V. Spartacus members. Save on nutrition, restaurants, recovery services, and more with your Spartacus membership." />
 </head>
 
 <body>
     <!-- Header -->
-<Header />
+    <Header />
 
-<body>
-
-<!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero discount-hero">
         <div class="container">
-            <h1>MEMBERSHIP DISCOUNTS</h1>
-            <h2>EXCLUSIVE BENEFITS FOR SPARTACUS MEMBERS</h2>
+            <h1>EXCLUSIVE MEMBER DISCOUNTS</h1>
+            <h2>SAVE MONEY WITH YOUR SPARTACUS MEMBERSHIP</h2>
         </div>
     </section>
 
@@ -32,90 +31,37 @@ import '../styles/pages/discounts.css';
         <div class="container">
             <!-- Introduction -->
             <section class="section">
-                <h2 class="section-title">MEMBER BENEFITS</h2>
-                <p>As a T.S.K.V. Spartacus member, you gain access to exclusive discounts and special offers from our partner businesses. These partnerships are designed to support your strength sports journey with quality nutrition, recovery services, and more.</p>
+                <h2 class="section-title">MEMBER BENEFITS & PARTNER DISCOUNTS</h2>
+                <p class="section-intro">As a T.S.K.V. Spartacus member, you gain access to exclusive discounts from our partner businesses. Your €25 membership fee pays for itself with these valuable savings on nutrition, recovery services, dining, and more.</p>
+                <div class="value-badge">
+                    <div class="value-badge-inner">SAVE €€€</div>
+                </div>
             </section>
 
-            <!-- Discount Partners -->
+            <!-- Discount Partners Section -->
             <section class="section">
                 <h2 class="section-title">OUR PARTNERS</h2>
-                <div class="discounts">
-                    <div class="discount-item">
-                        <div class="discount-img">
-                            <img src="placeholder-bossers.jpg" alt="Bossers Vlees">
-                        </div>
-                        <div class="discount-content">
-                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">BOSSERS VLEES</h3>
-                            <p>Quality meat products at discounted prices for Spartacus members.</p>
-                            <ul style="margin-top: 15px; margin-left: 15px;">
-                                <li>Get restaurant prices when buying meat</li>
-                            </ul>
-                            <a href="https://www.google.com/maps/search/Bossers+Vlees/@51.5638125,4.9049807,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDIyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank" class="btn" style="margin-top: 15px;">Bossersvlees</a>
-                        </div>
-                    </div>
-                </div>
+                <DiscountPartners />
             </section>
 
+            <!-- How to Access Section -->
             <section class="section">
-                <div class="discounts">
-                    <div class="discount-item">
-                        <div class="discount-img">
-                            <img src="placeholder-Physiofitaal.jpg" alt="Physiofitaal">
-                        </div>
-                        <div class="discount-content">
-                            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">Phyisiofitaal</h3>
-                            <p>Quality meat products at discounted prices for Spartacus members.</p>
-                            <ul style="margin-top: 15px; margin-left: 15px;">
-                                <li>10% discount on protein supplements</li>
-                                <li>Special offers on pre-workout products</li>
-                                <li>Member-only promotions</li>
-                            </ul>
-                            <a href="https://fysiofitaal.nl/"  target="_blank" class="btn" style="margin-top: 15px;">Physiofitaal</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- How to use -->
-            <section class="section">
-                <h2 class="section-title">HOW TO ACCESS DISCOUNTS</h2>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-id-card"></i>
-                        </div>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">SHOW MEMBERSHIP</h3>
-                        <p>Present your Spartacus membership by showing the Whatsapp community</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-tags"></i>
-                        </div>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">MENTION SPARTACUS</h3>
-                        <p>When ordering online or booking services, mention your Spartacus membership.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">
-                            <i class="fas fa-envelope-open-text"></i>
-                        </div>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #37001b;">CHECK EMAIL</h3>
-                        <p>Watch your email for exclusive member-only promotions and limited-time offers.</p>
-                    </div>
-                </div>
+                <h2 class="section-title">HOW TO ACCESS YOUR DISCOUNTS</h2>
+                <DiscountHowTo />
             </section>
 
             <!-- Call to Action -->
-            <section class="section text-center">
-                <h2 class="section-title centered-title">BECOME A MEMBER</h2>
-                <p class="mb-40">Join Spartacus today to access these exclusive discounts and many more benefits!</p>
-                <a href="/become-a-member" class="btn">JOIN NOW</a>
+            <section class="discount-cta">
+                <div class="discount-cta-content">
+                    <h2>BECOME A MEMBER TODAY</h2>
+                    <p>Join Spartacus to access these exclusive discounts and many more benefits!</p>
+                    <a href="/become-a-member" class="btn">JOIN NOW</a>
+                </div>
             </section>
         </div>
     </main>
 
     <!-- Footer -->
-<Footer />
-
-<script is:inline src="/script.js"></script>
+    <Footer />
 </body>
 </html>

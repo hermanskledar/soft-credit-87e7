@@ -2,8 +2,11 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ContactForm from '../components/ContactForm.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import MembershipBenefits from '../components/MembershipBenefits.astro';
+import MembershipSteps from '../components/MembershipSteps.astro';
+import Testimonials from '../components/Testimonials.astro';
+import MembershipFAQ from '../components/MembershipFAQ.astro';
+import MembershipCTA from '../components/MembershipCTA.astro';
 import '../styles/pages/membership.css';
 ---
 
@@ -11,26 +14,52 @@ import '../styles/pages/membership.css';
 <html lang="en">
 
 <head>
-    <BaseHead />
+    <BaseHead title="Join Spartacus - Largest Student Strength Sports Association" description="Become a member of T.S.K.V. Spartacus and join the largest student strength sports community in the Benelux. Only €25/year for coaching, competitions, and exclusive benefits." />
 </head>
 
 <body>
     <!-- Header -->
     <Header />
 
- <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero membership-hero">
         <div class="container">
-            <h1>BECOME A MEMBER</h1>
-            <h2>JOIN THE LARGEST STUDENT STRENGTH SPORTS ASSOCIATION</h2>
+            <div class="hero-content">
+                <h1>JOIN THE SPARTACUS STRENGTH COMMUNITY</h1>
+                <h2>UNLEASH YOUR POTENTIAL FOR JUST €25/YEAR</h2>
+                <p>Become part of the largest student strength sports association in the Benelux. Whether you're a beginner or experienced lifter, Spartacus provides everything you need to excel in powerlifting, bodybuilding, and strength training.</p>
+                <div class="hero-buttons">
+                    <a href="#benefits" class="btn">SEE MEMBERSHIP BENEFITS</a>
+                    <a href="/register" class="btn btn-secondary">JOIN NOW</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Main Content -->
     <main>
         <div class="container">
-            <!-- Membership Info -->
+            <!-- Value Proposition Section -->
+            <section id="benefits" class="section">
+                <h2 class="section-title centered-title">WHY JOIN SPARTACUS?</h2>
+                <p class="text-center">T.S.K.V. Spartacus provides exceptional value for students passionate about strength sports.</p>
+                <div class="price-tag">JUST €25 PER YEAR</div>
+                
+                <MembershipBenefits />
+            </section>
+
+            <!-- How to Join Section -->
             <section class="section">
+<<<<<<< HEAD
+                <h2 class="section-title centered-title">HOW TO JOIN</h2>
+                <p class="text-center mb-40">Becoming a member of T.S.K.V. Spartacus is simple and takes just a few minutes.</p>
+                
+                <MembershipSteps />
+                
+                <div class="text-center">
+                    <p class="mb-40"><strong>Note:</strong> To join Spartacus, you must also have a valid <a href="https://www.tilburguniversity.edu/campus/sports-center/sportsmembership" target="_blank" class="spartacus-link">Tilburg University Sports Center membership</a>.</p>
+                    <a href="/register" class="btn btn-large">BECOME A MEMBER TODAY!</a>
+=======
                 <h2 class="section-title">MEMBERSHIP DETAILS</h2>
                 <div class="about-content">
                     <div class="about-text">
@@ -51,11 +80,16 @@ import '../styles/pages/membership.css';
                     <div class="about-image">
                         <img src="images/Jelle.png" alt="Spartacus members training">
                     </div>
+>>>>>>> 866c30f155af7179b4b393e6c6bbda2a289fbb43
                 </div>
             </section>
 
-            <!-- Registration Process -->
+            <!-- Testimonials Section -->
             <section class="section">
+<<<<<<< HEAD
+                <h2 class="section-title centered-title">WHAT OUR MEMBERS SAY</h2>
+                <Testimonials />
+=======
                 <h2 class="section-title">HOW TO JOIN</h2>
                 <ol style="margin-left: 20px; margin-bottom: 30px;">
                     <li><strong>Complete the Spartacus registration form</strong> - Fill out the registration form after clicking on the link "become a member!".</li>
@@ -67,10 +101,19 @@ import '../styles/pages/membership.css';
                 <br>
                     <a href="/register" class="btn">BECOME A MEMBER!</a>
                 </div>
+>>>>>>> 866c30f155af7179b4b393e6c6bbda2a289fbb43
             </section>
 
-            <!-- FAQ -->
+            <!-- FAQ Section -->
             <section class="section">
+<<<<<<< HEAD
+                <h2 class="section-title centered-title">FREQUENTLY ASKED QUESTIONS</h2>
+                <MembershipFAQ />
+            </section>
+
+            <!-- CTA Box -->
+            <MembershipCTA />
+=======
                 <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
                 <div class="mb-40">
                     <h3>DO I NEED PREVIOUS EXPERIENCE?</h3>
@@ -123,12 +166,37 @@ import '../styles/pages/membership.css';
                     <a href="/contact" class="btn btn-secondary">CONTACT US WITH QUESTIONS</a>
                 </div>
             </section>
+>>>>>>> 866c30f155af7179b4b393e6c6bbda2a289fbb43
         </div>
     </main>
 
     <!-- Footer -->
-<Footer />
+    <Footer />
 
-<script is:inline src="/script.js"></script>
+    <script>
+        // For better code organization, we moved the JavaScript to a dedicated file
+        // This is just a minimal script to handle scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -42,9 +42,9 @@ import '../styles/pages/documents.css';
                     <div class="document-actions">
                         <div class="language-options">
                             <span class="language-label">Available in:</span>
-                            <a href="/documents/statues-dutch.pdf" class="language-btn">Dutch</a>
+                            <a href="/documents/statues-dutch.pdf" class="language-btn" target="_blank" rel="noopener">Dutch</a>
                         </div>
-                        <a href="/documents/statues-dutch.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <a href="/documents/statues-dutch.pdf" class="btn btn-secondary" target="_blank" rel="noopener">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
@@ -57,9 +57,9 @@ import '../styles/pages/documents.css';
                     <div class="document-actions">
                         <div class="language-options">
                             <span class="language-label">Available in:</span>
-                            <a href="/documents/policy-plan.pdf" class="language-btn">English</a>
+                            <a href="/documents/policy-plan.pdf" class="language-btn" target="_blank" rel="noopener">English</a>
                         </div>
-                        <a href="/documents/policy-plan.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <a href="/documents/policy-plan.pdf" class="btn btn-secondary" target="_blank" rel="noopener">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
@@ -72,9 +72,9 @@ import '../styles/pages/documents.css';
                     <div class="document-actions">
                         <div class="language-options">
                             <span class="language-label">Available in:</span>
-                            <a href="/documents/5-year-plan.pdf" class="language-btn">English</a>
+                            <a href="/documents/5-year-plan.pdf" class="language-btn" target="_blank" rel="noopener">English</a>
                         </div>
-                        <a href="/documents/5-year-plan.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <a href="/documents/5-year-plan.pdf" class="btn btn-secondary" target="_blank" rel="noopener">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
@@ -87,10 +87,10 @@ import '../styles/pages/documents.css';
                     <div class="document-actions">
                         <div class="language-options">
                             <span class="language-label">Available in:</span>
-                            <a href="/documents/code-of-conduct-english.pdf" class="language-btn active">English</a>
-                            <a href="/documents/code-of-conduct-dutch.pdf" class="language-btn">Dutch</a>
+                            <a href="/documents/code-of-conduct-english.pdf" class="language-btn active" target="_blank" rel="noopener">English</a>
+                            <a href="/documents/code-of-conduct-dutch.pdf" class="language-btn" target="_blank" rel="noopener">Dutch</a>
                         </div>
-                        <a href="/documents/code-of-conduct-english.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <a href="/documents/code-of-conduct-english.pdf" class="btn btn-secondary" target="_blank" rel="noopener">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
@@ -103,10 +103,10 @@ import '../styles/pages/documents.css';
                     <div class="document-actions">
                         <div class="language-options">
                             <span class="language-label">Available in:</span>
-                            <a href="/documents/terms-and-conditions.pdf" class="language-btn active">English</a>
-                            <a href="/documents/terms-and-conditions-dutch.pdf" class="language-btn">Dutch</a>
+                            <a href="/documents/terms-and-conditions.docx" class="language-btn active" target="_blank" rel="noopener">English</a>
+                            <a href="/documents/terms-and-conditions-dutch.pdf" class="language-btn" target="_blank" rel="noopener">Dutch</a>
                         </div>
-                        <a href="/documents/terms-and-conditions.pdf" class="btn btn-secondary">DOWNLOAD DOCUMENT</a>
+                        <a href="/documents/terms-and-conditions.docx" class="btn btn-secondary" target="_blank" rel="noopener">DOWNLOAD DOCUMENT</a>
                     </div>
                 </div>
             </section>
@@ -144,6 +144,9 @@ import '../styles/pages/documents.css';
     // Language selector functionality
     document.querySelectorAll('.language-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
+            // Prevent default behavior to avoid navigating away
+            e.preventDefault();
+            
             // Get parent card
             const card = this.closest('.document-card');
             
@@ -158,14 +161,6 @@ import '../styles/pages/documents.css';
             // Update download button link
             const downloadBtn = card.querySelector('.btn.btn-secondary');
             downloadBtn.href = this.href;
-            
-            // If this is just a language selector without changing the page
-            if (e.ctrlKey || e.metaKey) {
-                // Let the default behavior happen (open in new tab)
-            } else {
-                // Prevent default if it's a normal click to just change language
-                e.preventDefault();
-            }
         });
     });
 </script>

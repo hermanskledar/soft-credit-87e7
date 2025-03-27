@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MembershipBenefits from '../components/MembershipBenefits.astro';
 import MembershipSteps from '../components/MembershipSteps.astro';
-import Testimonials from '../components/Testimonials.astro';
 import MembershipFAQ from '../components/MembershipFAQ.astro';
 import MembershipCTA from '../components/MembershipCTA.astro';
 import '../styles/pages/membership.css';
@@ -64,7 +63,36 @@ import '../styles/pages/membership.css';
             <!-- Testimonials Section -->
             <section class="section">
                 <h2 class="section-title centered-title">WHAT OUR MEMBERS SAY</h2>
-                <Testimonials />
+                <div class="testimonials-carousel">
+                    <div class="testimonials-container">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Joining Spartacus was the best decision I made during my time at university. I've improved my strength significantly and made lifelong friends in the process. The coaching and supportive environment helped me achieve PRs I never thought possible."</p>
+                                <p class="testimonial-author">— Lisa K., Member for 2 years</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"As an international student, Spartacus helped me find a community. The coaches are incredibly knowledgeable and everyone is supportive regardless of your experience level. It's become my home away from home."</p>
+                                <p class="testimonial-author">— Miguel S., Exchange Student</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"I joined in my second year and have been loving it. I'm an officially coached athlete now and it's amazing! The competition opportunities and training environment have helped me progress faster than I ever expected."</p>
+                                <p class="testimonial-author">— Emma L., Competitive Powerlifter</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Previous testimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" aria-label="Next testimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
             </section>
 
             <!-- FAQ Section -->
@@ -104,7 +132,134 @@ import '../styles/pages/membership.css';
                     }
                 });
             });
+
+            // Testimonial Carousel
+            const testimonialsContainer = document.querySelector('.testimonials-container');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                testimonialsContainer.style.transform = `translateX(${offset}%)`;
+            }
+
+            function nextTestimonial() {
+                currentIndex = (currentIndex + 1) % testimonialCards.length;
+                updateCarousel();
+            }
+
+            function prevTestimonial() {
+                currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+                updateCarousel();
+            }
+
+            // Add event listeners
+            prevBtn.addEventListener('click', prevTestimonial);
+            nextBtn.addEventListener('click', nextTestimonial);
+
+            // Auto-advance every 20 seconds
+            setInterval(nextTestimonial, 20000);
         });
     </script>
+
+    <style>
+        /* Testimonials Carousel Styling */
+        .testimonials-carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .testimonial-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--spartacus-burgundy);
+            font-style: normal;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .carousel-btn {
+            background-color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--spartacus-red);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 0 10px;
+            }
+            
+            .testimonial-content {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-content p {
+                font-size: 16px;
+            }
+            
+            .carousel-controls {
+                position: static;
+                transform: none;
+                margin-top: 20px;
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+    </style>
 </body>
 </html>

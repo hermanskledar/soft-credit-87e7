@@ -1,0 +1,242 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import '../../styles/pages/board.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <BaseHead title="Previous Boards | T.S.K.V. Spartacus" description="Explore the history of T.S.K.V. Spartacus leadership and the board members who have shaped our association over the years." />
+</head>
+
+<body>
+    <!-- Header -->
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>PREVIOUS BOARDS</h1>
+            <h2>THE LEGACY OF LEADERSHIP AT SPARTACUS</h2>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Current Board Link -->
+            <div class="current-board-link">
+                <a href="/committee" class="btn">BACK TO CURRENT BOARD & COMMITTEES</a>
+            </div>
+
+            <!-- Board History Introduction -->
+            <section class="section">
+                <h2 class="section-title">BOARD HISTORY</h2>
+                <p class="section-description">Since its founding in 2012, T.S.K.V. Spartacus has been led by dedicated student boards who have contributed to the growth and development of our association. Each board has left its unique mark on our organization's history.</p>
+                
+                <div class="history-content">
+                    <div class="history-text">
+                        <p>Every academic year, a new board takes on the responsibility of leading Spartacus. The transition typically occurs in September, with the new board being officially installed at the General Members Meeting. Each board consists of at least a Chair, Secretary, and Treasurer, with additional positions such as Vice Chair added as the association has grown.</p>
+                        <p>The commitment and passion of these student leaders have been instrumental in making Spartacus the largest student strength sports association in the Benelux. We're proud to honor their contributions.</p>
+                    </div>
+                    <div class="history-image">
+                        <img src="/images/boards-history.jpg" alt="Board transition ceremony" class="history-img">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Previous Boards Timeline -->
+            <section class="section">
+                <h2 class="section-title">PREVIOUS BOARDS</h2>
+                <div class="previous-boards">
+                    <div class="board-year">
+                        <h3>2023-2024</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Ezra Janssen</li>
+                            <li><span class="position">Vice Chair:</span> Lisa Koopman</li>
+                            <li><span class="position">Treasurer:</span> Jan de Vries</li>
+                            <li><span class="position">Secretary:</span> Elena Petrova</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Organized the largest Dutch University Powerlifting Championship to date with over 100 participants.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2022-2023</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Tim van den Berg</li>
+                            <li><span class="position">Vice Chair:</span> Sara Ahmed</li>
+                            <li><span class="position">Treasurer:</span> Lotte van der Meer</li>
+                            <li><span class="position">Secretary:</span> Mark Johnson</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Established the first official coaching program for competitive lifters.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2021-2022</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Bas van Leeuwen</li>
+                            <li><span class="position">Vice Chair:</span> Thomas Bakker</li>
+                            <li><span class="position">Treasurer:</span> Emma de Groot</li>
+                            <li><span class="position">Secretary:</span> Michael Wang</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Increased international student membership by 40% through dedicated outreach programs.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2020-2021</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Laura van Dijk</li>
+                            <li><span class="position">Vice Chair:</span> James Smith</li>
+                            <li><span class="position">Treasurer:</span> Kevin Jansen</li>
+                            <li><span class="position">Secretary:</span> Sophie Williams</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Successfully navigated COVID-19 restrictions while maintaining member engagement through online programming.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2019-2020</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Noah de Jong</li>
+                            <li><span class="position">Treasurer:</span> Finn Bakker</li>
+                            <li><span class="position">Secretary:</span> Julia Hendriks</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Secured permanent training space and equipment in the university sports center.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2018-2019</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Liam van Dijk</li>
+                            <li><span class="position">Treasurer:</span> Sarah Jansen</li>
+                            <li><span class="position">Secretary:</span> Robin Smit</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Established the first international partnerships with student strength sports associations in Belgium and Germany.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2017-2018</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Thomas de Vries</li>
+                            <li><span class="position">Treasurer:</span> Anna Visser</li>
+                            <li><span class="position">Secretary:</span> David Mulder</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Hosted the first national student powerlifting championship at Tilburg University.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2016-2017</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Emma Bakker</li>
+                            <li><span class="position">Treasurer:</span> Lucas Vermeulen</li>
+                            <li><span class="position">Secretary:</span> Sophie van den Berg</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Introduced the committee structure to better organize association activities.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2015-2016</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Max de Boer</li>
+                            <li><span class="position">Treasurer:</span> Eva van Dijk</li>
+                            <li><span class="position">Secretary:</span> Sam Jansen</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Established the first annual membership weekend tradition.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2014-2015</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Lieke Vermeulen</li>
+                            <li><span class="position">Treasurer:</span> Tim Bakker</li>
+                            <li><span class="position">Secretary:</span> Daan de Jong</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Organized the first internal powerlifting competition.</p>
+                    </div>
+                    
+                    <div class="board-year">
+                        <h3>2013-2014</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Ruben Smit</li>
+                            <li><span class="position">Treasurer:</span> Fleur van Leeuwen</li>
+                            <li><span class="position">Secretary:</span> Jesse Verhoeven</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Doubled the membership from the founding year to over 80 members.</p>
+                    </div>
+                    
+                    <div class="board-year board-year-founding">
+                        <h3>2012-2013 (Founding Board)</h3>
+                        <ul class="board-list">
+                            <li><span class="position">Chair:</span> Sjoerd van der Zee</li>
+                            <li><span class="position">Secretary:</span> Jeroen de Beer</li>
+                            <li><span class="position">Treasurer:</span> Tijn Schraa</li>
+                        </ul>
+                        <p class="board-achievement">Key achievement: Established T.S.K.V. Spartacus as an official student association at Tilburg University with 45 founding members.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Board of Advisors -->
+            <section class="section">
+                <h2 class="section-title">BOARD OF ADVISORS</h2>
+                <p class="section-description">Our Board of Advisors consists of former board members who provide guidance, institutional knowledge, and support to the current board. Their experience and expertise help ensure continuity and strategic direction for T.S.K.V. Spartacus.</p>
+                
+                <div class="advisors-content">
+                    <div class="advisors-text">
+                        <h3>Advisory Role</h3>
+                        <p>The Board of Advisors meets quarterly with the current board to provide guidance on strategic decisions, help navigate complex challenges, and share institutional knowledge. They serve as mentors to current board members, helping them develop leadership skills and understand the history and traditions of Spartacus.</p>
+                        
+                        <h3>Current Advisors</h3>
+                        <ul class="advisors-list">
+                            <li>
+                                <span class="advisor-name">Ezra Janssen</span> 
+                                <span class="advisor-years">Chair (2022-2023)</span>
+                            </li>
+                            <li>
+                                <span class="advisor-name">Lotte van der Meer</span> 
+                                <span class="advisor-years">Treasurer (2021-2022)</span>
+                            </li>
+                            <li>
+                                <span class="advisor-name">Thomas Bakker</span> 
+                                <span class="advisor-years">Vice Chair (2020-2021)</span>
+                            </li>
+                            <li>
+                                <span class="advisor-name">Sophie Williams</span> 
+                                <span class="advisor-years">Secretary (2019-2020)</span>
+                            </li>
+                        </ul>
+                        
+                        <p class="mt-20">The Advisory Board is a valuable resource for our association, providing a link to our past while helping us build our future. Their guidance ensures that the lessons learned over the years are not forgotten and that Spartacus continues to grow and improve.</p>
+                    </div>
+                    
+                    <div class="advisors-image">
+                        <img src="/images/Old_Spartacus.jpg" alt="Spartacus Board of Advisors">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Top Button -->
+            <div class="back-to-top">
+                <a href="#" class="btn btn-secondary">BACK TO TOP</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <script>
+        // Smooth scroll for Back to Top
+        document.querySelector('.back-to-top a').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

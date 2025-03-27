@@ -10,7 +10,7 @@ import '../styles/pages/documents.css';
 <html lang="en">
 
 <head>
-    <BaseHead />
+    <BaseHead title="Important Documents | T.S.K.V. Spartacus" description="Access all official T.S.K.V. Spartacus documents including articles of association, policy plans, and more" />
 </head>
 
 <body>
@@ -33,43 +33,142 @@ import '../styles/pages/documents.css';
                 <h2 class="section-title">ASSOCIATION DOCUMENTS</h2>
                 <p>Here you'll find all official documents that govern T.S.K.V. Spartacus. These documents outline our rules, regulations, procedures, and expectations for all members.</p>
                 
-
-                <!-- Articles of Association -->
+                <!-- Statutes -->
                 <div class="document-card">
                     <div class="document-header">
-                        <h3 class="document-title">ARTICLES OF ASSOCIATION</h3>
+                        <h3 class="document-title">STATUTES (ARTICLES OF ASSOCIATION)</h3>
+                        <p class="document-description">The foundational legal document that governs our organization and establishes our mission, structure, and operational framework.</p>
                     </div>
                     <div class="document-actions">
-                        <a href="#" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <div class="language-options">
+                            <span class="language-label">Available in:</span>
+                            <a href="/documents/statues-dutch.pdf" class="language-btn">Dutch</a>
+                        </div>
+                        <a href="/documents/statues-dutch.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
-                <!-- Privacy Statement -->
+                <!-- Policy Plan -->
                 <div class="document-card">
                     <div class="document-header">
-                        <h3 class="document-title">PRIVACY STATEMENT</h3>
+                        <h3 class="document-title">POLICY PLAN</h3>
+                        <p class="document-description">Our current policy plan outlining the board's approach to governance, operations, and association management.</p>
                     </div>
                     <div class="document-actions">
-                        <a href="#" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <div class="language-options">
+                            <span class="language-label">Available in:</span>
+                            <a href="/documents/policy-plan.pdf" class="language-btn">English</a>
+                        </div>
+                        <a href="/documents/policy-plan.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
-                <!-- CODE OF CONDUCT -->
+                <!-- 5-Year Plan -->
+                <div class="document-card">
+                    <div class="document-header">
+                        <h3 class="document-title">5-YEAR PLAN</h3>
+                        <p class="document-description">Our long-term strategic vision and goals, including growth targets, facility improvements, and community initiatives for the next five years.</p>
+                    </div>
+                    <div class="document-actions">
+                        <div class="language-options">
+                            <span class="language-label">Available in:</span>
+                            <a href="/documents/5-year-plan.pdf" class="language-btn">English</a>
+                        </div>
+                        <a href="/documents/5-year-plan.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
+                    </div>
+                </div>
+
+                <!-- Code of Conduct -->
                 <div class="document-card">
                     <div class="document-header">
                         <h3 class="document-title">CODE OF CONDUCT</h3>
+                        <p class="document-description">The standards of behavior expected from our members, coaches, and board members to maintain a respectful and inclusive environment.</p>
                     </div>
                     <div class="document-actions">
-                        <a href="#" class="btn btn-secondary">DOWNLOAD PDF</a>
+                        <div class="language-options">
+                            <span class="language-label">Available in:</span>
+                            <a href="/documents/code-of-conduct-english.pdf" class="language-btn active">English</a>
+                            <a href="/documents/code-of-conduct-dutch.pdf" class="language-btn">Dutch</a>
+                        </div>
+                        <a href="/documents/code-of-conduct-english.pdf" class="btn btn-secondary">DOWNLOAD PDF</a>
                     </div>
                 </div>
 
+                <!-- Terms and Conditions -->
+                <div class="document-card">
+                    <div class="document-header">
+                        <h3 class="document-title">TERMS AND CONDITIONS</h3>
+                        <p class="document-description">The terms and conditions for membership and participation in T.S.K.V. Spartacus activities and events.</p>
+                    </div>
+                    <div class="document-actions">
+                        <div class="language-options">
+                            <span class="language-label">Available in:</span>
+                            <a href="/documents/terms-and-conditions.docx" class="language-btn active">English</a>
+                            <a href="/documents/terms-and-conditions-dutch.pdf" class="language-btn">Dutch</a>
+                        </div>
+                        <a href="/documents/terms-and-conditions.docx" class="btn btn-secondary">DOWNLOAD DOCUMENT</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meeting Document Request -->
+            <section class="section document-request-section">
+                <h2 class="section-title">REQUEST ADDITIONAL DOCUMENTS</h2>
+                <p>General Members Meeting (GMM) documents, including detailed financial reports and meeting minutes, are available to all association members upon request.</p>
+                <div class="document-request-info">
+                    <p>To request access to any GMM documents or previous financial reports, please email our secretary at <a href="mailto:secretary@tskvspartacus.nl" class="spartacus-link">secretary@tskvspartacus.nl</a> with your member details.</p>
+                    <div class="document-request-action">
+                        <a href="mailto:secretary@tskvspartacus.nl?subject=Document%20Request&body=Hi%20Spartacus%20Secretary%2C%0A%0AI%20would%20like%20to%20request%20access%20to%20the%20following%20document(s)%3A%0A%0A-%20[Document%20name]%0A%0AMy%20member%20details%3A%0A-%20Name%3A%0A-%20Membership%20year%3A%0A%0AThank%20you!" class="btn">REQUEST DOCUMENTS</a>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
-<script is:inline src="/script.js"></script>
-</body>
 
 <Footer />
 
+<script is:inline>
+    // Add hover effects for document cards
+    document.querySelectorAll('.document-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    // Language selector functionality
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Get parent card
+            const card = this.closest('.document-card');
+            
+            // Remove active class from all buttons in this card
+            card.querySelectorAll('.language-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Update download button link
+            const downloadBtn = card.querySelector('.btn.btn-secondary');
+            downloadBtn.href = this.href;
+            
+            // If this is just a language selector without changing the page
+            if (e.ctrlKey || e.metaKey) {
+                // Let the default behavior happen (open in new tab)
+            } else {
+                // Prevent default if it's a normal click to just change language
+                e.preventDefault();
+            }
+        });
+    });
+</script>
+
+</body>
 </html>

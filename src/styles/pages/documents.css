@@ -1,4 +1,13 @@
-/* Documents Page Specific Styles - Optimized */
+/* Documents Page Specific Styles - Enhanced */
+
+/* Hero Section */
+.hero {
+  min-height: 40vh;
+  background-image: linear-gradient(rgba(55, 0, 27, 0.85), rgba(186, 19, 26, 0.75)), url('/images/spartacus-documents-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
 /* Document Cards */
 .document-card {
@@ -9,8 +18,6 @@
   overflow: hidden;
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
-  display: flex;
-  flex-direction: column;
 }
 
 .document-card:hover {
@@ -22,7 +29,7 @@
 .document-header {
   padding: 20px 25px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   border-bottom: 1px solid #f0f0f0;
   transition: background-color 0.3s ease;
@@ -39,6 +46,7 @@
   position: relative;
   display: inline-block;
   padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .document-title::after {
@@ -56,11 +64,24 @@
   width: 100%;
 }
 
+.document-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .document-actions {
   padding: 15px 25px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.document-card:hover .document-actions {
+  background-color: #f0f0f0;
 }
 
 .document-actions .btn {
@@ -69,10 +90,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-}
-
-.document-actions .btn:hover {
-  transform: translateY(-3px);
 }
 
 .document-actions .btn::before {
@@ -87,6 +104,42 @@
   transform: translateY(-2px);
 }
 
+/* Language Options */
+.language-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-label {
+  font-size: 14px;
+  color: #666;
+  margin-right: 5px;
+}
+
+.language-btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.language-btn:hover {
+  background-color: #e0e0e0;
+  color: var(--spartacus-burgundy);
+}
+
+.language-btn.active {
+  background-color: var(--spartacus-burgundy);
+  color: white;
+  border-color: var(--spartacus-burgundy);
+}
+
 /* Section Introduction */
 .section p {
   margin-bottom: 30px;
@@ -94,12 +147,63 @@
   line-height: 1.8;
 }
 
+.section-title {
+  margin-bottom: 20px;
+}
+
+/* Document Request Section */
+.document-request-section {
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-left: 4px solid var(--spartacus-yellow);
+}
+
+.document-request-info {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.document-request-action {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.spartacus-link {
+  color: var(--spartacus-red);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.spartacus-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--spartacus-red);
+  transition: width 0.3s ease;
+}
+
+.spartacus-link:hover {
+  color: var(--spartacus-burgundy);
+}
+
+.spartacus-link:hover::after {
+  width: 100%;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .document-header {
     padding: 15px 20px;
-    flex-direction: column;
-    align-items: flex-start;
   }
   
   .document-title {
@@ -108,12 +212,39 @@
   
   .document-actions {
     padding: 15px 20px;
-    justify-content: center;
-    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
   }
   
   .document-actions .btn {
     width: 100%;
     justify-content: center;
+  }
+  
+  .language-options {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .document-request-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .document-request-info {
+    padding: 20px 15px;
+  }
+  
+  .language-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .language-label {
+    margin-bottom: 5px;
   }
 }

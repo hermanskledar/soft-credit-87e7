@@ -31,6 +31,12 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
         <div class="container">
             <!-- Board Section -->
             <BoardOfDirectors />
+            
+            <!-- Previous Boards Link -->
+            <div class="previous-boards-link">
+                <a href="/committee/boards" class="btn">SEE PREVIOUS BOARDS</a>
+                <p>Discover the history of leadership at Spartacus and the boards that have shaped our association over the years.</p>
+            </div>
 
             <!-- Committees Section -->
             <section class="section">
@@ -269,7 +275,7 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
                         </div>
                         <div class="testimonial-card">
                             <div class="testimonial-content">
-                                <p>"Being part of the social media committee for our student strength sports association is an absolute blast! It’s fun to create content, take sick photographs, share our members' achievements, and foster a supportive community. Every day is a new opportunity to inspire and be inspired. Come join us and experience the fun!"</p>
+                                <p>"Being part of the social media committee for our student strength sports association is an absolute blast! It's fun to create content, take sick photographs, share our members' achievements, and foster a supportive community. Every day is a new opportunity to inspire and be inspired. Come join us and experience the fun!"</p>
                                 <p class="testimonial-author">— Luca Simonetti, Social Media Committee Member (2024-2025)</p>
                             </div>
                         </div>
@@ -354,8 +360,8 @@ import BoardOfDirectors from '../components/BoardOfDirectors.astro';
         nextBtn.addEventListener('click', nextTestimonial);
         prevBtn.addEventListener('click', prevTestimonial);
 
-        // Auto-advance every 5 seconds
+        // Auto-advance every 20 seconds
         setInterval(nextTestimonial, 20000);
     </script>
-    </body>
+</body>
 </html>

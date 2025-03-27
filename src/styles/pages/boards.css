@@ -1,6 +1,6 @@
-/* Board History Page Styles */
+/* Board History Page Styles - Updated to match committee.css and remove achievements */
 
-/* Container for boards page - making it wider */
+/* Container for boards page - matching committee.css container width */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -36,6 +36,14 @@
 .current-board-link {
     text-align: center;
     margin: 20px 0 40px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    border-top: 3px solid var(--spartacus-yellow);
+}
+
+.current-board-link .btn {
+    margin-bottom: 15px;
 }
 
 /* History Section */
@@ -101,7 +109,7 @@
 }
 
 .section-description {
-  max-width: 900px;
+  max-width: 800px;
   margin-bottom: 40px;
   line-height: 1.8;
   font-size: 16px;
@@ -141,7 +149,7 @@
 .board-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 15px;
+  margin-bottom: 0; /* Updated from 15px to 0 since achievements were removed */
 }
 
 .board-list li {
@@ -155,113 +163,10 @@
   margin-right: 5px;
 }
 
-.board-achievement {
-  font-style: italic;
-  background-color: #f8f8f8;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-top: 15px;
-}
-
 .board-year-founding {
   grid-column: 1 / -1;
   background-color: #f8f8f8;
   border-left: 4px solid var(--spartacus-yellow);
-}
-
-/* Board of Advisors Section */
-.advisors-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.advisors-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.advisors-text h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
-  color: var(--spartacus-burgundy);
-  margin-top: 20px;
-  margin-bottom: 15px;
-  position: relative;
-  padding-bottom: 8px;
-}
-
-.advisors-text h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background-color: var(--spartacus-red);
-  transition: width 0.3s ease;
-}
-
-.advisors-text h3:hover::after {
-  width: 60px;
-}
-
-.advisors-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
-}
-
-.advisors-list li {
-  padding: 12px 15px;
-  margin-bottom: 10px;
-  background-color: #f8f8f8;
-  border-left: 3px solid var(--spartacus-red);
-  border-radius: 4px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.advisors-list li:hover {
-  transform: translateX(5px);
-  background-color: #f0f0f0;
-}
-
-.advisor-name {
-  font-weight: 600;
-  color: var(--spartacus-burgundy);
-}
-
-.advisor-years {
-  color: var(--spartacus-red);
-  font-size: 14px;
-}
-
-.advisors-image {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.advisors-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.advisors-image img:hover {
-  transform: scale(1.02);
-}
-
-.mt-20 {
-  margin-top: 20px;
 }
 
 /* Back to Top Button */
@@ -272,6 +177,11 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
   .previous-boards {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
@@ -287,15 +197,6 @@
     margin: 0 auto;
   }
   
-  .advisors-content {
-    flex-direction: column;
-  }
-  
-  .advisors-image {
-    margin: 0 auto;
-    order: -1;
-  }
-  
   .previous-boards {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
@@ -304,14 +205,5 @@
 @media (max-width: 576px) {
   .board-year {
     padding: 20px 15px;
-  }
-  
-  .advisors-list li {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .advisor-years {
-    margin-top: 5px;
   }
 }

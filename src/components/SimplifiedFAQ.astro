@@ -1,0 +1,138 @@
+---
+// src/components/SimplifiedFAQ.astro
+// A simplified FAQ component based on the contact page FAQ style
+---
+
+<div class="faq-section">
+    <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h3>DO I NEED PREVIOUS EXPERIENCE?</h3>
+            <p>No, we welcome members of all experience levels. Our community includes beginners, intermediate lifters, and advanced athletes.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>IS SPARTACUS ONLY FOR POWERLIFTERS?</h3>
+            <p>While we have a strong focus on powerlifting, we support all strength sports including bodybuilding, Olympic weightlifting and people who are less serious about the gym.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>ARE INTERNATIONAL STUDENTS WELCOME?</h3>
+            <p>Absolutely! TSKV Spartacus is one of the few English-first student associations in Tilburg, meaning all official communication will be in English! We also have many active international students.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>WHEN CAN I JOIN?</h3>
+            <p>You can join T.S.K.V. Spartacus at any time during the academic year.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>CAN I TRY SPARTACUS OUT?</h3>
+            <p>Of course! Email <a href="mailto:info@tskvspartacus.nl">info@tskvspartacus.nl</a> to get to know some board members during a training session!</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .faq-section {
+        margin: 80px 0;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+        text-align: center;
+        position: relative;
+        padding-bottom: 15px;
+        color: var(--spartacus-burgundy);
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--spartacus-red);
+    }
+
+    .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .faq-item {
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-left: 3px solid var(--spartacus-red);
+    }
+
+    .faq-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item h3 {
+        color: var(--spartacus-burgundy);
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 18px;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .faq-item h3::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 18px;
+        background-color: var(--spartacus-red);
+        border-radius: 3px;
+    }
+
+    .faq-item p {
+        line-height: 1.7;
+        color: #555;
+    }
+
+    .faq-item a {
+        color: var(--spartacus-red);
+        text-decoration: none;
+        position: relative;
+    }
+
+    .faq-item a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background-color: var(--spartacus-red);
+        transition: width 0.3s;
+    }
+
+    .faq-item a:hover::after {
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .faq-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .faq-item {
+            padding: 20px;
+        }
+    }
+</style>

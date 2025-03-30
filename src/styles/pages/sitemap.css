@@ -1,0 +1,123 @@
+/* Sitemap specific styles */
+.sitemap-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.sitemap-title {
+    font-size: 32px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.sitemap-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--spartacus-red);
+}
+
+.sitemap-introduction {
+    margin-bottom: 40px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.sitemap-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-top: 3px solid var(--spartacus-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sitemap-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.sitemap-section h2 {
+    font-size: 22px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sitemap-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--spartacus-red);
+    transition: width 0.3s ease;
+}
+
+.sitemap-section:hover h2::after {
+    width: 60px;
+}
+
+.sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemap-item {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.sitemap-item::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--spartacus-red);
+    font-weight: bold;
+}
+
+.sitemap-item.sub-item {
+    margin-left: 20px;
+    font-size: 0.9em;
+}
+
+.sitemap-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.sitemap-link:hover {
+    color: var(--spartacus-red);
+    transform: translateX(3px);
+}
+
+.sitemap-description {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+    .sitemap-grid {
+        grid-template-columns: 1fr;
+    }
+}

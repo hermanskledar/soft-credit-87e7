@@ -1,0 +1,156 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/pages/sitemap.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title="Sitemap | T.S.K.V. Spartacus" description="Navigate through all pages of the T.S.K.V. Spartacus website with our comprehensive sitemap." />
+</head>
+
+<body>
+    <!-- Header -->
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>SITEMAP</h1>
+            <h2>NAVIGATE OUR WEBSITE</h2>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="sitemap-container">
+            <h2 class="sitemap-title">Complete Website Structure</h2>
+            <div class="sitemap-introduction">
+                <p>Welcome to the T.S.K.V. Spartacus sitemap. This page provides a comprehensive overview of all the content available on our website, organized by section. Use this map to quickly find the information you're looking for.</p>
+            </div>
+            
+            <div class="sitemap-grid">
+                <!-- Main Pages Section -->
+                <div class="sitemap-section">
+                    <h2>Main Pages</h2>
+                    <ul class="sitemap-list">
+                        <li class="sitemap-item">
+                            <a href="/" class="sitemap-link">Home</a>
+                            <div class="sitemap-description">Welcome page with overview of Spartacus</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/about" class="sitemap-link">About Us</a>
+                            <div class="sitemap-description">Our mission, vision, and team</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/contact" class="sitemap-link">Contact</a>
+                            <div class="sitemap-description">Get in touch with us</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/become-a-member" class="sitemap-link">Become a Member</a>
+                            <div class="sitemap-description">Join Spartacus</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/registration" class="sitemap-link">Registration</a>
+                            <div class="sitemap-description">Sign up form for new members</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/history" class="sitemap-link">History</a>
+                            <div class="sitemap-description">The story of Spartacus</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Strength Sports Section -->
+                <div class="sitemap-section">
+                    <h2>Strength Sports</h2>
+                    <ul class="sitemap-list">
+                        <li class="sitemap-item">
+                            <a href="/strenghtsports" class="sitemap-link">Strength Sports Overview</a>
+                            <div class="sitemap-description">Introduction to strength sports at Spartacus</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/strenghtsports/powerlifting" class="sitemap-link">Powerlifting</a>
+                            <div class="sitemap-description">Information about powerlifting at Spartacus</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Committee Section -->
+                <div class="sitemap-section">
+                    <h2>Committees</h2>
+                    <ul class="sitemap-list">
+                        <li class="sitemap-item">
+                            <a href="/committee" class="sitemap-link">Committees Overview</a>
+                            <div class="sitemap-description">Information about our committees and board</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/committee/previous-boards" class="sitemap-link">Previous Boards</a>
+                            <div class="sitemap-description">History of Spartacus leadership</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Member Resources Section -->
+                <div class="sitemap-section">
+                    <h2>Member Resources</h2>
+                    <ul class="sitemap-list">
+                        <li class="sitemap-item">
+                            <a href="/member-portal" class="sitemap-link">Member Portal</a>
+                            <div class="sitemap-description">Access your membership details</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/membership-discounts" class="sitemap-link">Membership Discounts</a>
+                            <div class="sitemap-description">Special offers for Spartacus members</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/important-documents" class="sitemap-link">Important Documents</a>
+                            <div class="sitemap-description">Governing documents and policies</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Other Pages Section -->
+                <div class="sitemap-section">
+                    <h2>Other Pages</h2>
+                    <ul class="sitemap-list">
+                        <li class="sitemap-item">
+                            <a href="/confirmation" class="sitemap-link">Registration Confirmation</a>
+                            <div class="sitemap-description">Successful registration page</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="/sitemap" class="sitemap-link">Sitemap</a>
+                            <div class="sitemap-description">This page - complete website structure</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- External Resources Section -->
+                <div class="sitemap-section">
+                    <h2>External Resources</h2>
+                    <ul class="sitemap-list">
+                        <li class="sitemap-item">
+                            <a href="https://tskvspartacus.nl/shop/" class="sitemap-link" target="_blank">Official Webshop</a>
+                            <div class="sitemap-description">Spartacus merchandise and gear</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="https://knkf-sectiepowerliften.nl/" class="sitemap-link" target="_blank">KNKF Powerlifting</a>
+                            <div class="sitemap-description">Dutch Powerlifting Federation</div>
+                        </li>
+                        <li class="sitemap-item">
+                            <a href="https://www.tilburguniversity.edu/campus/sports-center" class="sitemap-link" target="_blank">Tilburg University Sports Center</a>
+                            <div class="sitemap-description">Information about our training facility</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+</body>
+</html>

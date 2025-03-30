@@ -1,4 +1,4 @@
-/* Previous Boards Page Styles - Matching committee.css */
+/* Previous Boards Page Styles - Updated with board photo styling */
 
 /* Container for boards page - matching committee.css container width */
 .container {
@@ -9,27 +9,27 @@
 
 /* Hero section specific styles */
 .hero {
-min-height: 40vh;
-background-image: linear-gradient(rgba(55, 0, 27, 0.85), rgba(186, 19, 26, 0.75)), url('/images/board-history-bg.jpg');
-background-size: cover;
-background-position: center;
-position: relative;
+  min-height: 40vh;
+  background-image: linear-gradient(rgba(55, 0, 27, 0.85), rgba(186, 19, 26, 0.75)), url('/images/board-history-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .hero::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: linear-gradient(135deg, rgba(55, 0, 27, 0.7) 0%, rgba(186, 19, 26, 0.6) 100%);
-z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(55, 0, 27, 0.7) 0%, rgba(186, 19, 26, 0.6) 100%);
+  z-index: 1;
 }
 
 .hero .container {
-position: relative;
-z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 /* Current Board Link */
@@ -80,130 +80,172 @@ z-index: 2;
 
 /* Section styling */
 .section {
-margin-bottom: 70px;
-width: 100%;
+  margin-bottom: 70px;
+  width: 100%;
 }
 
 .section-title {
-position: relative;
-margin-bottom: 30px;
-padding-bottom: 15px;
-font-family: 'Bebas Neue', sans-serif;
-color: var(--spartacus-burgundy);
-font-size: 28px;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--spartacus-burgundy);
+  font-size: 28px;
 }
 
 .section-title::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 60px;
-height: 3px;
-background-color: var(--spartacus-red);
-transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--spartacus-red);
+  transition: width 0.3s ease;
 }
 
 .section:hover .section-title::after {
-width: 80px;
+  width: 80px;
 }
 
 .section-description {
-max-width: 800px;
-margin-bottom: 40px;
-line-height: 1.8;
-font-size: 16px;
+  max-width: 800px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
 /* Previous Boards Section */
 .previous-boards {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-gap: 30px;
-margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .board-year {
-background-color: white;
-border-radius: 8px;
-padding: 25px;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-transition: all 0.3s ease;
-border-left: 4px solid var(--spartacus-red);
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--spartacus-red);
+  display: flex;
+  flex-direction: column;
 }
 
 .board-year:hover {
-transform: translateY(-8px);
-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Board Photo Styling */
+.board-photo {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.board-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.board-year:hover .board-img {
+  transform: scale(1.05);
 }
 
 .board-year h3 {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 22px;
-color: var(--spartacus-burgundy);
-margin-bottom: 15px;
-border-bottom: 2px solid #f0f0f0;
-padding-bottom: 8px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--spartacus-burgundy);
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
 }
 
 .board-list {
-list-style: none;
-padding: 0;
-margin-bottom: 0; /* Updated from 15px to 0 since achievements were removed */
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .board-list li {
-padding: 8px 0;
-border-bottom: 1px dashed #eee;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
 }
 
 .position {
-font-weight: 600;
-color: var(--spartacus-red);
-margin-right: 5px;
+  font-weight: 600;
+  color: var(--spartacus-red);
+  margin-right: 5px;
 }
 
 .board-year-founding {
-grid-column: 1 / -1;
-background-color: #f8f8f8;
-border-left: 4px solid var(--spartacus-yellow);
+  grid-column: 1 / -1;
+  background-color: #f8f8f8;
+  border-left: 4px solid var(--spartacus-yellow);
+}
+
+.board-year-founding .board-photo {
+  max-width: 500px;
+  margin: 0 auto 20px;
 }
 
 /* Back to Top Button */
 .back-to-top {
-text-align: center;
-margin: 60px 0 30px;
+  text-align: center;
+  margin: 60px 0 30px;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-.container {
-  max-width: 100%;
-  padding: 0 20px;
-}
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 
-.previous-boards {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-}
+  .previous-boards {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-.history-content {
-  flex-direction: column;
-}
+  .history-content {
+    flex-direction: column;
+  }
 
-.history-image {
-  order: -1;
-  margin: 0 auto;
-}
+  .history-image {
+    order: -1;
+    margin: 0 auto;
+  }
 
-.previous-boards {
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-}
+  .previous-boards {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+  
+  .board-year-founding {
+    grid-column: auto;
+  }
+  
+  .board-year-founding .board-photo {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 576px) {
-.board-year {
-  padding: 20px 15px;
-}
+  .board-year {
+    padding: 20px 15px;
+  }
+  
+  .board-photo {
+    aspect-ratio: 4 / 3;
+  }
 }

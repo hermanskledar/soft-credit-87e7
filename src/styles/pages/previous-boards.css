@@ -1,4 +1,4 @@
-/* Previous Boards Page Styles - Updated with board photo styling */
+/* Previous Boards Page Styles - Updated with fixed heights */
 
 /* Container for boards page - matching committee.css container width */
 .container {
@@ -96,15 +96,16 @@
   border-radius: 8px;
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
   border-left: 4px solid var(--spartacus-red);
   display: flex;
   flex-direction: column;
+  height: 420px; /* Fixed height for all board cards */
 }
 
 .board-year:hover {
-  transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  /* Removed the translateY transform to prevent jumpy appearance */
 }
 
 /* Board Photo Styling */
@@ -113,9 +114,8 @@
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-  aspect-ratio: 16 / 9;
+  height: 180px; /* Fixed height for all board photos */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 }
 
 .board-img {
@@ -139,6 +139,12 @@
   padding-bottom: 8px;
 }
 
+.board-list-container {
+  flex: 1; /* Take up remaining space */
+  overflow: auto; /* Allow scrolling if content is too large */
+  padding-right: 5px; /* Space for scrollbar */
+}
+
 .board-list {
   list-style: none;
   padding: 0;
@@ -160,17 +166,38 @@
   grid-column: 1 / -1;
   background-color: #f8f8f8;
   border-left: 4px solid var(--spartacus-yellow);
+  height: auto; /* Allow founding board to be auto-height */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .board-year-founding .board-photo {
-  max-width: 500px;
-  margin: 0 auto 20px;
+  height: 300px; /* Larger photo for founding board */
 }
 
 /* Back to Top Button */
 .back-to-top {
   text-align: center;
   margin: 60px 0 30px;
+}
+
+/* Custom scrollbar for board list */
+.board-list-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.board-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.board-list-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.board-list-container::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }
 
 /* Responsive Design */
@@ -192,19 +219,25 @@
   
   .board-year-founding {
     grid-column: auto;
+    height: auto;
   }
   
-  .board-year-founding .board-photo {
-    max-width: 100%;
+  .board-year {
+    height: 400px; /* Slightly smaller for tablets */
+  }
+  
+  .board-photo {
+    height: 160px; /* Slightly smaller photos for tablets */
   }
 }
 
 @media (max-width: 576px) {
   .board-year {
     padding: 20px 15px;
+    height: 380px; /* Even smaller for mobile */
   }
   
   .board-photo {
-    aspect-ratio: 4 / 3;
+    height: 140px; /* Smaller photos for mobile */
   }
 }

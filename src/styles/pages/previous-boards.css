@@ -174,11 +174,40 @@
   margin: 60px 0 30px;
 }
 
-/* Remove animations during scrolling */
+/* Remove animations during scrolling and stabilize all elements */
 .board-year,
 .section,
-.board-photo {
+.board-photo,
+.board-list,
+.board-list li,
+.position,
+.section-title,
+.section-description,
+.board-year h3 {
   animation: none !important;
+}
+
+/* Prevent text from jumping or transforming */
+.board-list li {
+  transition: none !important;
+}
+
+.board-list li:hover {
+  transform: none !important;
+}
+
+/* Stabilize position titles */
+.position {
+  transition: none !important;
+}
+
+/* Prevent section title underline animations */
+.section-title::after {
+  transition: none !important;
+}
+
+.section:hover .section-title::after {
+  width: 60px !important; /* Keep it at the initial width */
 }
 
 /* Responsive Design */

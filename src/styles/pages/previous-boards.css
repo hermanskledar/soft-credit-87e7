@@ -96,15 +96,16 @@
   border-radius: 8px;
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
   border-left: 4px solid var(--spartacus-red);
   display: flex;
   flex-direction: column;
+  transform: none !important; /* Prevent initial transform */
 }
 
 .board-year:hover {
-  transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  transform: none !important; /* Prevent hover transform */
 }
 
 /* Board Photo Styling */
@@ -115,7 +116,7 @@
   position: relative;
   aspect-ratio: 16 / 9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .board-img {
@@ -123,11 +124,11 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.5s ease;
+  transition: none;
 }
 
 .board-year:hover .board-img {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .board-year h3 {
@@ -171,6 +172,13 @@
 .back-to-top {
   text-align: center;
   margin: 60px 0 30px;
+}
+
+/* Remove animations during scrolling */
+.board-year,
+.section,
+.board-photo {
+  animation: none !important;
 }
 
 /* Responsive Design */

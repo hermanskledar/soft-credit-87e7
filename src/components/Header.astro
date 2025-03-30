@@ -23,6 +23,12 @@ import '../styles/Components/header.css';
                 <li>
                     <a href="https://tskvspartacus.nl/shop/" target="_blank" rel="noopener noreferrer" class="nav-link">Shop</a>
                 </li>
+                <!-- New Member Portal Link -->
+                <li>
+                    <a href="/member-portal" class="nav-link portal-link">
+                        <i class="fas fa-user-circle"></i> Portal
+                    </a>
+                </li>
                 <!-- Desktop Join Button (hidden on mobile) -->
                 <li class="desktop-join-link">
                     <a href="/register" class="nav-link desktop-join-button">Join</a>
@@ -57,6 +63,7 @@ import '../styles/Components/header.css';
         </button>
     </div>
 </header>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -76,5 +83,37 @@ import '../styles/Components/header.css';
                 document.body.style.overflow = 'auto';
             }
         });
+        
+        // Add Font Awesome if not already included
+        if (!document.querySelector('link[href*="font-awesome"]')) {
+            const fontAwesome = document.createElement('link');
+            fontAwesome.rel = 'stylesheet';
+            fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+            document.head.appendChild(fontAwesome);
+        }
     });
 </script>
+
+<style>
+    /* Portal Link Specific Styles */
+    .portal-link {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .portal-link i {
+        font-size: 16px;
+    }
+    
+    /* Hover effects for portal link */
+    .portal-link:hover i {
+        color: var(--clr-secondary);
+    }
+    
+    @media (max-width: 768px) {
+        .portal-link {
+            justify-content: center;
+        }
+    }
+</style>

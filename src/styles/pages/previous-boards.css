@@ -32,19 +32,7 @@
   z-index: 2;
 }
 
-/* Current Board Link */
-.current-board-link {
-  text-align: center;
-  margin: 20px 0 40px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  border-top: 3px solid var(--spartacus-yellow);
-}
-
-.current-board-link .btn {
-  margin-bottom: 15px;
-}
+/* Removed Current Board Link styles */
 
 /* Section styling */
 .section {
@@ -160,7 +148,7 @@
 .board-year-founding {
   grid-column: 1 / -1;
   background-color: #f8f8f8;
-  border-left: 4px solid var(--spartacus-yellow);
+  border-left: 4px solid var(--spartacus-red);
 }
 
 .board-year-founding .board-photo {

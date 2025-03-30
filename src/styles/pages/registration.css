@@ -1,0 +1,363 @@
+/* Registration Page Specific Styles */
+
+/* Hero Section */
+.registration-hero {
+    background-image: linear-gradient(rgba(55, 0, 27, 0.8), rgba(186, 19, 26, 0.7)), url('/images/registration-hero-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 40vh;
+}
+
+.section-intro {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Information Box */
+.registration-info {
+    margin: 40px 0;
+}
+
+.info-box {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 20px;
+    border-left: 4px solid var(--spartacus-yellow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    font-size: 30px;
+    color: var(--spartacus-yellow);
+    flex-shrink: 0;
+}
+
+.info-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 15px;
+}
+
+.info-content ul {
+    margin-left: 15px;
+}
+
+.info-content li {
+    margin-bottom: 10px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.spartacus-link {
+    color: var(--spartacus-red);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.spartacus-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--spartacus-red);
+    transition: width 0.3s ease;
+}
+
+.spartacus-link:hover {
+    color: var(--spartacus-burgundy);
+}
+
+.spartacus-link:hover::after {
+    width: 100%;
+}
+
+/* Form Container */
+.form-section {
+    margin: 60px 0;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 5px solid var(--spartacus-red);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, transparent 50%, rgba(186, 19, 26, 0.05) 50%);
+    z-index: 1;
+}
+
+/* Benefits Preview */
+.benefits-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.benefit-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid var(--spartacus-red);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+    font-size: 36px;
+    color: var(--spartacus-red);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.2);
+}
+
+.benefit-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--spartacus-burgundy);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.benefit-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--spartacus-red);
+    transition: width 0.3s ease;
+}
+
+.benefit-card:hover h3::after {
+    width: 50%;
+}
+
+.benefit-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.benefits-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Conscribo Form Overrides */
+#cwfForm {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+#cwfForm input[type="text"],
+#cwfForm input[type="email"],
+#cwfForm input[type="tel"],
+#cwfForm input[type="date"],
+#cwfForm select,
+#cwfForm textarea {
+    font-family: 'Montserrat', sans-serif !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ddd !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    background-color: #f9f9f9 !important;
+    width: 100% !important;
+}
+
+#cwfForm input[type="text"]:focus,
+#cwfForm input[type="email"]:focus,
+#cwfForm input[type="tel"]:focus,
+#cwfForm input[type="date"]:focus,
+#cwfForm select:focus,
+#cwfForm textarea:focus {
+    border-color: var(--spartacus-red) !important;
+    box-shadow: 0 0 0 3px rgba(186, 19, 26, 0.1) !important;
+    outline: none !important;
+    background-color: white !important;
+}
+
+#cwfForm .labelDiv {
+    margin-bottom: 5px !important;
+    font-weight: 600 !important;
+    color: var(--spartacus-burgundy) !important;
+}
+
+#cwfForm .inputDiv, 
+#cwfForm .textareaDiv, 
+#cwfForm .selectDiv,
+#cwfForm .dateDiv {
+    margin-bottom: 20px !important;
+}
+
+#cwfForm .submitButtonDiv {
+    text-align: center !important;
+    margin-top: 30px !important;
+}
+
+#cwfForm .submitButton {
+    background-color: var(--spartacus-red) !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 30px !important;
+    border-radius: 4px !important;
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+#cwfForm .submitButton:hover {
+    background-color: #a01116 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+#cwfForm .errorMessage {
+    color: var(--spartacus-red) !important;
+    font-size: 14px !important;
+    margin-top: 5px !important;
+    font-weight: normal !important;
+}
+
+#cwfForm .requiredMarker {
+    color: var(--spartacus-red) !important;
+}
+
+#cwfForm .checkboxDiv {
+    margin: 20px 0 !important;
+}
+
+#cwfForm .checkboxDiv input {
+    margin-right: 10px !important;
+    vertical-align: middle !important;
+}
+
+#cwfForm .textDiv {
+    margin: 30px 0 15px !important;
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 22px !important;
+    color: var(--spartacus-burgundy) !important;
+    padding-bottom: 8px !important;
+    border-bottom: 2px solid var(--spartacus-red) !important;
+}
+
+#cwfForm .captchaDiv {
+    margin: 25px 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+#cwfForm .dateDiv input {
+    width: auto !important;
+}
+
+/* Loading State */
+.form-loading {
+    position: relative;
+}
+
+.form-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+    
+    .info-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .benefits-preview {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-title {
+        font-size: 26px;
+    }
+    
+    #cwfForm .submitButton {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 25px 15px;
+    }
+    
+    .benefit-card {
+        padding: 20px 15px;
+    }
+    
+    .benefit-icon {
+        font-size: 32px;
+    }
+    
+    .section-intro {
+        font-size: 16px;
+    }
+    
+    #cwfForm .textDiv {
+        font-size: 20px !important;
+    }
+}

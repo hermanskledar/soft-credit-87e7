@@ -1,210 +1,56 @@
-/* Previous Boards Page Styles - Updated with board photo styling */
+/* Stabilize elements on the previous boards page */
 
-/* Container for boards page - matching committee.css container width */
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
-/* Hero section specific styles */
-.hero {
-  min-height: 40vh;
-  background-image: linear-gradient(rgba(55, 0, 27, 0.85), rgba(186, 19, 26, 0.75)), url('/images/board-history-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(55, 0, 27, 0.7) 0%, rgba(186, 19, 26, 0.6) 100%);
-  z-index: 1;
-}
-
-.hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* Current Board Link */
-.current-board-link {
-  text-align: center;
-  margin: 20px 0 40px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  border-top: 3px solid var(--spartacus-yellow);
-}
-
-.current-board-link .btn {
-  margin-bottom: 15px;
-}
-
-/* Section styling */
-.section {
-  margin-bottom: 70px;
-  width: 100%;
-}
-
-.section-title {
-  position: relative;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  font-family: 'Bebas Neue', sans-serif;
-  color: var(--spartacus-burgundy);
-  font-size: 28px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background-color: var(--spartacus-red);
-  transition: width 0.3s ease;
-}
-
-.section:hover .section-title::after {
-  width: 80px;
-}
-
-.section-description {
-  max-width: 800px;
-  margin-bottom: 40px;
-  line-height: 1.8;
-  font-size: 16px;
-}
-
-/* Previous Boards Section */
-.previous-boards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
+/* Prevent board cards from moving on hover */
 .board-year {
-  background-color: white;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border-left: 4px solid var(--spartacus-red);
-  display: flex;
-  flex-direction: column;
+  transition: box-shadow 0.3s ease !important;
+  transform: none !important;
 }
 
 .board-year:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  transform: none !important;
 }
 
-/* Board Photo Styling */
+/* Prevent board photos from scaling on hover */
 .board-photo {
-  margin-bottom: 20px;
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-  aspect-ratio: 16 / 9;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease !important;
 }
 
 .board-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s ease;
+  transition: none !important;
 }
 
 .board-year:hover .board-img {
-  transform: scale(1.05);
+  transform: none !important;
 }
 
-.board-year h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
-  color: var(--spartacus-burgundy);
-  margin-bottom: 15px;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 8px;
+/* Stabilize any other elements that might be animated */
+.board-member-name::after,
+.board-year h3::after,
+.section-title::after {
+  transition: none !important;
 }
 
-.board-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
+/* Remove any fade-in or slide-in animations that might be applied */
+.board-year,
+.section,
+.board-photo,
+.board-img {
+  animation: none !important;
 }
 
+/* Ensure text remains stable */
 .board-list li {
-  padding: 8px 0;
-  border-bottom: 1px dashed #eee;
+  transition: none !important;
 }
 
-.position {
-  font-weight: 600;
-  color: var(--spartacus-red);
-  margin-right: 5px;
+.board-list li:hover {
+  transform: none !important;
 }
 
-.board-year-founding {
-  grid-column: 1 / -1;
-  background-color: #f8f8f8;
-  border-left: 4px solid var(--spartacus-yellow);
-}
-
-.board-year-founding .board-photo {
-  max-width: 500px;
-  margin: 0 auto 20px;
-}
-
-/* Back to Top Button */
-.back-to-top {
-  text-align: center;
-  margin: 60px 0 30px;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .container {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-
-  .previous-boards {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .previous-boards {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  }
-  
-  .board-year-founding {
-    grid-column: auto;
-  }
-  
-  .board-year-founding .board-photo {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 576px) {
-  .board-year {
-    padding: 20px 15px;
-  }
-  
-  .board-photo {
-    aspect-ratio: 4 / 3;
-  }
+/* Prevent any scaling effects on hover */
+.board-year:hover .board-member-name::after,
+.board-year:hover h3::after,
+.section:hover .section-title::after {
+  width: auto !important;
+  transform: none !important;
 }

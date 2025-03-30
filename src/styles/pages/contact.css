@@ -1,6 +1,7 @@
-/* Enhanced Contact Page Styles */
+/* Updated Contact Page Styles - Form Removed */
+
 .hero {
-    background-image: url('/images/contact-hero-bg.jpg'); /* Replace with actual image */
+    background-image: url('/images/contact-hero-bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -23,18 +24,18 @@
     z-index: 2;
 }
 
-.contact-container {
+.container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 30px;
     box-sizing: border-box;
 }
 
-.contact-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+/* Updated contact section style for full width */
+.contact-section-full {
     margin: 60px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-info {
@@ -42,8 +43,16 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    height: fit-content;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
     border-top: 4px solid var(--spartacus-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .contact-info h2 {
@@ -132,7 +141,7 @@
     width: 40px; 
     height: 40px; 
     background-color: var(--spartacus-red); 
-    color: white !important; /* Ensure icon color is always white */
+    color: white !important;
     border-radius: 50%; 
     transition: all 0.3s ease; 
     text-decoration: none; 
@@ -146,8 +155,8 @@
 
 /* Fix for social icons */
 .social-links a i {
-    color: white !important; /* Force icon color to white */
-    margin-right: 0; /* Reset margins for social icons */
+    color: white !important;
+    margin-right: 0;
 }
 
 /* Organization details in contact info */
@@ -180,123 +189,6 @@
     border-radius: 3px;
     border: 1px solid #eee;
     display: inline-block;
-}
-
-/* Contact Form Styles */
-.contact-form-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--spartacus-yellow);
-}
-
-.contact-form-container h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 15px;
-    color: var(--spartacus-burgundy);
-}
-
-.contact-form-container h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: var(--spartacus-yellow);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    font-family: 'Bebas Neue', sans-serif;
-    color: var(--spartacus-burgundy);
-    letter-spacing: 1px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: #f9f9f9;
-}
-
-.form-control:focus {
-    border-color: var(--spartacus-yellow);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(231, 197, 94, 0.2);
-    background-color: white;
-}
-
-select.form-control {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6' fill='none'%3E%3Cpath d='M1 1l5 4 5-4' stroke='%23ba131a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    padding-right: 40px;
-}
-
-textarea.form-control {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.form-submit-btn {
-    background-color: var(--spartacus-yellow);
-    color: var(--spartacus-burgundy);
-    border: none;
-    padding: 14px 30px;
-    border-radius: 4px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-}
-
-.form-submit-btn:hover {
-    background-color: var(--spartacus-red);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-#formStatus {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 4px;
-    display: none;
-}
-
-#formStatus.success {
-    background-color: rgba(40, 167, 69, 0.1);
-    color: #28a745;
-    border: 1px solid rgba(40, 167, 69, 0.2);
-    display: block;
-}
-
-#formStatus.error {
-    background-color: rgba(186, 19, 26, 0.1);
-    color: var(--spartacus-red);
-    border: 1px solid rgba(186, 19, 26, 0.2);
-    display: block;
 }
 
 /* Confidential contacts section */
@@ -335,12 +227,13 @@ textarea.form-control {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .confidential-contact-card {
     flex: 1;
     min-width: 250px;
+    max-width: 300px;
     background-color: #f8f8f8;
     padding: 25px;
     border-radius: 8px;
@@ -516,17 +409,12 @@ iframe {
 
 /* Media Queries */
 @media (max-width: 992px) {
-    .contact-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
     .faq-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
     
-    .contact-container {
+    .container {
         padding: 0 25px;
     }
     
@@ -536,16 +424,26 @@ iframe {
 }
 
 @media (max-width: 768px) {
-    .contact-container {
+    .container {
         padding: 0 20px;
     }
     
-    .contact-info, .contact-form-container, .confidential-contacts-container {
+    .contact-info {
+        padding: 30px 20px;
+    }
+    
+    .confidential-contacts-container {
         padding: 30px 20px;
     }
     
     .confidential-contacts {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .confidential-contact-card {
+        width: 100%;
+        max-width: 300px;
     }
     
     .map-container {
@@ -554,11 +452,12 @@ iframe {
 }
 
 @media (max-width: 576px) {
-    .contact-container {
+    .container {
         padding: 0 15px;
     }
     
-    .contact-info, .contact-form-container, .confidential-contacts-container {
+    .contact-info, 
+    .confidential-contacts-container {
         padding: 25px 15px;
     }
     
@@ -568,9 +467,5 @@ iframe {
     
     .map-container {
         height: 300px;
-    }
-    
-    .form-submit-btn {
-        width: 100%;
     }
 }

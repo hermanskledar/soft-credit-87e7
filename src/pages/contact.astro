@@ -29,7 +29,7 @@ import '../styles/pages/contact.css';
     <!-- Main Content -->
     <main>
         <div class="container">
-            <div class="contact-section">
+            <div class="contact-section-full">
                 <!-- Contact Info -->
                 <div class="contact-info">
                     <h2>GET IN TOUCH</h2>
@@ -72,46 +72,6 @@ import '../styles/pages/contact.css';
                         </div>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-                <div id="email" class="contact-form-container">
-                    <h2>SEND US A MESSAGE</h2>
-                    
-                    <form id="contactForm" class="contact-form" action="/api/contact.php" method="POST">
-                        <div class="form-group">
-                            <label for="name" class="form-label">NAME *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">EMAIL *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="form-label">SUBJECT *</label>
-                            <select id="subject" name="subject" class="form-control" required>
-                                <option value="">Select a subject</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="membership">Membership Information</option>
-                                <option value="strength-sports">Strength Sports Questions</option>
-                                <option value="competitions">Competition Information</option>
-                                <option value="committee">Committee Involvement</option>
-                                <option value="coaching application">Coaching Application</option>
-                                <option value="Competition Volunteering">Competition Volunteering</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">MESSAGE *</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="form-submit-btn">SEND MESSAGE</button>
-                        <div id="formStatus"></div>
-                    </form>
-                </div>
             </div>
 
             <!-- Confidential Contact Persons -->
@@ -126,7 +86,7 @@ import '../styles/pages/contact.css';
                         </div>
                         <h3>Marlijn</h3>
                         <p>Confidential Contact Person</p>
-                        <a href="mailto:confidential1@tskvspartacus.nl" class="contact-email">marlijn@tskvspartacus.nl</a>
+                        <a href="mailto:marlijn@tskvspartacus.nl" class="contact-email">marlijn@tskvspartacus.nl</a>
                     </div>
                     
                     <div class="confidential-contact-card">
@@ -135,7 +95,7 @@ import '../styles/pages/contact.css';
                         </div>
                         <h3>Wystke</h3>
                         <p>Confidential Contact Person</p>
-                        <a href="mailto:confidential2@tskvspartacus.nl" class="contact-email">wytske@tskvspartacus.nl</a>
+                        <a href="mailto:wytske@tskvspartacus.nl" class="contact-email">wytske@tskvspartacus.nl</a>
                     </div>
                 </div>
             </div>
@@ -155,42 +115,5 @@ import '../styles/pages/contact.css';
 
     <!-- Footer -->
     <Footer />
-
-    <script is:inline>
-        // Client-side form handling with AJAX
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const formStatus = document.getElementById('formStatus');
-                formStatus.className = '';
-                formStatus.textContent = 'Sending message...';
-                formStatus.style.display = 'block';
-                
-                const formData = new FormData(this);
-                
-                fetch('/api/contact.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
-                        formStatus.className = 'success';
-                        document.getElementById('contactForm').reset();
-                    } else {
-                        formStatus.textContent = data.message || 'There was an error sending your message. Please try again.';
-                        formStatus.className = 'error';
-                    }
-                })
-                .catch(error => {
-                    formStatus.textContent = 'There was an error sending your message. Please try again.';
-                    formStatus.className = 'error';
-                    console.error('Error:', error);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -246,17 +246,82 @@ import Footer from '../components/Footer.astro';
             .hero {
                 padding: 100px 0 50px;
             }
-            
+
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .hero h2 {
                 font-size: 22px;
             }
-            
+
             .faq-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                min-width: 0;
+                padding: 20px 15px;
+                overflow: hidden;
+            }
+
+            /* Constrain Conscribo form widget on mobile */
+            #cwfForm {
+                max-width: 100% !important;
+                overflow-x: auto !important;
+            }
+
+            #cwfForm * {
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            #cwfForm table {
+                width: 100% !important;
+                table-layout: fixed !important;
+            }
+
+            #cwfForm input,
+            #cwfForm select,
+            #cwfForm textarea {
+                width: 100% !important;
+                min-width: 0 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 90px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            .registration-container {
+                padding: 0 10px;
+            }
+
+            .form-container {
+                padding: 15px 10px;
+            }
+
+            .form-title {
+                font-size: 22px;
+            }
+
+            .highlight-box {
+                padding: 12px;
+                font-size: 14px;
             }
         }
     </style>

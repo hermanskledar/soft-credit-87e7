@@ -14,13 +14,11 @@
   padding: 40px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   border-top: 5px solid var(--spartacus-red);
-  animation: fadeIn 0.8s ease-out;
 }
 
 .confirmation-title {
   color: var(--spartacus-red);
   margin-bottom: 20px;
-  animation: fadeInDown 0.8s ease-out;
 }
 
 .confirmation-message {
@@ -28,8 +26,6 @@
   line-height: 1.6;
   margin-bottom: 30px;
   color: #333;
-  animation: fadeInDown 0.8s ease-out 0.2s;
-  animation-fill-mode: both;
 }
 
 .next-steps {
@@ -38,8 +34,6 @@
   border-radius: 8px;
   margin: 30px 0;
   text-align: left;
-  animation: fadeInDown 0.8s ease-out 0.4s;
-  animation-fill-mode: both;
 }
 
 .next-steps-title {
@@ -58,11 +52,6 @@
   align-items: flex-start;
   margin-bottom: 20px;
   font-size: 14px;
-  transition: transform 0.3s ease;
-}
-
-.step-item:hover {
-  transform: translateX(5px);
 }
 
 .step-icon {
@@ -85,8 +74,6 @@
 
 .social-follow {
   margin-top: 30px;
-  animation: fadeInUp 0.8s ease-out 0.6s;
-  animation-fill-mode: both;
 }
 
 .social-title {
@@ -120,14 +107,10 @@
 
 .social-btn:hover {
   background-color: var(--spartacus-red);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .confirmation-actions {
   margin-top: 30px;
-  animation: fadeInUp 0.8s ease-out 0.8s;
-  animation-fill-mode: both;
 }
 
 /* Media Queries */

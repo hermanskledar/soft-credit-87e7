@@ -227,8 +227,6 @@ main {
 
 .btn:hover {
   background-color: var(--spartacus-red-dark);
-  box-shadow: var(--box-shadow-md);
-  transform: translateY(-2px);
   color: white;
 }
 
@@ -271,7 +269,6 @@ main {
   background-color: var(--spartacus-red);
   bottom: 0;
   left: 0;
-  transition: width var(--transition-normal);
 }
 
 .centered-title {
@@ -302,7 +299,6 @@ main {
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-sm);
   text-align: center;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -313,7 +309,6 @@ main {
   font-size: 40px;
   margin-bottom: 20px;
   color: var(--spartacus-red);
-  transition: color var(--transition-normal);
 }
 
 .feature h3 {
@@ -334,7 +329,6 @@ main {
   width: 0;
   height: 2px;
   background-color: var(--spartacus-red);
-  transition: width var(--transition-normal);
 }
 
 
@@ -387,15 +381,7 @@ main {
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
-/* Animation Classes */
-.fade-in {
-  animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+/* Animation Classes - Removed for cleaner UX */
 
 /* Responsive - Medium screen */
 @media (max-width: 992px) {

@@ -47,12 +47,6 @@
     max-width: 700px;
     margin: 0 auto;
     border-top: 4px solid var(--spartacus-red);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .contact-info h2 {
@@ -109,23 +103,8 @@
     transition: color 0.3s;
 }
 
-.contact-method a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 1px;
-    background-color: var(--spartacus-red);
-    transition: width 0.3s;
-}
-
 .contact-method a:hover {
     color: var(--spartacus-burgundy);
-}
-
-.contact-method a:hover::after {
-    width: 100%;
 }
 
 .social-links { 
@@ -148,9 +127,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.social-links a:hover { 
+.social-links a:hover {
     background-color: var(--spartacus-yellow);
-    transform: translateY(-3px);
 }
 
 /* Fix for social icons */
@@ -238,13 +216,7 @@
     padding: 25px;
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.confidential-contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contact-icon {
@@ -258,12 +230,6 @@
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 28px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.confidential-contact-card:hover .contact-icon {
-    transform: scale(1.1);
-    background-color: var(--spartacus-red);
 }
 
 .confidential-contact-card h3 {
@@ -292,8 +258,6 @@
 .contact-email:hover {
     background-color: var(--spartacus-red);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(186, 19, 26, 0.2);
 }
 
 /* FAQ Section */
@@ -332,13 +296,7 @@
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
     border-left: 3px solid var(--spartacus-red);
-}
-
-.faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .faq-item h3 {
@@ -373,20 +331,6 @@
     position: relative;
 }
 
-.faq-item a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 1px;
-    background-color: var(--spartacus-red);
-    transition: width 0.3s;
-}
-
-.faq-item a:hover::after {
-    width: 100%;
-}
 
 /* Map Section */
 .map-section {

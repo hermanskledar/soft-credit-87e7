@@ -18,18 +18,6 @@
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  animation: fadeIn 0.8s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Form Header */
@@ -63,19 +51,6 @@
   right: 20px;
   width: 70px;
   height: auto;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .spartacus-logo-container img {
@@ -99,13 +74,6 @@
   padding: 15px;
   margin: 20px 0;
   border-radius: 4px;
-  animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
 }
 
 /* Loading Indicator */
@@ -129,12 +97,6 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /* Confirmation Screen */
@@ -143,7 +105,6 @@
   text-align: center;
   padding: 40px 30px;
   font-family: 'Montserrat', sans-serif;
-  animation: fadeIn 0.8s ease-out;
 }
 
 .spartacus-confirmation-screen h2 {
@@ -200,20 +161,6 @@
   overflow: hidden;
 }
 
-.spartacus-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
-  transition: left 0.7s ease;
-}
-
-.spartacus-btn:hover::before {
-  left: 100%;
-}
 
 .spartacus-btn-primary {
   background-color: var(--spartacus-red);
@@ -222,8 +169,6 @@
 
 .spartacus-btn-primary:hover {
   background-color: #a01116;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .spartacus-btn-secondary {
@@ -233,8 +178,6 @@
 
 .spartacus-btn-secondary:hover {
   background-color: #d3b44c;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .spartacus-social-links {
@@ -263,14 +206,11 @@
   background-color: var(--spartacus-burgundy);
   color: white;
   border-radius: 50%;
-  transition: transform 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .spartacus-social-icon:hover {
-  transform: translateY(-3px) scale(1.1);
   background-color: var(--spartacus-red);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Form Styling Overrides */
@@ -378,25 +318,8 @@
   overflow: hidden;
 }
 
-#cwfForm .submitButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
-  transition: left 0.7s ease;
-}
-
 #cwfForm .submitButton:hover {
   background-color: #a01116;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(186, 19, 26, 0.3);
-}
-
-#cwfForm .submitButton:hover::before {
-  left: 100%;
 }
 
 /* Responsive Design */

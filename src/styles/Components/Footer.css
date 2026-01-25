@@ -100,7 +100,6 @@ footer::before {
 
 .footer-links a:hover {
   color: var(--spartacus-yellow);
-  transform: translateX(5px);
 }
 
 .social-links {
@@ -125,7 +124,6 @@ footer::before {
 
 .social-links a:hover {
   background-color: var(--spartacus-yellow);
-  transform: translateY(-3px);
 }
 
 .footer-bottom {

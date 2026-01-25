@@ -39,13 +39,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 4px solid var(--spartacus-red);
-}
-
-.benefits-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .benefits-card h3 {
@@ -66,11 +60,6 @@
     width: 40px;
     height: 2px;
     background-color: var(--spartacus-red);
-    transition: width 0.3s ease;
-}
-
-.benefits-card:hover h3::after {
-    width: 70px;
 }
 
 .benefit-item {
@@ -91,12 +80,6 @@
     margin-right: 15px;
     flex-shrink: 0;
     font-size: 18px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.benefit-item:hover .benefit-icon {
-    transform: scale(1.1) rotate(5deg);
-    background-color: var(--spartacus-burgundy);
 }
 
 .benefit-content h4 {
@@ -128,13 +111,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     width: 280px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-}
-
-.step-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .step-number {
@@ -160,11 +137,6 @@
     font-size: 40px;
     color: var(--spartacus-red);
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.step-card:hover .step-icon {
-    transform: scale(1.2);
 }
 
 .step-title {
@@ -183,7 +155,6 @@
 
 .testimonials-container {
     display: flex;
-    transition: transform 0.5s ease;
     width: 100%;
 }
 
@@ -238,14 +209,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
     pointer-events: auto;
 }
 
 .carousel-btn:hover {
     background-color: var(--spartacus-red);
     color: white;
-    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -398,23 +367,8 @@
     font-weight: 500;
 }
 
-.spartacus-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--spartacus-red);
-    transition: width 0.3s ease;
-}
-
 .spartacus-link:hover {
     color: var(--spartacus-burgundy);
-}
-
-.spartacus-link:hover::after {
-    width: 100%;
 }
 
 /* Responsive Media Queries */

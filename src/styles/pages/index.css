@@ -26,13 +26,6 @@
   backdrop-filter: blur(5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(231, 197, 94, 0.3);
-  animation: fadeIn 1s ease-out;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .hero-video {
@@ -48,12 +41,6 @@
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(231, 197, 94, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-wrapper:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .video-wrapper iframe {
@@ -85,13 +72,7 @@
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: all 0.4s ease;
   position: relative;
-}
-
-.price-box:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .price-header {
@@ -103,21 +84,6 @@
   overflow: hidden;
 }
 
-.price-header::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.price-box:hover .price-header::before {
-  opacity: 1;
-}
 
 .price-header h3 {
   margin-bottom: 15px;
@@ -147,12 +113,7 @@
   margin-bottom: 18px;
   padding-left: 28px;
   position: relative;
-  transition: transform 0.3s ease;
   text-align: left;
-}
-
-.price-features li:hover {
-  transform: translateX(5px);
 }
 
 .price-features li::before {
@@ -170,12 +131,6 @@
   justify-content: center;
   font-size: 12px;
   line-height: 1;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.price-features li:hover::before {
-  transform: scale(1.2);
-  background-color: rgba(186, 19, 26, 0.2);
 }
 
 .price-action {
@@ -223,13 +178,11 @@
   height: 10px;
   border-radius: 50%;
   background-color: #ddd;
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .indicator.active {
   background-color: var(--spartacus-red);
-  transform: scale(1.2);
 }
 
 /* Desktop/Mobile visibility */
@@ -262,7 +215,6 @@
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
 /* Additional media queries for the about section images */

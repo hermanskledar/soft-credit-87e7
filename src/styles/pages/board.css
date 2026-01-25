@@ -29,17 +29,11 @@
 .board-member {
   width: 280px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 30px 20px;
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-top: 4px solid var(--spartacus-red);
-}
-
-.board-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .board-member img {
@@ -49,13 +43,6 @@
   object-fit: cover;
   border: 4px solid var(--spartacus-red);
   margin-bottom: 20px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.board-member:hover img {
-  box-shadow: 0 8px 20px rgba(186, 19, 26, 0.3);
-  border-color: var(--spartacus-yellow);
-  transform: scale(1.05);
 }
 
 .board-member-name {
@@ -73,15 +60,10 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 0;
+  width: 50%;
   height: 2px;
   background-color: var(--spartacus-red);
   transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.board-member:hover .board-member-name::after {
-  width: 50%;
 }
 
 .board-member-role {
@@ -123,23 +105,8 @@
   padding-bottom: 2px;
 }
 
-.board-member-email a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--spartacus-burgundy);
-  transition: width 0.3s ease;
-}
-
 .board-member-email a:hover {
   color: var(--spartacus-burgundy);
-}
-
-.board-member-email a:hover::after {
-  width: 100%;
 }
 
 /* Board Responsibilities Section */
@@ -155,13 +122,7 @@
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
   border-top: 3px solid var(--spartacus-red);
-}
-
-.responsibility-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .responsibility-icon {
@@ -175,12 +136,6 @@
   border-radius: 50%;
   font-size: 24px;
   margin: 0 auto 20px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.responsibility-card:hover .responsibility-icon {
-  transform: scale(1.1) rotate(10deg);
-  background-color: var(--spartacus-burgundy);
 }
 
 .responsibility-card h3 {
@@ -243,16 +198,10 @@
   background-color: #f8f8f8;
   border-left: 3px solid var(--spartacus-red);
   border-radius: 4px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.advisors-list li:hover {
-  transform: translateX(5px);
-  background-color: #f0f0f0;
 }
 
 .advisor-name {
@@ -274,7 +223,6 @@
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
 /* Previous Boards Section */
@@ -290,13 +238,7 @@
   border-radius: 8px;
   padding: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
   border-left: 4px solid var(--spartacus-red);
-}
-
-.board-year:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .board-year h3 {
@@ -353,17 +295,6 @@
   font-weight: 600;
   position: relative;
   transition: color 0.3s ease;
-}
-
-.spartacus-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--spartacus-red);
-  transition: width 0.3s ease;
 }
 
 .spartacus-link:hover {

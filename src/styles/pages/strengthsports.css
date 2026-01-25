@@ -25,22 +25,10 @@
   z-index: 2;
 }
 
-/* Section styling with enhanced animations */
+/* Section styling */
 .section {
   margin-bottom: 80px;
-  animation: fadeIn 0.8s ease-out;
   overflow: hidden;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Enhanced content sections styling */
@@ -67,14 +55,12 @@
   z-index: 1;
 }
 
-/* Enhanced image styling */
+/* Image styling */
 .about-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
-  transform: perspective(1000px) rotateY(0deg);
   object-fit: cover;
 }
 
@@ -91,7 +77,6 @@
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
 }
 
 /* Enhanced section titles with animated underlines */
@@ -111,7 +96,6 @@
   width: 60px;
   height: 3px;
   background-color: var(--spartacus-red);
-  transition: width 0.5s ease;
 }
 
 /* Enhanced content styling */
@@ -125,7 +109,6 @@
   margin-bottom: 15px;
   position: relative;
   padding-left: 25px;
-  transition: transform 0.3s ease;
 }
 
 .about-text li::before {
@@ -134,48 +117,12 @@
   left: 0;
   color: var(--spartacus-red);
   font-size: 20px;
-  transition: transform 0.3s ease;
 }
 
-.about-text li:hover {
-  transform: translateX(5px);
-}
-
-.about-text li:hover::before {
-  transform: scale(1.2);
-}
-
-/* Enhanced button styling */
+/* Button styling */
 .about-text .btn {
   margin-top: 15px;
   margin-right: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-text .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    rgba(255,255,255,0) 0%, 
-    rgba(255,255,255,0.2) 50%, 
-    rgba(255,255,255,0) 100%
-  );
-  transition: left 0.7s ease;
-  z-index: 1;
-}
-
-.about-text .btn:hover::before {
-  left: 100%;
-}
-
-.about-text .btn span {
-  position: relative;
-  z-index: 2;
 }
 
 /* Competition List with enhanced styling */
@@ -191,21 +138,9 @@
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  border-left: 4px solid transparent;
+  border-left: 4px solid var(--spartacus-red);
   position: relative;
   overflow: hidden;
-}
-
-.competition-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 0;
-  background-color: var(--spartacus-red);
-  transition: height 0.4s ease;
 }
 
 .competition-item h3 {
@@ -225,7 +160,6 @@
   width: 50px;
   height: 2px;
   background-color: var(--spartacus-red);
-  transition: width 0.3s ease;
 }
 
 .competition-item p {
@@ -252,34 +186,16 @@
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   z-index: 1;
-}
-
-.feature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--spartacus-red);
-  transition: height 0.4s ease;
-  z-index: -1;
-}
-
-.feature:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-top: 4px solid var(--spartacus-red);
 }
 
 .feature-icon {
   font-size: 46px;
   color: var(--spartacus-red);
   margin-bottom: 20px;
-  transition: transform 0.4s ease, color 0.4s ease;
 }
 
 

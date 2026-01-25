@@ -80,11 +80,6 @@
       width: 0;
       height: 2px;
       background: var(--clr-secondary);
-      transition: width var(--transition);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
     }
 
     .desktop-join-button {

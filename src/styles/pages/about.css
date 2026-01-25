@@ -21,15 +21,8 @@
 .board-member {
   width: 220px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-.board-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 
@@ -40,13 +33,6 @@
   object-fit: cover;
   border: 4px solid var(--spartacus-red);
   margin-bottom: 15px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.board-member:hover img {
-  box-shadow: 0 5px 15px rgba(186, 19, 26, 0.3);
-  border-color: var(--spartacus-yellow);
-  transform: scale(1.05);
 }
 
 .board-member-name {
@@ -60,25 +46,15 @@
   position: absolute;
   bottom: -3px;
   left: 50%;
-  width: 0;
+  width: 50%;
   height: 2px;
   background-color: var(--spartacus-red);
   transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.board-member:hover .board-member-name::after {
-  width: 50%;
 }
 
 .board-member-role {
   font-weight: bold;
   margin-bottom: 10px;
-  color: #555;
-  transition: color 0.3s ease;
-}
-
-.board-member:hover .board-member-role {
   color: var(--spartacus-burgundy);
 }
 
@@ -87,20 +63,6 @@
   padding-bottom: 2px;
 }
 
-.board-member-email a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--spartacus-burgundy);
-  transition: width 0.3s ease;
-}
-
-.board-member-email a:hover::after {
-  width: 100%;
-}
 
 /* Affiliation Section */
 
@@ -142,14 +104,12 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .history-image {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.5s ease;
 }
 
 /* Responsive adjustments */

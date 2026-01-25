@@ -29,12 +29,6 @@
     display: flex;
     gap: 20px;
     border-left: 4px solid var(--spartacus-yellow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .info-icon {
@@ -67,23 +61,8 @@
     transition: color 0.3s ease;
 }
 
-.spartacus-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--spartacus-red);
-    transition: width 0.3s ease;
-}
-
 .spartacus-link:hover {
     color: var(--spartacus-burgundy);
-}
-
-.spartacus-link:hover::after {
-    width: 100%;
 }
 
 /* Form Container */
@@ -128,24 +107,13 @@
     padding: 30px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 3px solid var(--spartacus-red);
-}
-
-.benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .benefit-icon {
     font-size: 36px;
     color: var(--spartacus-red);
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.benefit-card:hover .benefit-icon {
-    transform: scale(1.2);
 }
 
 .benefit-card h3 {
@@ -164,14 +132,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
+    width: 50%;
     height: 2px;
     background-color: var(--spartacus-red);
-    transition: width 0.3s ease;
-}
-
-.benefit-card:hover h3::after {
-    width: 50%;
 }
 
 .benefit-card p {
@@ -251,8 +214,6 @@
 
 #cwfForm .submitButton:hover {
     background-color: #a01116 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 #cwfForm .errorMessage {

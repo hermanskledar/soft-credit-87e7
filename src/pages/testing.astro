@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +87,7 @@ import Footer from '../components/Footer.astro';
             background: #f8f8f8;
             padding: 15px 20px;
             border-radius: 8px;
-            width: 280px;
+            width: 250px;
         }
         
         .feature-icon {
@@ -104,8 +105,8 @@ import Footer from '../components/Footer.astro';
             border-radius: 8px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
             min-height: 600px;
-            margin-bottom: 60px;
         }
         
         .portal-widget-container h2 {
@@ -113,15 +114,6 @@ import Footer from '../components/Footer.astro';
             margin-bottom: 30px;
             text-align: center;
             font-size: 24px;
-        }
-        
-        .widget-subtitle {
-            text-align: center;
-            max-width: 800px;
-            margin: 15px auto 30px;
-            color: #555;
-            font-size: 16px;
-            line-height: 1.6;
         }
         
         .conscribo-app-container {
@@ -189,6 +181,7 @@ import Footer from '../components/Footer.astro';
 <body>
     <!-- Header -->
     <Header />
+
     <!-- Hero Section -->
     <section class="portal-hero">
         <div class="container">
@@ -196,13 +189,14 @@ import Footer from '../components/Footer.astro';
             <h2>MANAGE YOUR SPARTACUS MEMBERSHIP</h2>
         </div>
     </section>
+
     <!-- Main Content -->
     <main>
         <div class="portal-container">
             <!-- Introduction -->
             <div class="portal-intro">
-                <h2>WELCOME TO YOUR MEMBER PORTAL</h2>
-                <p>This secure portal allows you to manage your T.S.K.V. Spartacus membership details and access important association files. Update your personal information, manage your payment method, keep your contact details current, and download documents such as statutes and minutes.</p>
+                <h2>WELCOME TO YOUR MEMBERSHIP PORTAL</h2>
+                <p>This secure portal allows you to manage your T.S.K.V. Spartacus membership details. Update your personal information, change your payment method, and keep your contact details current.</p>
                 
                 <div class="portal-features">
                     <div class="portal-feature">
@@ -214,43 +208,39 @@ import Footer from '../components/Footer.astro';
                         <span class="feature-icon"><i class="fas fa-university"></i></span>
                         <span class="feature-text">Manage Payment Details</span>
                     </div>
-                    
-                    <div class="portal-feature">
-                        <span class="feature-icon"><i class="fas fa-folder-open"></i></span>
-                        <span class="feature-text">Access Association Files</span>
-                    </div>
                 </div>
             </div>
-            
-            <!-- Membership Details Widget -->
+
+            <!-- ===== SECTION 1: MEMBERSHIP DETAILS ===== -->
             <div class="portal-widget-container">
-                <h2>Your Membership Details</h2>
-                <p class="widget-subtitle">View and update your personal information, membership status, and payment details.</p>
-                <!-- Conscribo widget for membership details -->
+                <h2>YOUR MEMBERSHIP INFORMATION</h2>
+                <!-- Conscribo Portal Widget - Membership Details -->
                 <script async src="https://leden.conscribo.nl/TSKVSpartacus/portal/loader" type="module"></script>
                 <div class="conscribo-app-container" data-id="af04808317"></div>
             </div>
-            
-            <!-- Association Files Widget -->
+
+            <!-- ===== SECTION 2: ASSOCIATION FILES ===== -->
             <div class="portal-widget-container">
-                <h2>Association Files</h2>
-                <p class="widget-subtitle">Browse and download important documents such as statutes, policies, meeting minutes, and other association files.</p>
-                <!-- Conscribo widget for association files -->
+                <h2>ASSOCIATION FILES</h2>
+                <!-- Conscribo Portal Widget - Association Files -->
+                <script async src="https://leden.conscribo.nl/TSKVSpartacus/portal/loader" type="module"></script>
                 <div class="conscribo-app-container" data-id="a071d903b8"></div>
             </div>
             
             <!-- Help Section -->
             <div class="help-section">
                 <h3>NEED ASSISTANCE?</h3>
-                <p>If you encounter any issues with the portal or have questions about your membership, please contact our secretary:</p>
+                <p>If you encounter any issues or have questions about your membership, please contact our secretary:</p>
                 <a href="mailto:secretary@tskvspartacus.nl" class="help-email">
                     <i class="fas fa-envelope"></i> secretary@tskvspartacus.nl
                 </a>
             </div>
         </div>
     </main>
+
     <!-- Footer -->
     <Footer />
+
     <script>
         // Add Font Awesome if not already included
         if (!document.querySelector('link[href*="font-awesome"]')) {

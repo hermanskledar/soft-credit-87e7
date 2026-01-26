@@ -1,119 +1,146 @@
 ---
 import '../styles/Components/header.css';
+import HeaderLink from './HeaderLink.astro';
+
+interface NavItem {
+  label: string;
+  href: string;
+  external?: boolean;
+  icon?: boolean;
+  isButton?: boolean;
+  mobileOnly?: boolean;
+  desktopOnly?: boolean;
+}
+
+const navItems: NavItem[] = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Strength Sports', href: '/strengthsports' },
+  { label: 'Committees', href: '/committee' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Shop', href: 'https://tskvspartacus.nl/shop/', external: true },
+  { label: 'Portal', href: '/member-portal', icon: true },
+  { label: 'Join', href: '/registration', isButton: true, desktopOnly: true },
+];
 ---
 
 <header class="spartacus-header" role="banner">
-    <div class="header-container">
-        <a href="/" class="logo" aria-label="Spartacus Home">
-            <img 
-                src="/images/spartacus-logo.png" 
-                alt="Spartacus Logo" 
-                class="logo-image" 
-                loading="eager"
-            >
-            <span class="logo-text">Spartacus</span>
-        </a>
-        <nav class="main-navigation" role="navigation" aria-label="Main navigation">
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/strengthsports" class="nav-link">Strength Sports</a></li>
-                <li><a href="/committee" class="nav-link">Committees</a></li>
-                <li><a href="/contact" class="nav-link">Contact</a></li>
-                <li>
-                    <a href="https://tskvspartacus.nl/shop/" target="_blank" rel="noopener noreferrer" class="nav-link">Shop</a>
-                </li>
-                <!-- New Member Portal Link -->
-                <li>
-                    <a href="/member-portal" class="nav-link portal-link">
-                        <i class="fas fa-user-circle"></i> Portal
-                    </a>
-                </li>
-                <!-- Desktop Join Button (hidden on mobile) -->
-                <li class="desktop-join-link">
-                    <a href="/registration" class="nav-link desktop-join-button">Join</a>
-                </li>
-            </ul>
-            <!-- Mobile Join Button (visible on mobile) -->
-            <div class="mobile-join-link">
-                <a href="/registration" class="mobile-join-button">Become Member!</a>
-            </div>
-        </nav>
-        <button 
-            class="mobile-menu-toggle" 
-            aria-label="Toggle mobile menu" 
-            aria-expanded="false"
-            aria-controls="main-navigation"
-        >
-            <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                stroke-width="2" 
-                stroke-linecap="round" 
-                class="hamburger-icon"
-            >
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        </button>
-    </div>
+  <div class="header-container">
+    <a href="/" class="logo" aria-label="Spartacus Home">
+      <img
+        src="/images/spartacus-logo.png"
+        alt="Spartacus Logo"
+        class="logo-image"
+        loading="eager"
+      >
+      <span class="logo-text">Spartacus</span>
+    </a>
+
+    <nav class="main-navigation" role="navigation" aria-label="Main navigation">
+      <ul class="nav-menu">
+        {navItems.map((item) => {
+          if (item.mobileOnly) return null;
+
+          const linkClass = [
+            'nav-link',
+            item.icon && 'portal-link',
+            item.isButton && 'desktop-join-button',
+          ].filter(Boolean).join(' ');
+
+          const liClass = item.desktopOnly ? 'desktop-join-link' : '';
+
+          return (
+            <li class={liClass}>
+              <HeaderLink
+                href={item.href}
+                class={linkClass}
+                {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
+              >
+                {item.icon && (
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                )}
+                {item.label}
+              </HeaderLink>
+            </li>
+          );
+        })}
+      </ul>
+
+      <div class="mobile-join-link">
+        <a href="/registration" class="mobile-join-button">Become Member!</a>
+      </div>
+    </nav>
+
+    <button
+      class="mobile-menu-toggle"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        class="hamburger-icon"
+      >
+        <line class="line-top" x1="3" y1="6" x2="21" y2="6" />
+        <line class="line-middle" x1="3" y1="12" x2="21" y2="12" />
+        <line class="line-bottom" x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </div>
 </header>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navigation = document.querySelector('.main-navigation');
-        mobileMenuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isActive = navigation.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenuToggle.setAttribute('aria-expanded', isActive);
-            document.body.style.overflow = isActive ? 'hidden' : 'auto';
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.main-navigation') && !e.target.closest('.mobile-menu-toggle')) {
-                navigation.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Add Font Awesome if not already included
-        if (!document.querySelector('link[href*="font-awesome"]')) {
-            const fontAwesome = document.createElement('link');
-            fontAwesome.rel = 'stylesheet';
-            fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
-            document.head.appendChild(fontAwesome);
-        }
-    });
-</script>
+  function initMobileMenu() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.main-navigation');
 
-<style>
-    /* Portal Link Specific Styles */
-    .portal-link {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    
-    .portal-link i {
-        font-size: 16px;
-    }
-    
-    /* Hover effects for portal link */
-    .portal-link:hover i {
-        color: var(--clr-secondary);
-    }
-    
-    @media (max-width: 768px) {
-        .portal-link {
-            justify-content: center;
-        }
-    }
-</style>
+    if (!toggle || !nav) return;
+
+    const closeMenu = () => {
+      nav.classList.remove('active');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      nav.classList.add('active');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = nav.classList.contains('active');
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.main-navigation') && !target.closest('.mobile-menu-toggle')) {
+        closeMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('active')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+</script>

@@ -164,8 +164,8 @@
 
 .competition-item p {
   margin-bottom: 15px;
-  line-height: 1.8;
-  color: #444;
+  line-height: 1.85;
+  color: var(--dark-gray);
 }
 
 /* Enhanced features section */

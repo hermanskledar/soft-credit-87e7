@@ -187,9 +187,9 @@
 }
 
 .discount-description {
-    color: #555;
+    color: var(--dark-gray);
     margin-bottom: 20px;
-    line-height: 1.6;
+    line-height: 1.75;
 }
 
 .discount-subtitle {
@@ -271,9 +271,10 @@
 }
 
 .discount-placeholder-text {
-    color: #777;
+    color: var(--dark-gray);
     margin-bottom: 10px;
     max-width: 80%;
+    line-height: 1.7;
 }
 
 /* How To Section */
@@ -318,9 +319,9 @@
 }
 
 .how-to-text {
-    color: #555;
+    color: var(--dark-gray);
     margin-bottom: 25px;
-    line-height: 1.6;
+    line-height: 1.75;
 }
 
 .how-to-steps {
@@ -376,9 +377,9 @@
 }
 
 .discount-note-text p {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.6;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.75;
 }
 
 .discount-note-text p:last-child {

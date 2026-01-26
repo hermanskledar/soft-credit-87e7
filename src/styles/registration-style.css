@@ -39,10 +39,11 @@
 }
 
 .spartacus-form-header p {
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 12px;
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
-  opacity: 0.9;
+  opacity: 0.95;
+  line-height: 1.6;
 }
 
 .spartacus-logo-container {
@@ -130,12 +131,12 @@
 
 .spartacus-confirmation-screen p {
   font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  line-height: 1.85;
+  margin-bottom: 24px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  color: #444;
+  color: var(--dark-gray);
 }
 
 .spartacus-confirmation-buttons {

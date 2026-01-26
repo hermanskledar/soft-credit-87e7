@@ -65,7 +65,8 @@
 }
 
 .timeline-content p {
-  line-height: 1.8;
+  line-height: 1.85;
+  color: var(--dark-gray);
 }
 
 /* Founder Quote Section */

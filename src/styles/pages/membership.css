@@ -90,9 +90,9 @@
 }
 
 .benefit-content p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--dark-gray);
 }
 
 /* Membership Steps */
@@ -173,8 +173,8 @@
 
 .testimonial-content p {
     font-size: 18px;
-    line-height: 1.8;
-    color: #444;
+    line-height: 1.85;
+    color: var(--dark-gray);
     margin-bottom: 20px;
     font-style: italic;
 }

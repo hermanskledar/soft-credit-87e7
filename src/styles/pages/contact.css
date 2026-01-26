@@ -82,9 +82,9 @@
 .contact-method p {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 10px;
-    font-size: 15px;
-    line-height: 1.5;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 .contact-method i {
@@ -239,9 +239,10 @@
 }
 
 .confidential-contact-card p {
-    color: #666;
+    color: var(--dark-gray);
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 .contact-email {
@@ -321,8 +322,8 @@
 }
 
 .faq-item p {
-    line-height: 1.7;
-    color: #555;
+    line-height: 1.8;
+    color: var(--dark-gray);
 }
 
 .faq-item a {

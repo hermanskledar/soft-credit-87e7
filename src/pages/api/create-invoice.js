@@ -1,4 +1,4 @@
-const INVOICE_WORKER_URL = "https://invoice-handler.tskvspartacus.workers.dev";
+const INVOICE_WORKER_URL = "https://nameless-hall-db47.herman-skledar.workers.dev";
 
 export async function POST({ request }) {
   try {

@@ -68,8 +68,9 @@ async function getSession() {
   };
 
   const data = await conscriboRequest(payload);
-  if (data && data.success === 1) {
-    return data.sessionId;
+  const successValue = getCaseInsensitiveValue(data, "success");
+  if (isConscriboSuccess(successValue)) {
+    return getCaseInsensitiveValue(data, "sessionId");
   }
   throw new Error("Conscribo authentication failed");
 }
@@ -157,6 +158,18 @@ function extractConscriboErrorMessage(result) {
   return null;
 }
 
+function getCaseInsensitiveValue(obj, key) {
+  if (!obj || typeof obj !== "object") return undefined;
+  const match = Object.keys(obj).find((k) => k.toLowerCase() === key.toLowerCase());
+  return match ? obj[match] : undefined;
+}
+
+function isConscriboSuccess(value) {
+  if (value === 1 || value === "1") return true;
+  if (value === true || value === "true") return true;
+  return false;
+}
+
 export default {
   async fetch(request) {
     const origin = request.headers.get("Origin");
@@ -239,12 +252,15 @@ export default {
 
       const result = await conscriboRequest(payload, sessionId);
 
-      if (result && (result.success === 1 || result.transactionId)) {
+      const successValue = getCaseInsensitiveValue(result, "success");
+      const transactionId = getCaseInsensitiveValue(result, "transactionId");
+
+      if (result && (isConscriboSuccess(successValue) || transactionId)) {
         return new Response(
           JSON.stringify({
             success: true,
             message: "Order placed successfully! An invoice has been created and will be sent to your email.",
-            transactionId: result.transactionId || null,
+            transactionId: transactionId || null,
             member: {
               name: member.fullName,
               email: member.email,

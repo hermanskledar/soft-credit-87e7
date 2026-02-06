@@ -1,5 +1,7 @@
 // src/pages/api/contact.js
 
+export const prerender = false;
+
 export async function POST({ request }) {
   const formData = await request.json();
   

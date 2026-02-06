@@ -1,3 +1,5 @@
+export const prerender = false;
+
 const INVOICE_WORKER_URL = "https://nameless-hall-db47.herman-skledar.workers.dev";
 
 export async function POST({ request }) {

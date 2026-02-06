@@ -38,7 +38,19 @@ async function conscriboRequest(payload, sessionId = null) {
     body: JSON.stringify(payload),
   });
 
-  const data = await response.json();
+  const responseText = await response.text();
+  if (!responseText) {
+    throw new Error(`Conscribo returned an empty response (status ${response.status}).`);
+  }
+
+  let data;
+  try {
+    data = JSON.parse(responseText);
+  } catch (error) {
+    throw new Error(
+      `Conscribo returned non-JSON response (status ${response.status}): ${responseText.slice(0, 200)}`
+    );
+  }
   const rootKey = Object.keys(data).find(
     (k) => k.toLowerCase() === "result" || k.toLowerCase() === "results"
   );
@@ -117,6 +129,34 @@ async function lookupMember(sessionId, identifier) {
   };
 }
 
+function extractConscriboErrorMessage(result) {
+  if (!result || typeof result !== "object") return null;
+
+  const candidates = [
+    "errorMessage",
+    "errormessage",
+    "message",
+    "error",
+    "errors",
+    "errorMessages",
+  ];
+
+  for (const key of candidates) {
+    if (result[key]) {
+      const value = result[key];
+      if (typeof value === "string") return value;
+      if (Array.isArray(value)) return value.filter(Boolean).join(", ");
+      if (typeof value === "object") {
+        if (value.message) return value.message;
+        if (value.error) return value.error;
+        if (value.detail) return value.detail;
+      }
+    }
+  }
+
+  return null;
+}
+
 export default {
   async fetch(request) {
     const origin = request.headers.get("Origin");
@@ -161,7 +201,7 @@ export default {
       }
 
       const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      const totalFormatted = total.toFixed(2).replace(".", ",");
+      const totalFormatted = total.toFixed(2);
 
       const lineDescriptions = items
         .map((item) => `${item.quantity}x ${item.name} @ €${item.price.toFixed(2)}`)
@@ -218,7 +258,9 @@ export default {
       return new Response(
         JSON.stringify({
           success: false,
-          message: "Failed to create invoice in Conscribo. Please try again or contact the board.",
+          message:
+            extractConscriboErrorMessage(result) ||
+            "Failed to create invoice in Conscribo. Please try again or contact the board.",
           debug: result,
         }),
         { status: 500, headers: corsHeaders(origin) }

@@ -1,0 +1,1310 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title="Sign Up | T.S.K.V. Spartacus" description="Join T.S.K.V. Spartacus in 3 easy steps. Choose your membership, fill in your details, and start your strength journey today." />
+    <style>
+        /* ===== Hero ===== */
+        .hero {
+            background: linear-gradient(135deg, rgba(55, 0, 27, 0.92), rgba(186, 19, 26, 0.82)), url('/images/hero-membership.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 130px 0 70px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 52px;
+            margin-bottom: 12px;
+        }
+
+        .hero h2 {
+            color: var(--spartacus-yellow);
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* ===== Progress Bar ===== */
+        .progress-section {
+            max-width: 680px;
+            margin: -36px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 36px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            right: 40px;
+            height: 3px;
+            background: #e8e8e8;
+            z-index: 0;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            height: 3px;
+            background: var(--spartacus-red);
+            z-index: 1;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+
+        .step-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            cursor: default;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e8e8e8;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.35s ease;
+            border: 3px solid transparent;
+        }
+
+        .step-indicator.active .step-circle {
+            background: var(--spartacus-red);
+            color: #fff;
+            border-color: rgba(186, 19, 26, 0.25);
+            box-shadow: 0 0 0 4px rgba(186, 19, 26, 0.12);
+        }
+
+        .step-indicator.completed .step-circle {
+            background: var(--spartacus-red);
+            color: #fff;
+        }
+
+        .step-label {
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.35s ease;
+        }
+
+        .step-indicator.active .step-label,
+        .step-indicator.completed .step-label {
+            color: var(--spartacus-burgundy);
+        }
+
+        /* ===== Main Funnel ===== */
+        .funnel-main {
+            max-width: 800px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+        }
+
+        .funnel-step {
+            display: none;
+            animation: fadeSlideIn 0.45s ease forwards;
+        }
+
+        .funnel-step.active {
+            display: block;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--spartacus-red);
+        }
+
+        .step-card h3 {
+            color: var(--spartacus-burgundy);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .step-card .step-subtitle {
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ===== Step 1: Membership Plans ===== */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 12px;
+        }
+
+        .plan-card {
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 28px 24px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            background: #fff;
+        }
+
+        .plan-card:hover {
+            border-color: rgba(186, 19, 26, 0.3);
+            box-shadow: 0 4px 16px rgba(186, 19, 26, 0.08);
+        }
+
+        .plan-card.selected {
+            border-color: var(--spartacus-red);
+            background: rgba(186, 19, 26, 0.03);
+            box-shadow: 0 4px 20px rgba(186, 19, 26, 0.12);
+        }
+
+        .plan-card.selected::after {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            color: var(--spartacus-red);
+            font-size: 22px;
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background: var(--spartacus-yellow);
+            color: var(--spartacus-burgundy);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+        }
+
+        .plan-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: var(--spartacus-burgundy);
+            margin-bottom: 4px;
+        }
+
+        .plan-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--spartacus-red);
+            margin-bottom: 4px;
+        }
+
+        .plan-price span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #888;
+        }
+
+        .plan-period {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 18px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .plan-features li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plan-features li i {
+            color: var(--spartacus-red);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Step 2: Personal Details ===== */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--spartacus-burgundy);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .form-group label .required {
+            color: var(--spartacus-red);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            background: #fafafa;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--spartacus-red);
+            box-shadow: 0 0 0 3px rgba(186, 19, 26, 0.1);
+            background: #fff;
+        }
+
+        .form-group input.error,
+        .form-group select.error {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-group input.error + .error-message,
+        .form-group select.error + .error-message {
+            display: block;
+        }
+
+        .form-note {
+            background: rgba(186, 19, 26, 0.05);
+            border: 1px solid rgba(186, 19, 26, 0.12);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .form-note i {
+            color: var(--spartacus-red);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ===== Step 3: Review ===== */
+        .review-section {
+            margin-bottom: 28px;
+        }
+
+        .review-section h4 {
+            color: var(--spartacus-burgundy);
+            font-size: 18px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(186, 19, 26, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-section h4 i {
+            color: var(--spartacus-red);
+            font-size: 16px;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+
+        .review-item {
+            padding: 8px 0;
+        }
+
+        .review-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .review-value {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .review-plan-summary {
+            background: linear-gradient(135deg, var(--spartacus-burgundy), var(--spartacus-red));
+            border-radius: 10px;
+            padding: 24px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        .review-plan-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 26px;
+        }
+
+        .review-plan-price {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .review-plan-price span {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .agreement-box {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 4px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .checkbox-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--spartacus-red);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .checkbox-group label a {
+            color: var(--spartacus-red);
+            text-decoration: underline;
+        }
+
+        /* ===== Success State ===== */
+        .success-container {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .success-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--spartacus-red), var(--spartacus-red-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .success-icon i {
+            color: #fff;
+            font-size: 40px;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-container h3 {
+            color: var(--spartacus-burgundy);
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .success-container .step-subtitle {
+            max-width: 500px;
+            margin: 0 auto 36px;
+        }
+
+        .next-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 36px;
+            text-align: center;
+        }
+
+        .next-step-card {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 24px 18px;
+        }
+
+        .next-step-card i {
+            font-size: 28px;
+            color: var(--spartacus-red);
+            margin-bottom: 12px;
+        }
+
+        .next-step-card h4 {
+            color: var(--spartacus-burgundy);
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .next-step-card p {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== Buttons ===== */
+        .funnel-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-funnel {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+
+        .btn-next {
+            background: var(--spartacus-red);
+            color: #fff;
+            margin-left: auto;
+        }
+
+        .btn-next:hover {
+            background: var(--spartacus-red-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(186, 19, 26, 0.3);
+        }
+
+        .btn-next:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-back {
+            background: transparent;
+            color: #666;
+            border: 2px solid #ddd;
+        }
+
+        .btn-back:hover {
+            border-color: #bbb;
+            color: #444;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--spartacus-red), var(--spartacus-red-dark));
+            color: #fff;
+            padding: 16px 40px;
+            font-size: 20px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(186, 19, 26, 0.35);
+        }
+
+        .btn-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--spartacus-red);
+            border: 2px solid var(--spartacus-red);
+        }
+
+        .btn-outline:hover {
+            background: rgba(186, 19, 26, 0.05);
+        }
+
+        /* ===== Social Proof Bar ===== */
+        .social-proof {
+            text-align: center;
+            margin-top: 32px;
+            padding: 20px;
+            background: rgba(186, 19, 26, 0.03);
+            border-radius: 10px;
+        }
+
+        .social-proof-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .proof-stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .proof-stat i {
+            color: var(--spartacus-red);
+            font-size: 18px;
+        }
+
+        .proof-stat strong {
+            color: var(--spartacus-burgundy);
+        }
+
+        /* ===== Trust Badges ===== */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .trust-badge i {
+            color: var(--spartacus-red);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 110px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .progress-card {
+                padding: 20px 16px;
+            }
+
+            .progress-steps::before {
+                left: 24px;
+                right: 24px;
+            }
+
+            .progress-fill {
+                left: 24px;
+            }
+
+            .step-circle {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+
+            .step-label {
+                font-size: 11px;
+            }
+
+            .step-card {
+                padding: 28px 20px;
+            }
+
+            .step-card h3 {
+                font-size: 24px;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-plan-summary {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .next-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .funnel-actions {
+                flex-direction: column-reverse;
+                gap: 12px;
+            }
+
+            .funnel-actions .btn-funnel {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn-next {
+                margin-left: 0;
+            }
+
+            .social-proof-stats {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .step-label {
+                display: none;
+            }
+
+            .progress-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <Header />
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>START YOUR STRENGTH JOURNEY</h1>
+            <h2>JOIN SPARTACUS IN 3 SIMPLE STEPS</h2>
+            <p>Become part of the largest student strength sports association in the Benelux. Coaching, competitions, community — all starting from just &euro;25/year.</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-card">
+                <div class="progress-steps">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="step-indicator active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Plan</span>
+                    </div>
+                    <div class="step-indicator" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Details</span>
+                    </div>
+                    <div class="step-indicator" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Confirm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Funnel Container -->
+        <div class="funnel-main">
+
+            <!-- ========== STEP 1: Choose Plan ========== -->
+            <div class="funnel-step active" id="step1">
+                <div class="step-card">
+                    <h3>CHOOSE YOUR MEMBERSHIP</h3>
+                    <p class="step-subtitle">Select the plan that fits your goals. Both options give you full access to the Spartacus community.</p>
+
+                    <div class="plans-grid">
+                        <!-- Standard Plan -->
+                        <div class="plan-card" data-plan="standard" id="planStandard">
+                            <div class="plan-badge">Most Popular</div>
+                            <div class="plan-name">STANDARD</div>
+                            <div class="plan-price">&euro;25 <span>/ year</span></div>
+                            <div class="plan-period">Billed annually via direct debit</div>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> Expert coaching &amp; technique clinics</li>
+                                <li><i class="fas fa-check"></i> All social events &amp; gatherings</li>
+                                <li><i class="fas fa-check"></i> Exclusive member discounts</li>
+                                <li><i class="fas fa-check"></i> WhatsApp community access</li>
+                                <li><i class="fas fa-check"></i> International, English-speaking</li>
+                            </ul>
+                        </div>
+
+                        <!-- Competitive Plan -->
+                        <div class="plan-card" data-plan="competitive" id="planCompetitive">
+                            <div class="plan-badge">For Athletes</div>
+                            <div class="plan-name">COMPETITIVE</div>
+                            <div class="plan-price">&euro;25 <span>/ year</span></div>
+                            <div class="plan-period">+ KNKF registration fee for competitions</div>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> Everything in Standard</li>
+                                <li><i class="fas fa-check"></i> Official powerlifting competitions</li>
+                                <li><i class="fas fa-check"></i> Dedicated competition coaching</li>
+                                <li><i class="fas fa-check"></i> Peaking &amp; programming support</li>
+                                <li><i class="fas fa-check"></i> Team travel to competitions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="social-proof">
+                        <div class="social-proof-stats">
+                            <div class="proof-stat">
+                                <i class="fas fa-users"></i>
+                                <span><strong>300+</strong> active members</span>
+                            </div>
+                            <div class="proof-stat">
+                                <i class="fas fa-star"></i>
+                                <span><strong>Largest</strong> in the Benelux</span>
+                            </div>
+                            <div class="proof-stat">
+                                <i class="fas fa-trophy"></i>
+                                <span><strong>50+</strong> competition medals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="funnel-actions">
+                        <button class="btn-funnel btn-next" id="toStep2" disabled>
+                            CONTINUE <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== STEP 2: Personal Details ========== -->
+            <div class="funnel-step" id="step2">
+                <div class="step-card">
+                    <h3>YOUR DETAILS</h3>
+                    <p class="step-subtitle">Fill in your information below. All fields marked with <span style="color:var(--spartacus-red);">*</span> are required.</p>
+
+                    <div class="form-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span>You must have a valid <a href="https://www.tilburguniversity.edu/campus/sports-center/sportsmembership" target="_blank" style="color:var(--spartacus-red);">Tilburg University Sports Center membership</a> to join Spartacus.</span>
+                    </div>
+
+                    <form id="signupForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="e.g. Jan" required />
+                                <span class="error-message">Please enter your first name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="e.g. De Vries" required />
+                                <span class="error-message">Please enter your last name</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="e.g. jan@tilburguniversity.edu" required />
+                            <span class="error-message">Please enter a valid email address</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="e.g. +31 6 12345678" required />
+                                <span class="error-message">Please enter your phone number</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth <span class="required">*</span></label>
+                                <input type="date" id="dob" name="dob" required />
+                                <span class="error-message">Please enter your date of birth</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentId">Student Number <span class="required">*</span></label>
+                                <input type="text" id="studentId" name="studentId" placeholder="e.g. 2012345" required />
+                                <span class="error-message">Please enter your student number</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="studyProgram">Study Program</label>
+                                <input type="text" id="studyProgram" name="studyProgram" placeholder="e.g. Economics" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Training Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select your experience level</option>
+                                <option value="beginner">Beginner (0-1 years)</option>
+                                <option value="intermediate">Intermediate (1-3 years)</option>
+                                <option value="advanced">Advanced (3+ years)</option>
+                                <option value="competitive">Competitive athlete</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interests">Primary Interests</label>
+                            <select id="interests" name="interests">
+                                <option value="">What interests you most?</option>
+                                <option value="powerlifting">Powerlifting</option>
+                                <option value="bodybuilding">Bodybuilding</option>
+                                <option value="weightlifting">Olympic Weightlifting</option>
+                                <option value="general">General Strength Training</option>
+                                <option value="fitness">Fitness &amp; Health</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <div class="funnel-actions">
+                        <button class="btn-funnel btn-back" id="backToStep1">
+                            <i class="fas fa-arrow-left"></i> BACK
+                        </button>
+                        <button class="btn-funnel btn-next" id="toStep3">
+                            REVIEW &amp; CONFIRM <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== STEP 3: Review & Confirm ========== -->
+            <div class="funnel-step" id="step3">
+                <div class="step-card">
+                    <h3>REVIEW &amp; CONFIRM</h3>
+                    <p class="step-subtitle">Please review your details below. Once confirmed, you will be redirected to the official registration form to finalize your membership.</p>
+
+                    <div class="review-plan-summary">
+                        <div>
+                            <div style="font-size:13px;opacity:0.8;margin-bottom:4px;">Selected plan</div>
+                            <div class="review-plan-name" id="reviewPlan">STANDARD</div>
+                        </div>
+                        <div class="review-plan-price">&euro;25 <span>/ year</span></div>
+                    </div>
+
+                    <div class="review-section">
+                        <h4><i class="fas fa-user"></i> PERSONAL INFORMATION</h4>
+                        <div class="review-grid">
+                            <div class="review-item">
+                                <div class="review-label">Full Name</div>
+                                <div class="review-value" id="reviewName">—</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-label">Email</div>
+                                <div class="review-value" id="reviewEmail">—</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-label">Phone</div>
+                                <div class="review-value" id="reviewPhone">—</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-label">Date of Birth</div>
+                                <div class="review-value" id="reviewDob">—</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-label">Student Number</div>
+                                <div class="review-value" id="reviewStudentId">—</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-label">Study Program</div>
+                                <div class="review-value" id="reviewProgram">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <h4><i class="fas fa-dumbbell"></i> TRAINING PROFILE</h4>
+                        <div class="review-grid">
+                            <div class="review-item">
+                                <div class="review-label">Experience</div>
+                                <div class="review-value" id="reviewExperience">—</div>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-label">Primary Interest</div>
+                                <div class="review-value" id="reviewInterests">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agreement-box">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" />
+                            <label for="agreeTerms">I agree to the <a href="/important-documents" target="_blank">Terms &amp; Conditions</a> and <a href="/important-documents" target="_blank">Privacy Policy</a> of T.S.K.V. Spartacus. <span class="required">*</span></label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeDebit" />
+                            <label for="agreeDebit">I authorize T.S.K.V. Spartacus to collect the annual membership fee (&euro;25) via direct debit. <span class="required">*</span></label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeSports" />
+                            <label for="agreeSports">I confirm that I have (or will obtain) a valid Tilburg University Sports Center membership. <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+                    <div class="funnel-actions">
+                        <button class="btn-funnel btn-back" id="backToStep2">
+                            <i class="fas fa-arrow-left"></i> BACK
+                        </button>
+                        <button class="btn-funnel btn-submit" id="submitBtn" disabled>
+                            <i class="fas fa-check-circle"></i> COMPLETE REGISTRATION
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== Success State ========== -->
+            <div class="funnel-step" id="stepSuccess">
+                <div class="step-card">
+                    <div class="success-container">
+                        <div class="success-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3>WELCOME TO SPARTACUS!</h3>
+                        <p class="step-subtitle">Your registration has been submitted. You will be redirected to complete the final step through our member administration system.</p>
+
+                        <div class="next-steps-grid">
+                            <div class="next-step-card">
+                                <i class="fas fa-envelope"></i>
+                                <h4>CHECK YOUR EMAIL</h4>
+                                <p>You will receive a confirmation email with your membership details.</p>
+                            </div>
+                            <div class="next-step-card">
+                                <i class="fas fa-comments"></i>
+                                <h4>JOIN WHATSAPP</h4>
+                                <p>You will be added to our community groups within 24 hours.</p>
+                            </div>
+                            <div class="next-step-card">
+                                <i class="fas fa-calendar-check"></i>
+                                <h4>ATTEND EVENTS</h4>
+                                <p>Check the calendar for upcoming training sessions and social events.</p>
+                            </div>
+                        </div>
+
+                        <div class="success-actions">
+                            <a href="/registration" class="btn-funnel btn-next">
+                                COMPLETE ON CONSCRIBO <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="/" class="btn-funnel btn-outline">
+                                BACK TO HOME
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-badge"><i class="fas fa-shield-alt"></i> Secure registration</div>
+                    <div class="trust-badge"><i class="fas fa-lock"></i> Data protected</div>
+                    <div class="trust-badge"><i class="fas fa-university"></i> Tilburg University affiliated</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ===== State =====
+            let currentStep = 1;
+            let selectedPlan = null;
+
+            // ===== DOM References =====
+            const steps = {
+                1: document.getElementById('step1'),
+                2: document.getElementById('step2'),
+                3: document.getElementById('step3'),
+                success: document.getElementById('stepSuccess'),
+            };
+            const indicators = document.querySelectorAll('.step-indicator');
+            const progressFill = document.getElementById('progressFill');
+            const planCards = document.querySelectorAll('.plan-card');
+            const toStep2Btn = document.getElementById('toStep2');
+            const toStep3Btn = document.getElementById('toStep3');
+            const backToStep1Btn = document.getElementById('backToStep1');
+            const backToStep2Btn = document.getElementById('backToStep2');
+            const submitBtn = document.getElementById('submitBtn');
+            const checkboxes = [
+                document.getElementById('agreeTerms'),
+                document.getElementById('agreeDebit'),
+                document.getElementById('agreeSports'),
+            ];
+
+            // ===== Navigation =====
+            function goToStep(step) {
+                // Hide all steps
+                Object.values(steps).forEach(function (el) {
+                    el.classList.remove('active');
+                });
+
+                // Show target step
+                var key = step === 4 ? 'success' : step;
+                steps[key].classList.add('active');
+
+                // Update indicators
+                indicators.forEach(function (ind) {
+                    var s = parseInt(ind.dataset.step);
+                    ind.classList.remove('active', 'completed');
+                    if (s < step) {
+                        ind.classList.add('completed');
+                        ind.querySelector('.step-circle').innerHTML = '<i class="fas fa-check" style="font-size:14px;"></i>';
+                    } else if (s === step && step <= 3) {
+                        ind.classList.add('active');
+                    }
+                });
+
+                // Update progress fill
+                var totalWidth = 100; // percentage of the bar between first and last step
+                if (step === 1) progressFill.style.width = '0%';
+                else if (step === 2) progressFill.style.width = '50%';
+                else progressFill.style.width = '100%';
+
+                currentStep = step;
+
+                // Scroll to top of funnel
+                window.scrollTo({ top: document.querySelector('.progress-section').offsetTop - 100, behavior: 'smooth' });
+            }
+
+            // ===== Plan Selection =====
+            planCards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    planCards.forEach(function (c) { c.classList.remove('selected'); });
+                    card.classList.add('selected');
+                    selectedPlan = card.dataset.plan;
+                    toStep2Btn.disabled = false;
+                });
+            });
+
+            // ===== Form Validation =====
+            function validateStep2() {
+                var isValid = true;
+                var requiredFields = ['firstName', 'lastName', 'email', 'phone', 'dob', 'studentId'];
+
+                requiredFields.forEach(function (id) {
+                    var input = document.getElementById(id);
+                    var value = input.value.trim();
+                    var valid = true;
+
+                    if (!value) {
+                        valid = false;
+                    } else if (id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                        valid = false;
+                    }
+
+                    if (!valid) {
+                        input.classList.add('error');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('error');
+                    }
+                });
+
+                return isValid;
+            }
+
+            // Remove error on input
+            document.querySelectorAll('#signupForm input, #signupForm select').forEach(function (el) {
+                el.addEventListener('input', function () {
+                    el.classList.remove('error');
+                });
+            });
+
+            // ===== Populate Review =====
+            function populateReview() {
+                var planName = selectedPlan === 'competitive' ? 'COMPETITIVE' : 'STANDARD';
+                document.getElementById('reviewPlan').textContent = planName;
+
+                var firstName = document.getElementById('firstName').value.trim();
+                var lastName = document.getElementById('lastName').value.trim();
+                document.getElementById('reviewName').textContent = firstName + ' ' + lastName;
+                document.getElementById('reviewEmail').textContent = document.getElementById('email').value.trim();
+                document.getElementById('reviewPhone').textContent = document.getElementById('phone').value.trim();
+
+                var dobVal = document.getElementById('dob').value;
+                if (dobVal) {
+                    var d = new Date(dobVal);
+                    document.getElementById('reviewDob').textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+                }
+
+                document.getElementById('reviewStudentId').textContent = document.getElementById('studentId').value.trim();
+                document.getElementById('reviewProgram').textContent = document.getElementById('studyProgram').value.trim() || '—';
+
+                var expSelect = document.getElementById('experience');
+                document.getElementById('reviewExperience').textContent = expSelect.options[expSelect.selectedIndex].text || '—';
+
+                var intSelect = document.getElementById('interests');
+                document.getElementById('reviewInterests').textContent = intSelect.options[intSelect.selectedIndex].text || '—';
+            }
+
+            // ===== Checkbox Handling =====
+            checkboxes.forEach(function (cb) {
+                cb.addEventListener('change', function () {
+                    var allChecked = checkboxes.every(function (c) { return c.checked; });
+                    submitBtn.disabled = !allChecked;
+                });
+            });
+
+            // ===== Button Handlers =====
+            toStep2Btn.addEventListener('click', function () {
+                if (selectedPlan) goToStep(2);
+            });
+
+            toStep3Btn.addEventListener('click', function () {
+                if (validateStep2()) {
+                    populateReview();
+                    goToStep(3);
+                }
+            });
+
+            backToStep1Btn.addEventListener('click', function () { goToStep(1); });
+            backToStep2Btn.addEventListener('click', function () { goToStep(2); });
+
+            submitBtn.addEventListener('click', function () {
+                if (submitBtn.disabled) return;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
+
+                // Simulate a brief processing delay, then show success
+                setTimeout(function () {
+                    goToStep(4);
+                }, 1200);
+            });
+
+            // ===== Pre-select plan from URL param =====
+            var params = new URLSearchParams(window.location.search);
+            var planParam = params.get('plan');
+            if (planParam === 'competitive') {
+                document.getElementById('planCompetitive').click();
+            } else if (planParam === 'standard') {
+                document.getElementById('planStandard').click();
+            }
+        });
+    </script>
+</body>
+</html>

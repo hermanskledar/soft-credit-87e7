@@ -1,0 +1,76 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead title="Events | T.S.K.V. Spartacus" description="View Spartacus activities and subscribe to events through our event portal." />
+    <style>
+        .events-page {
+            max-width: 1100px;
+            margin: 120px auto 80px;
+            padding: 0 20px;
+        }
+
+        .events-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .events-header h1 {
+            color: var(--spartacus-burgundy);
+            margin-bottom: 10px;
+        }
+
+        .events-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .events-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--spartacus-red);
+        }
+
+        .events-card h2 {
+            margin-bottom: 12px;
+            color: var(--spartacus-burgundy);
+        }
+
+        .conscribo-app-container {
+            min-height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <Header />
+
+    <main class="events-page">
+        <div class="events-header">
+            <h1>Subscribe to Spartacus Events</h1>
+            <p>Browse all activities below and reserve your spot for a specific event.</p>
+        </div>
+
+        <div class="events-grid">
+            <section class="events-card">
+                <h2>Event Overview</h2>
+                <script async src="https://leden.conscribo.nl/TSKVSpartacus/portal/loader" type="module"></script>
+                <div class="conscribo-app-container" data-page="activity_overview"></div>
+            </section>
+
+            <section class="events-card">
+                <h2>Reserve for an Event</h2>
+                <div class="conscribo-app-container" data-page="activity_reservation" data-options="b58ee071eb"></div>
+            </section>
+        </div>
+    </main>
+
+    <Footer />
+</body>
+</html>

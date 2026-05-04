@@ -1,0 +1,55 @@
+.events-page {
+  padding: 2.5rem 0 4rem;
+}
+
+.events-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.events-intro {
+  margin-bottom: 1rem;
+}
+
+.reservation-link {
+  margin-bottom: 1.5rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.event-card {
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.event-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.event-card p {
+  margin: 0.3rem 0;
+}
+
+.event-card .details {
+  margin-top: 0.75rem;
+}
+
+.events-state {
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.events-state.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.events-state.empty {
+  background: #f4f4f5;
+}

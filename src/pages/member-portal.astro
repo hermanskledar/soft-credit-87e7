@@ -14,108 +14,56 @@ const widgets = {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <BaseHead title="Member Portal | T.S.K.V. Spartacus" description="Secure Spartacus member portal for profile edits, events, and shared files." />
+  <BaseHead title="Member Portal | T.S.K.V. Spartacus" description="Manage your details, activities and files in the Spartacus member portal." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    .portal-shell{max-width:1150px;margin:120px auto 80px;padding:0 20px}.portal-card{background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:28px}.portal-hero{margin-bottom:24px;border-left:5px solid var(--spartacus-red)}.portal-hero h1{margin:0 0 8px;color:var(--spartacus-burgundy)}.portal-hero p{margin:0;color:#555;line-height:1.6}
-    .auth-grid{display:grid;grid-template-columns:1fr auto auto;gap:12px;margin-top:18px}.auth-input{padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px}.auth-btn{padding:12px 20px;border:none;border-radius:8px;background:var(--spartacus-red);color:#fff;font-weight:700;cursor:pointer}.auth-btn.secondary{background:#374151}.auth-btn:disabled{opacity:.5;cursor:not-allowed}
-    .auth-status{margin-top:12px;font-size:14px}.auth-status.error{color:#b91c1c}.auth-status.success{color:#0f766e}
-    .portal-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 0}.portal-tab{border:none;border-radius:10px 10px 0 0;padding:14px 20px;background:#f3f4f6;color:#666;font-weight:700;cursor:pointer}.portal-tab.active{background:#fff;color:var(--spartacus-burgundy);box-shadow:inset 0 -3px 0 var(--spartacus-red)}
-    .portal-pane-wrap{background:#fff;border-radius:0 12px 12px 12px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:24px;min-height:420px}.portal-pane{display:none}.portal-pane.active{display:block}.pane-head h2{margin:0;color:var(--spartacus-burgundy)}.pane-head p{margin:8px 0 20px;color:#666}
-    .widget{min-height:260px;border:1px dashed #ddd;border-radius:10px;padding:12px;background:#fafafa}.hint{margin-top:14px;padding:12px;border-radius:8px;background:#fff8e1;font-size:14px}
-    .hidden-until-login{opacity:.45;pointer-events:none;transition:.2s}.hidden-until-login.unlocked{opacity:1;pointer-events:auto}
-    @media (max-width:768px){.portal-shell{margin-top:100px}.auth-grid{grid-template-columns:1fr 1fr}.auth-input{grid-column:1/-1}}
+    .portal-shell{max-width:1100px;margin:120px auto 80px;padding:0 20px}
+    .panel{background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:24px}
+    .intro{border-left:5px solid var(--spartacus-red);margin-bottom:20px}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .tab{padding:12px 16px;border:none;border-radius:10px;background:#f3f4f6;font-weight:700;cursor:pointer}
+    .tab.active{background:#fff;color:var(--spartacus-burgundy);box-shadow:inset 0 -3px 0 var(--spartacus-red)}
+    .pane-wrap{background:#fff;border-radius:0 12px 12px 12px;box-shadow:0 6px 20px rgba(0,0,0,.08);padding:24px;min-height:420px}
+    .pane{display:none}.pane.active{display:block}
+    .conscribo-app-container{min-height:260px}
   </style>
 </head>
 <body>
   <Header />
   <main class="portal-shell">
-    <section class="portal-card portal-hero">
-      <h1>Spartacus Members Portal</h1>
-      <p>Edit your details, subscribe to events, and download files such as minutes and photos. Login only unlocks the page UI; Conscribo still handles authorization per widget.</p>
-      <form id="memberLoginForm" class="auth-grid">
-        <input id="memberIdentifier" class="auth-input" type="text" placeholder="Member code or email" autocomplete="username" required />
-        <button id="memberLoginButton" class="auth-btn" type="submit">Log in</button>
-        <button id="memberLogoutButton" class="auth-btn secondary" type="button" style="display:none;">Log out</button>
-      </form>
-      <div id="authStatus" class="auth-status" aria-live="polite"></div>
+    <section class="panel intro">
+      <h1>Spartacus Member Portal</h1>
+      <p>Use the tabs below to edit your member details, view/subscribe to activities, and download files such as minutes and photos.</p>
     </section>
 
-    <section class="hidden-until-login" id="portalContent">
-      <div class="portal-tabs" role="tablist" aria-label="Member Portal Sections">
-        <button class="portal-tab active" role="tab" aria-selected="true" aria-controls="details-tab" id="tab-details" data-tab="details"><i class="fas fa-user-edit"></i> My Details</button>
-        <button class="portal-tab" role="tab" aria-selected="false" aria-controls="events-tab" id="tab-events" data-tab="events"><i class="fas fa-calendar-check"></i> Events</button>
-        <button class="portal-tab" role="tab" aria-selected="false" aria-controls="files-tab" id="tab-files" data-tab="files"><i class="fas fa-folder-open"></i> Files</button>
-      </div>
-      <div class="portal-pane-wrap">
-        <article class="portal-pane active" role="tabpanel" aria-labelledby="tab-details" id="details-tab"><div class="pane-head"><h2>Edit profile details</h2><p>Update address, phone, IBAN/payment, and emergency/contact details.</p></div><div class="widget" data-id={widgets.details}></div></article>
-        <article class="portal-pane" role="tabpanel" aria-labelledby="tab-events" id="events-tab"><div class="pane-head"><h2>View & subscribe to events</h2><p>See upcoming activities, open event pages, and register directly.</p></div>{widgets.events ? (<div class="widget" data-id={widgets.events}></div>) : (<div class="hint">Configure <code>widgets.events</code> with your Conscribo events block ID to enable event subscriptions.</div>)}</article>
-        <article class="portal-pane" role="tabpanel" aria-labelledby="tab-files" id="files-tab"><div class="pane-head"><h2>Download minutes, reports & photos</h2><p>Browse shared folders and committee media archives.</p></div><div class="widget" data-id={widgets.files}></div></article>
-      </div>
+    <div class="tabs" role="tablist" aria-label="Portal sections">
+      <button class="tab active" data-tab="details" role="tab" aria-selected="true">Member details</button>
+      <button class="tab" data-tab="activities" role="tab" aria-selected="false">Activities</button>
+      <button class="tab" data-tab="files" role="tab" aria-selected="false">Files</button>
+    </div>
+
+    <section class="pane-wrap">
+      <article id="details-tab" class="pane active" role="tabpanel">
+        <h2>Member details</h2>
+        <div class="conscribo-app-container" data-id="af04808317"></div>
+      </article>
+      <article id="activities-tab" class="pane" role="tabpanel">
+        <h2>Activities overview</h2>
+        <div class="conscribo-app-container" data-page="activity_overview"></div>
+      </article>
+      <article id="files-tab" class="pane" role="tabpanel">
+        <h2>Files</h2>
+        <div class="conscribo-app-container" data-id="a071d903b8"></div>
+      </article>
     </section>
   </main>
   <Footer />
 
   <script async src="https://leden.conscribo.nl/TSKVSpartacus/portal/loader" type="module"></script>
-  <script define:vars={{ proxyUrl }}>
-    const storageKey = 'spartacus_portal_session';
-    const sessionTTL = 12 * 60 * 60 * 1000;
-    const portalContent = document.getElementById('portalContent');
-    const authStatus = document.getElementById('authStatus');
-    const form = document.getElementById('memberLoginForm');
-    const loginButton = document.getElementById('memberLoginButton');
-    const logoutButton = document.getElementById('memberLogoutButton');
-    const memberIdentifier = document.getElementById('memberIdentifier');
-
-    const setUnlocked = (displayName) => {
-      portalContent.classList.add('unlocked');
-      logoutButton.style.display = 'inline-block';
-      authStatus.textContent = `Welcome ${displayName}. Portal unlocked.`;
-      authStatus.className = 'auth-status success';
-    };
-
-    const setLocked = (message = 'You are logged out.') => {
-      portalContent.classList.remove('unlocked');
-      logoutButton.style.display = 'none';
-      authStatus.textContent = message;
-      authStatus.className = 'auth-status';
-    };
-
-    async function loginMember() {
-      const identifier = memberIdentifier.value.trim();
-      if (!identifier) return;
-
-      loginButton.disabled = true;
-      authStatus.textContent = 'Checking membership…';
-      authStatus.className = 'auth-status';
-
-      try {
-        const response = await fetch(proxyUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ action: 'login', identifier })
-        });
-
-        const payload = await response.json().catch(() => ({}));
-        if (!response.ok || !payload.success || !payload.member) {
-          throw new Error(payload?.error?.message || 'Unable to verify membership.');
-        }
-
-        const displayName = payload.member.fullName || payload.member.code || 'member';
-        localStorage.setItem(storageKey, JSON.stringify({ displayName, issuedAt: Date.now() }));
-        setUnlocked(displayName);
-      } catch (error) {
-        authStatus.textContent = error.message;
-        authStatus.className = 'auth-status error';
-      } finally {
-        loginButton.disabled = false;
-      }
-    }
-
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const tabs = [...document.querySelectorAll('.portal-tab')];
-      const panes = [...document.querySelectorAll('.portal-pane')];
-
+      const tabs = [...document.querySelectorAll('.tab')];
+      const panes = [...document.querySelectorAll('.pane')];
       tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
           tabs.forEach((t) => {
@@ -126,31 +74,6 @@ const widgets = {
           panes.forEach((p) => p.classList.remove('active'));
           document.getElementById(`${tab.dataset.tab}-tab`)?.classList.add('active');
         });
-      });
-
-      const rawSession = localStorage.getItem(storageKey);
-      if (rawSession) {
-        try {
-          const session = JSON.parse(rawSession);
-          if (Date.now() - Number(session.issuedAt) < sessionTTL && session.displayName) {
-            setUnlocked(session.displayName);
-          } else {
-            localStorage.removeItem(storageKey);
-          }
-        } catch {
-          localStorage.removeItem(storageKey);
-        }
-      }
-
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        loginMember();
-      });
-
-      logoutButton.addEventListener('click', () => {
-        localStorage.removeItem(storageKey);
-        memberIdentifier.value = '';
-        setLocked();
       });
     });
   </script>

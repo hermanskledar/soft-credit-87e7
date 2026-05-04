@@ -4,6 +4,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
+const widgets = {
+  details: 'af04808317',
+  events: '',
+  files: 'a071d903b8',
+};
 ---
 
 <!DOCTYPE html>
@@ -50,6 +55,7 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
         <button id="memberLoginButton" class="auth-btn">Log in</button>
       </div>
       <div id="authStatus" class="auth-status" aria-live="polite"></div>
+      <button id="memberLogoutButton" class="auth-btn" style="display:none;margin-top:12px;background:#374151">Log out</button>
     </section>
 
     <section class="hidden-until-login" id="portalContent">
@@ -64,7 +70,7 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
             <h2>Edit profile details</h2>
             <p>Update address, phone, IBAN/payment, and emergency/contact details in your official member record.</p>
           </div>
-          <div class="widget" data-id="af04808317"></div>
+          <div class="widget" data-id={widgets.details}></div>
         </article>
 
         <article class="portal-pane" id="events-tab">
@@ -72,8 +78,11 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
             <h2>View & subscribe to events</h2>
             <p>See upcoming activities, open event pages, and register directly from your account.</p>
           </div>
-          <div class="widget" data-id="EVENTS_WIDGET_ID"></div>
-          <div class="hint">Replace <strong>EVENTS_WIDGET_ID</strong> with the Conscribo portal block ID for your events overview.</div>
+          {widgets.events ? (
+            <div class="widget" data-id={widgets.events}></div>
+          ) : (
+            <div class="hint">Events widget is not configured yet. Add your Conscribo events block ID in <code>widgets.events</code> at the top of this file.</div>
+          )}
         </article>
 
         <article class="portal-pane" id="files-tab">
@@ -81,7 +90,7 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
             <h2>Download minutes, reports & photos</h2>
             <p>Browse shared folders, committee minutes, and media archives uploaded in Conscribo.</p>
           </div>
-          <div class="widget" data-id="a071d903b8"></div>
+          <div class="widget" data-id={widgets.files}></div>
         </article>
       </div>
     </section>
@@ -93,6 +102,8 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
     const portalContent = document.getElementById('portalContent');
     const authStatus = document.getElementById('authStatus');
     const loginButton = document.getElementById('memberLoginButton');
+    const logoutButton = document.getElementById('memberLogoutButton');
+    const SESSION_TTL_MS = 12 * 60 * 60 * 1000;
     const memberIdentifier = document.getElementById('memberIdentifier');
 
     async function loginMember() {
@@ -118,10 +129,14 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
           throw new Error(payload?.error?.message || 'Login failed');
         }
 
-        localStorage.setItem('spartacus_member', JSON.stringify(payload.member));
+        localStorage.setItem('spartacus_member_session', JSON.stringify({
+          member: payload.member,
+          issuedAt: Date.now(),
+        }));
         authStatus.textContent = `Welcome ${payload.member.fullName || payload.member.code}. Portal unlocked.`;
         authStatus.className = 'auth-status success';
         portalContent.classList.add('unlocked');
+        logoutButton.style.display = 'inline-block';
       } catch (error) {
         authStatus.textContent = error.message;
         authStatus.className = 'auth-status error';
@@ -143,15 +158,28 @@ const proxyUrl = 'https://tskv-conscribo-proxy.herman-skledar.workers.dev/';
         });
       });
 
-      const existingMember = localStorage.getItem('spartacus_member');
+      const existingMember = localStorage.getItem('spartacus_member_session');
       if (existingMember) {
         const parsed = JSON.parse(existingMember);
-        authStatus.textContent = `Welcome back ${parsed.fullName || parsed.code}. Portal unlocked.`;
-        authStatus.className = 'auth-status success';
-        portalContent.classList.add('unlocked');
+        if (parsed.issuedAt && Date.now() - parsed.issuedAt < SESSION_TTL_MS) {
+          const member = parsed.member || {};
+          authStatus.textContent = `Welcome back ${member.fullName || member.code}. Portal unlocked.`;
+          authStatus.className = 'auth-status success';
+          portalContent.classList.add('unlocked');
+          logoutButton.style.display = 'inline-block';
+        } else {
+          localStorage.removeItem('spartacus_member_session');
+        }
       }
 
       loginButton.addEventListener('click', loginMember);
+      logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('spartacus_member_session');
+        portalContent.classList.remove('unlocked');
+        authStatus.textContent = 'You are logged out.';
+        authStatus.className = 'auth-status';
+        logoutButton.style.display = 'none';
+      });
       memberIdentifier.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') loginMember();
       });
